@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">启蒙数学</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="mathname">启蒙数学试题</string>
+<string name="prompt">提示</string>
+  <string name="suo">GridView锁</string>
+   <string name="congratulation">恭喜您！过关拉！！</string>
+</resources>

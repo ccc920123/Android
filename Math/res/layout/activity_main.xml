@@ -1,0 +1,42 @@
+<com.cn.math.lib.DragLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dl"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+  >
+
+    
+<!-- 左侧菜单页面 -->
+
+    <include layout="@layout/qqredide_leftmenu"/>
+     <com.cn.math.lib.MyRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#eeeeee"
+        android:orientation="vertical" >
+      <include 
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          layout="@layout/qqredide_middleview"/>
+    <ListView
+        android:id="@+id/math"
+        android:layout_width="match_parent"
+         android:layout_height="0dip"
+         android:layout_weight="1.0"
+         />
+         <Button 
+             android:id="@+id/sbmit"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:paddingTop="10dip"
+              android:paddingBottom="10dip"
+              android:gravity="center"
+              android:text="提交我的计算"
+              android:background="@drawable/sbmit"
+              android:layout_alignParentBottom="true"
+             />
+   
+          </com.cn.math.lib.MyRelativeLayout>
+               
+</com.cn.math.lib.DragLayout>

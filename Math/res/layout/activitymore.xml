@@ -1,0 +1,36 @@
+<com.cn.math.lib.DragLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dl"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+  >
+
+    
+<!-- 左侧菜单页面 -->
+
+    <include layout="@layout/qqredide_leftmenu"/>
+     <com.cn.math.lib.MyRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#eeeeee"
+        android:orientation="vertical" >
+   <include 
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          layout="@layout/qqredide_middleview"/>
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       >
+    <Button
+        android:id="@+id/shudu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+    
+</LinearLayout>
+ </com.cn.math.lib.MyRelativeLayout>
+               
+</com.cn.math.lib.DragLayout>
