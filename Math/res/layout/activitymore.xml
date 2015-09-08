@@ -24,11 +24,16 @@
        android:layout_height="wrap_content"
        android:orientation="horizontal"
        >
+       <Button
+        android:id="@+id/jisuangti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="计算" />
     <Button
         android:id="@+id/shudu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="数独" />
     
 </LinearLayout>
  </com.cn.math.lib.MyRelativeLayout>

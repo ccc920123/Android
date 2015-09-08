@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -18,6 +20,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.cn.math.data.MathData;
+import com.cn.math.dialog.AlerDialog;
 import com.cn.math.game.shuduing.gameactivity.MyViewPagerActivity;
 import com.cn.math.lib.DragLayout;
 import com.cn.math.lib.DragLayout.DragListener;
@@ -25,7 +29,7 @@ import com.cn.math.lib.DragLayout.DragListener;
 public class MoreActivity extends Activity {
 
 	private TextView mText;
-	private Button mShudu;
+	private Button mShudu,mJiSuangTi;
 	private DragLayout mDragLayout;
 	/** 左边侧滑菜单 */
 	private ListView menuListView;// 菜单列表
@@ -43,10 +47,12 @@ public class MoreActivity extends Activity {
 		Seting = (ImageButton) findViewById(R.id.menu_imgbtn);
 		menu_left = (ImageButton) findViewById(R.id.menu_left);
 		mShudu=(Button) findViewById(R.id.shudu);
+		mJiSuangTi=(Button) findViewById(R.id.jisuangti);
 		mText=(TextView) findViewById(R.id.apptext);
-		mText.setText("脑力开发");
+		mText.setText("启蒙数学");
 		menu_left.setOnClickListener(Click);
 		mShudu.setOnClickListener(Click);
+		mJiSuangTi.setOnClickListener(Click);
 		Seting.setOnClickListener(Click);
 	}
 	
@@ -55,6 +61,9 @@ public class MoreActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
+			case R.id.menu_imgbtn:
+				mDragLayout.open();
+				break;
 			case R.id.menu_left:
 				mDragLayout.open();
 				break;
@@ -67,6 +76,13 @@ public class MoreActivity extends Activity {
 				Intent intent = new Intent(MoreActivity.this,MyViewPagerActivity.class);
 				startActivity(intent);
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+				
+				break;
+			case R.id.jisuangti:
+				Intent ittmain=new Intent();
+				ittmain.setClass(MoreActivity.this, MainActivity.class);
+				startActivity(ittmain);
+				finish();
 				
 				break;
 			}
@@ -114,7 +130,7 @@ public class MoreActivity extends Activity {
 		Map<String, Object> item;
 
 		item = new HashMap<String, Object>();
-		item.put("item", "试题设置");
+		item.put("item", "软件详情");
 		item.put("image", R.drawable.alert_address_btn);
 		data.add(item);
 
@@ -128,10 +144,7 @@ public class MoreActivity extends Activity {
 		item.put("image", R.drawable.icon_phone);
 		data.add(item);
 
-		item = new HashMap<String, Object>();
-		item.put("item", "更多精彩");
-		item.put("image", R.drawable.more1_tabbar);
-		data.add(item);
+	
 		return data;
 	}
 	private void initResideListener() {
@@ -170,5 +183,30 @@ public class MoreActivity extends Activity {
 				}
 			}
 		});
+	}
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if(keyCode==KeyEvent.KEYCODE_BACK)
+		{
+			AlerDialog.exitDialog(MoreActivity.this,
+					new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							System.exit(0);
+							
+						}
+					},
+					new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							AlerDialog.closeDialog();
+						}
+					});
+			}
+		
+		return false;
 	}
 }

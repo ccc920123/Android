@@ -451,7 +451,7 @@ private List<Map<String, Object>> getMenuData() {
 	data.add(item);
 
 	item = new HashMap<String, Object>();
-	item.put("item", "脑力开发");
+	item.put("item", "更多精彩");
 	item.put("image", R.drawable.more1_tabbar);
 	data.add(item);
 	return data;
