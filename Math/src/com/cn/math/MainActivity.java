@@ -35,6 +35,9 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
+
 import com.cn.math.adpter.CommonAdapter;
 import com.cn.math.adpter.MathAdpter;
 import com.cn.math.bean.MathBean;
@@ -477,11 +480,14 @@ private void initResideListener() {
 				finish();
 				break;
 			case 2:
-				 Intent intent=new Intent(Intent.ACTION_SEND);
-				  intent.setType("image/*");   
-			      intent.putExtra(Intent.EXTRA_SUBJECT, "启蒙数学");
-			      intent.putExtra(Intent.EXTRA_TEXT, "让你的宝宝不输在起跑线上，学习的好助手，“启蒙数学”。");
-			      startActivity(Intent.createChooser(intent, getTitle()));
+				
+				showShare();
+				
+//				 Intent intent=new Intent(Intent.ACTION_SEND);
+//				  intent.setType("image/*");   
+//			      intent.putExtra(Intent.EXTRA_SUBJECT, "启蒙数学");
+//			      intent.putExtra(Intent.EXTRA_TEXT, "让你的宝宝不输在起跑线上，学习的好助手，“启蒙数学”。");
+//			      startActivity(Intent.createChooser(intent, getTitle()));
 				break;
 			case 3:
 				Intent itmore=new Intent();
@@ -544,7 +550,34 @@ protected void onPause() {
 	wm.removeView(leftbtn);
 	super.onPause();
 }
-
+private void showShare() {
+	 ShareSDK.initSDK(this);
+	 OnekeyShare oks = new OnekeyShare();
+	 //关闭sso授权
+	 oks.disableSSOWhenAuthorize(); 
+	 
+	// 分享时Notification的图标和文字  2.5.9以后的版本不调用此方法
+	 //oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
+	 // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
+	 oks.setTitle(getString(R.string.share));
+	 // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
+	 oks.setTitleUrl("http://www.jypush.com/apk/file/4j3.apk");
+	 // text是分享文本，所有平台都需要这个字段
+	 oks.setText("你的省心家教“启蒙数学”");
+	 // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+	 oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+	 // url仅在微信（包括好友和朋友圈）中使用
+	 oks.setUrl("http://www.jypush.com/apk/file/4j3.apk");
+	 // comment是我对这条分享的评论，仅在人人网和QQ空间使用
+	 oks.setComment("宝宝没学习没兴趣，启蒙数学让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“启蒙数学”");
+	 // site是分享此内容的网站名称，仅在QQ空间使用
+	 oks.setSite(getString(R.string.app_name));
+	 // siteUrl是分享此内容的网站地址，仅在QQ空间使用
+	 oks.setSiteUrl("http://www.jypush.com/apk/file/4j3.apk");
+	 
+	// 启动分享GUI
+	 oks.show(this);
+	 }
 
 
 }
