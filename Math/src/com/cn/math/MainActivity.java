@@ -1,5 +1,6 @@
 package com.cn.math;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,6 +18,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -78,6 +80,10 @@ public class MainActivity extends Activity {
 	private SharedPreferences sp;
 	private DisplayMetrics dm;
 	EditText edt;
+	private String url="file:///android_asset/ico.png";
+	public static final String PHONE_PATH = Environment
+			.getExternalStorageDirectory().getAbsolutePath() + File.separator+"Math/math.jpg";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -561,19 +567,19 @@ private void showShare() {
 	 // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
 	 oks.setTitle(getString(R.string.share));
 	 // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
-	 oks.setTitleUrl("http://www.jypush.com/apk/file/4j3.apk");
+	 oks.setTitleUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
 	 // text是分享文本，所有平台都需要这个字段
 	 oks.setText("你的省心家教“启蒙数学”");
-	 // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-	 oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+	 // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数"/sdcard/test.jpg"
+	 oks.setImagePath(PHONE_PATH);//确保SDcard下面存在此张图片
 	 // url仅在微信（包括好友和朋友圈）中使用
-	 oks.setUrl("http://www.jypush.com/apk/file/4j3.apk");
+	 oks.setUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
 	 // comment是我对这条分享的评论，仅在人人网和QQ空间使用
 	 oks.setComment("宝宝没学习没兴趣，启蒙数学让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“启蒙数学”");
 	 // site是分享此内容的网站名称，仅在QQ空间使用
 	 oks.setSite(getString(R.string.app_name));
 	 // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-	 oks.setSiteUrl("http://www.jypush.com/apk/file/4j3.apk");
+	 oks.setSiteUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
 	 
 	// 启动分享GUI
 	 oks.show(this);
