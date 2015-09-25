@@ -13,10 +13,10 @@ public class ProgressDialogControler {
 	}
 	private void onCreateDialog(){
 		pd = new ProgressDialog(context);
-		pd.setTitle("...稍等...");
+		pd.setTitle("...请稍等...");
 		pd.setIcon(context.getResources().getDrawable(
 				android.R.drawable.ic_dialog_alert));
-		pd.setMessage("……答案验证中……");
+		pd.setMessage("……正在验证答案……");
 		pd.show();
 	}
 	public void myDismiss(){

@@ -141,12 +141,6 @@ public class MoreActivity extends Activity {
 		item.put("item", "软件详情");
 		item.put("image", R.drawable.alert_address_btn);
 		data.add(item);
-
-		item = new HashMap<String, Object>();
-		item.put("item", "口诀表");
-		item.put("image", R.drawable.reduce_cart);
-		data.add(item);
-
 		item = new HashMap<String, Object>();
 		item.put("item", "分享软件");
 		item.put("image", R.drawable.icon_phone);
@@ -164,23 +158,12 @@ public class MoreActivity extends Activity {
 					int position, long id) {
 				switch (position) {
 				case 0:
-//					Intent itt=new Intent();
-//					itt.setClass(MainActivity.this,CheckTopicActivity.class);
-//					startActivity(itt);
-//					finish();
+					Intent itt=new Intent();
+					itt.setClass(MoreActivity.this,AboutusActivity.class);
+					startActivity(itt);
 					break;
 				case 1:
-//					Intent itts=new Intent();
-//					itts.setClass(MainActivity.this, MantraSheetActivity.class);
-//					startActivity(itts);
-//					finish();
-					break;
-				case 2:
 					showShare();
-					break;
-				case 3:
-//					Toast.makeText(MainActivity.this, "更多精彩即将为您呈现",
-//							Toast.LENGTH_LONG).show();
 					break;
 				default:
 					break;

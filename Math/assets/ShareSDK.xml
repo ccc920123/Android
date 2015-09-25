@@ -68,7 +68,6 @@
         AppSecret="K0ovhx3QHYrF4UOl"
         RedirectUri="http://sharesdk.cn"
         Enable="true" />
-
     <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
     <QZone
         Id="3"
@@ -117,12 +116,11 @@
     <SinaWeibo
         Id="7"
         SortId="7"
-        AppKey="568898243"
-        AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
+        AppKey="2664616451"
+        AppSecret="afabd65c2c33c275d915e13a9e29d8ef"
         RedirectUrl="http://www.sharesdk.cn"
         ShareByAppClient="false"
         Enable="true" />
-    
     <Facebook
         Id="8"
         SortId="8"

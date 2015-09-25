@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <color name="blue">#4DB9FF</color> 
-   <color name="blueno">#00C5CD</color>
-  <color name="trff">#50000000</color>
-  <color name="text_color">#ff434343</color>
-  <color name="transparent">#00000000</color>
-  <color name="white">#FFFFFF</color>
-     <color name="shudu_background">#ffe6f0ff</color>
-   <color name="shudu_hilite">#ffffffff</color>
-   <color name="shudu_light">#64c6d4ef</color>
+
+    <color name="blue">#4DB9FF</color>
+    <color name="blueno">#00C5CD</color>
+    <color name="trff">#50000000</color>
+    <color name="text_color">#ff434343</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="shudu_background">#ffe6f0ff</color>
+    <color name="shudu_hilite">#ffffffff</color>
+    <color name="shudu_light">#64c6d4ef</color>
    <color name="shudu_dark">#6456648f</color>
+<drawable name="about_bg">#e0000000</drawable>
 </resources>

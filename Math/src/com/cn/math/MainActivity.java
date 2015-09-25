@@ -312,7 +312,10 @@ public class MainActivity extends Activity {
 								mediaPlayer.stop();
 								}
 								MathData.mList=null;
-								System.exit(0);
+								Intent itexit=new Intent();
+								itexit.setClass(MainActivity.this, MoreActivity.class);
+								startActivity(itexit);
+								finish();
 							}},true);
 				
 				
@@ -338,8 +341,10 @@ public class MainActivity extends Activity {
 							
 							@Override
 							public void onClick(View v) {
-								MathData.mList=null;
-								System.exit(0);
+								Intent itexit=new Intent();
+								itexit.setClass(MainActivity.this, MoreActivity.class);
+								startActivity(itexit);
+								finish();
 								
 							}},false);
 			}

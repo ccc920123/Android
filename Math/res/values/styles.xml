@@ -68,4 +68,11 @@
         <item name="android:layout_marginRight">6.0dip</item>
         <item name="android:minHeight">40.0dip</item>
     </style>
+      <style name="myStyle">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorForeground">#fff</item>
+    </style>
 </resources>
