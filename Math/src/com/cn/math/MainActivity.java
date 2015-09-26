@@ -517,30 +517,18 @@ private void initResideListener() {
 public boolean onKeyDown(int keyCode, KeyEvent event) {
 	if(keyCode==KeyEvent.KEYCODE_BACK)
 	{
-		AlerDialog.exitDialog(MainActivity.this,
-				new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
+		
 						if(mediaPlayer!=null)
 						{
 						mediaPlayer.stop();
 						}
 						MathData.mList=null;
-						System.exit(0);
 						
-					}
-				},
-				new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
 						
-						AlerDialog.closeDialog();
-//						Toast.makeText(MainActivity.this, "ÍÆ¼ö", Toast.LENGTH_SHORT).show();
-						
-					}
-				});
+						Intent ittmain=new Intent();
+						ittmain.setClass(MainActivity.this, MoreActivity.class);
+						startActivity(ittmain);
+						finish();
 		}
 	
 	return false;

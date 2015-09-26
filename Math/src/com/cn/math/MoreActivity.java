@@ -14,25 +14,31 @@ import android.os.Environment;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
-import com.cn.math.data.MathData;
+import com.cn.math.adpter.CommonAdapter;
+import com.cn.math.adpter.ViewHolder;
+import com.cn.math.bean.GridViewBean;
 import com.cn.math.dialog.AlerDialog;
 import com.cn.math.game.shuduing.gameactivity.MyViewPagerActivity;
 import com.cn.math.lib.DragLayout;
 import com.cn.math.lib.DragLayout.DragListener;
 import com.cn.math.utli.CopyFileToSDcard;
 
-public class MoreActivity extends Activity {
+public class MoreActivity extends Activity implements
+OnItemClickListener{
 	public static final String PHONE_PATH = Environment
 			.getExternalStorageDirectory().getAbsolutePath() + File.separator+"Math/math.jpg";
 	private TextView mText;
@@ -42,26 +48,59 @@ public class MoreActivity extends Activity {
 	private ListView menuListView;// 菜单列表
 	private ImageButton Seting, menu_left;
 	private String url="file:///android_asset/ico.png";
+	
+	private Map<String, Integer> imageidMap = null;
+	private GridView mGridView;
+	private CommonAdapter<GridViewBean> mAdapter;
+	private List<GridViewBean> data;
+	private int[] imageid={R.drawable.suangsu,R.drawable.shuduioc};
+	private String[] title={"算数","数独"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activitymore);
 		findViewid();
+		initDatas();
+		initView();
 		sideslip();
 		CopyFileToSDcard.copyFileToSdCard(MoreActivity.this,PHONE_PATH);
+	}
+	private void initDatas() {
+		GridViewBean itemBean = null;
+		data = new ArrayList<GridViewBean>();
+		for (int i = 0; i < imageid.length; i++) {
+			itemBean=new GridViewBean(imageid[i],title[i]);
+			data.add(itemBean);
+		}
+		
+		
+	}
+	private void initView() {
+		mText.setText("启蒙数学");
+		menu_left.setOnClickListener(Click);
+		mGridView.setOnItemClickListener(this);
+		Seting.setOnClickListener(Click);
+		
+		mGridView.setAdapter(mAdapter=new CommonAdapter<GridViewBean>(getApplicationContext(),
+				data,R.layout.gridviewimage	) {
+			
+			@Override
+			public void convert(ViewHolder helper, GridViewBean item) {
+				helper.setImageResource(R.id.img, item.getImage());
+				helper.setText(R.id.title, item.getTitMessage());
+			}
+		});
+		
 	}
 	private void findViewid() {
 		Seting = (ImageButton) findViewById(R.id.menu_imgbtn);
 		menu_left = (ImageButton) findViewById(R.id.menu_left);
-		mShudu=(Button) findViewById(R.id.shudu);
-		mJiSuangTi=(Button) findViewById(R.id.jisuangti);
+//		mShudu=(Button) findViewById(R.id.shudu);
+//		mJiSuangTi=(Button) findViewById(R.id.jisuangti);
 		mText=(TextView) findViewById(R.id.apptext);
-		mText.setText("启蒙数学");
-		menu_left.setOnClickListener(Click);
-		mShudu.setOnClickListener(Click);
-		mJiSuangTi.setOnClickListener(Click);
-		Seting.setOnClickListener(Click);
+		mGridView=(GridView) findViewById(R.id.gridview);
+		
 	}
 	
 	private View.OnClickListener Click=new View.OnClickListener() {
@@ -74,24 +113,6 @@ public class MoreActivity extends Activity {
 				break;
 			case R.id.menu_left:
 				mDragLayout.open();
-				break;
-
-			case R.id.shudu:
-//				Intent itts=new Intent();
-//				itts.setClass(MoreActivity.this, ShuDuActivity.class);
-//				startActivity(itts);
-//				finish();
-				Intent intent = new Intent(MoreActivity.this,MyViewPagerActivity.class);
-				startActivity(intent);
-				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
-				
-				break;
-			case R.id.jisuangti:
-				Intent ittmain=new Intent();
-				ittmain.setClass(MoreActivity.this, MainActivity.class);
-				startActivity(ittmain);
-				finish();
-				
 				break;
 			}
 			
@@ -225,4 +246,38 @@ public class MoreActivity extends Activity {
 		// 启动分享GUI
 		 oks.show(this);
 		 }
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		ImageView image=(ImageView) view.findViewById(R.id.img);
+		Animation alphaAnimation =
+				AnimationUtils.loadAnimation(this, R.anim.probtn);
+		image.startAnimation(alphaAnimation);
+		
+		switch (position) {
+		case 0:
+			
+//			Intent itts=new Intent();
+//			itts.setClass(MoreActivity.this, ShuDuActivity.class);
+//			startActivity(itts);
+//			finish();
+			
+			Intent ittmain=new Intent();
+			ittmain.setClass(MoreActivity.this, MainActivity.class);
+			startActivity(ittmain);
+			overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+			finish();
+			
+			break;
+        case 1:
+        	Intent intent = new Intent(MoreActivity.this,MyViewPagerActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+			
+			break;
+		default:
+			break;
+		}
+		
+	}
 }

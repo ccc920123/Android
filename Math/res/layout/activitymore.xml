@@ -19,23 +19,68 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           layout="@layout/qqredide_middleview"/>
+   
+   <GridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1.0"
+            android:columnWidth="4dip"
+            android:drawSelectorOnTop="false"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:horizontalSpacing="4dp"
+            android:numColumns="4"
+            android:layout_marginTop="20dip"
+            android:layout_marginLeft="16dip"
+            android:layout_marginRight="16dip"
+            android:layout_marginBottom="16dip"
+            android:stretchMode="columnWidth"
+             />
+   
+   <!-- 
    <LinearLayout 
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
+       android:layout_marginLeft="12dip"
+       android:layout_marginTop="12dip"
        >
        <Button
         android:id="@+id/jisuangti"
-        android:layout_width="wrap_content"
+        android:layout_width="0dip"
         android:layout_height="wrap_content"
-        android:text="计算" />
+        android:layout_weight="1.0"
+        android:background="@drawable/suangsu"
+        android:layout_marginRight="6dip"
+         />
     <Button
         android:id="@+id/shudu"
-        android:layout_width="wrap_content"
+        android:layout_width="0dip"
         android:layout_height="wrap_content"
-        android:text="数独" />
-    
+        android:layout_weight="1.0"
+        android:layout_marginLeft="6dip"
+        android:background="@drawable/shuduioc"
+         />
+     <Button
+        android:id="@+id/jisuangti"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/suangsu"
+        android:layout_marginRight="6dip"
+         />
+    <Button
+        android:id="@+id/shudu"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:layout_marginLeft="6dip"
+        android:background="@drawable/shuduioc"
+         />
 </LinearLayout>
+ -->
  </com.cn.math.lib.MyRelativeLayout>
                
 </com.cn.math.lib.DragLayout>
