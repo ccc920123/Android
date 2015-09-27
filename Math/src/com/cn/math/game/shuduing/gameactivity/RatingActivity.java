@@ -31,7 +31,7 @@ public class RatingActivity extends Activity {
 			public void onClick(View v) {
 				//关闭上一局游戏
 				finishActivity(requestCode) ;
-				//跳转到下一关
+				//跳转到下一关     stage关数，rating 星星
 				Intent intent = new Intent(RatingActivity.this, Sudoku_Activity.class) ;
 				intent.putExtra("stage", stage) ;
 				startActivity(intent) ;

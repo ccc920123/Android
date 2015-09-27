@@ -153,7 +153,7 @@ public class Sudoku {
 		for(int i=0;i<10;i++){
 			if(i%3==0){
 				color = _paint.getColor() ;
-				_paint.setColor(Color.argb(200, 0, 255, 255)) ;
+				_paint.setColor(Color.argb(250, 192, 192, 192)) ;
 				xiantiao = _paint.getStrokeWidth() ;
 				_paint.setStrokeWidth(4) ;
 				_canvas.drawLine(_left+i*(_distance/9), _top, _left+i*(_distance/9), _top+_distance, _paint) ;
