@@ -1,0 +1,168 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+ 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="1"
+            android:textSize="150px" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_weight="1.0"
+            android:text="2"
+            android:textSize="150px" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="3"
+            android:textSize="150px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+          android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_4"
+             android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="4"
+            android:textSize="150px" />
+
+        <TextView
+            android:id="@+id/tv_5"
+             android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="5"
+            android:textSize="150px" />
+
+        <TextView
+            android:id="@+id/tv_6"
+            android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="6"
+            android:textSize="150px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+          android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_7"
+             android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="7"
+            android:textSize="150px" />
+
+        <TextView
+            android:id="@+id/tv_8"
+            android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="8"
+            android:textSize="150px" />
+
+        <TextView
+            android:id="@+id/tv_9"
+             android:layout_width="0dip"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="150px" />
+    </LinearLayout>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的成绩:"
+            android:textColor="@color/text_color"
+            android:textSize="30dip" />
+
+        <TextView
+            android:id="@+id/tv_socer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+             android:textColor="#FF7F50"
+            android:text="移动了 100 步"
+            android:textSize="30dip" />
+    </LinearLayout>
+   
+
+    <LinearLayout
+        android:layout_width="match_parent"
+         android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_restart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/sbmit"
+            android:text="重新开始"
+            android:textSize="50dip"
+             />
+    </LinearLayout>
+
+</LinearLayout>
