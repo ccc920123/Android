@@ -3,6 +3,7 @@ package com.cn.math;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import com.cn.math.R;
 import com.cn.math.game.shuzimianban.DataHelper;
@@ -23,24 +24,25 @@ import android.widget.Toast;
 public class ShuZiMianBanActivity extends Activity {
     private LinearLayout ll;
     private TextView[][] tv_group;
-    private int number[]=new int[9] ;
+    private int number[];
     Vibrator mVibrator;
 	private TextView tv_socer;
 	private Button btnrestart;
 	private int socer = 0;
-	private static ArrayList<String> arrangeList = new ArrayList<String>();
+	List<String> list;
 	 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shuzimianban);
-        genernateData(DataHelper.number,0,DataHelper.number.length-1);
-        int sizelenght=arrangeList.size();
+        list=DataHelper.getDate();
+        int sizelenght=list.size();
         int key=(int) (Math.random()*sizelenght);
-        char[] newnumber=arrangeList.get(key).toCharArray();
-        for(int i=0;i<9;i++){
-        	number[i]=DataHelper.number[i];
-//        	number[i]=newnumber[i];
+        
+        char[] newnumbe=list.get(key).toCharArray();
+        number = new int[newnumbe.length];
+        for(int i=0;i<newnumbe.length;i++){
+        	number[i] = Integer.parseInt(String.valueOf(newnumbe[i]));
         }
         initView();
         initGame();
@@ -95,9 +97,14 @@ public class ShuZiMianBanActivity extends Activity {
 		btnrestart.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				 for(int i=0;i<9;i++){
-			        	number[i]=DataHelper.number[i];
-			        }
+				int sizelenght=list.size();
+		        int key=(int) (Math.random()*sizelenght);
+		        
+		        char[] newnumbe=list.get(key).toCharArray();
+		        number = new int[newnumbe.length];
+		        for(int i=0;i<newnumbe.length;i++){
+		        	number[i] = Integer.parseInt(String.valueOf(newnumbe[i]));
+		        }
 				 initGame();
 				 socer = 0 ;
 				 tv_socer.setText("移动了 "+String.valueOf(socer)+" 步");
@@ -172,31 +179,14 @@ public class ShuZiMianBanActivity extends Activity {
 		}
 		return 0;	
 	}
-	 public static void genernateData(int[] number2, int k, int m) {
-		  if (k > m) {
-		   StringBuffer sb = new StringBuffer();
-		   for (int i = 0; i <= m; i++) {
-		    sb.append(number2[i]);
-		   }
-		   arrangeList.add(sb.toString());
-		  } else {
-		   for (int i = k; i <= m; i++) {
-		    swapData(number2, k, i);
-		    genernateData(number2, k + 1, m);
-		    swapData(number2, k, i);
-		   }
-		  }
-		 }
-	 private static void swapData(int list[], int k, int i) {
-		  int temp = list[k];
-		  list[k] = list[i];
-		  list[i] = temp;
-		 }
-
+	
+	
+	
+	
 	private void initView() {
 		tv_group = new TextView[3][3];
 		ll= (LinearLayout)findViewById(R.id.ll);
-		tv_group[0][0] =(TextView) findViewById(R.id.tv_1);
+		tv_group[0][0] = (TextView) findViewById(R.id.tv_1);
 		tv_group[0][1] = (TextView)findViewById(R.id.tv_2);
 		tv_group[0][2] = (TextView)findViewById(R.id.tv_3);
 		tv_group[1][0] = (TextView)findViewById(R.id.tv_4);
@@ -215,11 +205,14 @@ public class ShuZiMianBanActivity extends Activity {
 				if(number[i*3+j]==0){
 					tv_group[i][j].setText(" ");
 				}else{
-					
+					System.out.println("number-----"+number[i*3+j]);
 					tv_group[i][j].setText(String.valueOf(number[i*3+j]));
 				}
 			}
 		}
+		
+		
+		
 	}
 	
 	public void overGame(){
@@ -231,8 +224,13 @@ public class ShuZiMianBanActivity extends Activity {
        }
        if(total==7&&number[8]==0){
 		   Toast.makeText(ShuZiMianBanActivity.this, "GameOver", 0).show();
-		   for(int i=0;i<9;i++){
-	        	number[i]=DataHelper.number[i];
+		   int sizelenght=list.size();
+	        int key=(int) (Math.random()*sizelenght);
+	        
+	        char[] newnumbe=list.get(key).toCharArray();
+	        number = new int[newnumbe.length];
+	        for(int i=0;i<newnumbe.length;i++){
+	        	number[i] = Integer.parseInt(String.valueOf(newnumbe[i]));
 	        }
 		   socer = 0 ;
 		   tv_socer.setText("移动了 "+String.valueOf(socer)+" 步");
