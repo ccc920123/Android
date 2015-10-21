@@ -47,7 +47,16 @@ public class DataHelper {
 		arrangeList.add("671823450");
 		arrangeList.add("451823670");
 		arrangeList.add("475182360");
-		
+		arrangeList.add("736451820");
+		arrangeList.add("735186420");
+		arrangeList.add("782364510");
+		arrangeList.add("723645180");
+		arrangeList.add("273645180");
+		arrangeList.add("264735180");
+		arrangeList.add("217345860");
+		arrangeList.add("245817360");
+		arrangeList.add("261734580");
+		arrangeList.add("245173860");
 		return arrangeList;
 		
 	}
