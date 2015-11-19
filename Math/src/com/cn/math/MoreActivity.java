@@ -55,8 +55,8 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 	private CommonAdapter<GridViewBean> mAdapter;
 	private List<GridViewBean> data;
 	private int[] imageid = { R.drawable.suangsu, R.drawable.shuduioc,
-			R.drawable.shuduioc };
-	private String[] title = { "算数", "数独", "魔板" };
+			R.drawable.shuduioc,R.drawable.shuduioc };
+	private String[] title = { "算数", "数独", "你的世界","魔板" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -285,12 +285,21 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 
 			break;
 		case 2:
-			Intent intentshuzimianban = new Intent(MoreActivity.this,
-					ShuZiMianBanActivity.class);
-			startActivity(intentshuzimianban);
+			
+			Intent yourworld = new Intent(MoreActivity.this,
+					YuorWorldActivity.class);
+			startActivity(yourworld);
 			overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 
 			break;
+			case 3:
+				
+				Intent intentshuzimianban = new Intent(MoreActivity.this,
+					ShuZiMianBanActivity.class);
+			startActivity(intentshuzimianban);
+			overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+				
+				break;
 		default:
 			break;
 		}
