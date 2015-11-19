@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/logo"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/newgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/button_selector_newgame"
+        android:cacheColorHint="#00000000"
+        android:onClick="isClick" />
+
+    <Button
+        android:id="@+id/continuegame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/button_selector_continuegame"
+        android:cacheColorHint="#00000000"
+        android:onClick="isClick" />
+    <Button
+        android:id="@+id/aboutus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/button_selector_about"
+        android:cacheColorHint="#00000000"
+        android:onClick="isClick" />
+
+    <Button
+        android:id="@+id/aboutgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/button_selector_aboutgame"
+        android:cacheColorHint="#00000000"
+        android:onClick="isClick" />
+
+</LinearLayout>

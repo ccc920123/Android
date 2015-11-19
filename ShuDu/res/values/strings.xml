@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ShuDuActivity!</string>
+    <string name="congratulation">恭喜您！过关拉！！</string>
+    <string name="app_name">数独王</string>
+    <string name="newgame">开始游戏</string>
+    <string name="continnue">继续游戏</string>
+    <string name="about">数独王Android版\n是一款古老的游戏\n主要锻炼你的思维能力\n多样的关卡让你来挑战\n如果你有好的意见请联系我们的邮箱\n645503254@qq.com\n747859231@qq.com\nCopyright© 2015~2017 Android J brother studio\nAll Rights Reserved</string>
+    <string name="aboutgame">数独,是一种源自18世纪末的瑞士,后再美国发展,并在得以发扬广大的数字谜题.数独盘面是个九宫,每一宫又分为九个小格,在这八十一格中给出一定的已知数字和解题条件,利用逻辑和推理,在其他的空格上填入1~9的数字,使1~9每个数字在每一行,每一列和每一个宫中只出现一次.这种游戏全面考验做题者观察能力和推理能力.虽然玩法简单,但数字排列方式却千变万化.所以不少教育者认为数独是训练头脑的绝佳方式.</string>
+    <string name="title">关于数独</string>
+    <string name="prompt">提示</string>
+    <string name="suo">GridView suo</string>
+</resources>

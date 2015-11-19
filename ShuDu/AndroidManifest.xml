@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.com.shuduwang"
+    android:versionCode="5"
+    android:versionName="1.0.0.0" >
+
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="9"/>
+  
+
+    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    
+    
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" 
+        >
+         <!-- 百度 -->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity
+            android:name="cn.com.shuduwang.LogoActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cn.com.shuduwang.ShuDuActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="cn.com.shuduwang.AboutusActivity"
+            android:label="@string/app_name" 
+            android:theme="@style/myStyle"
+            >
+        </activity>
+        <activity
+            android:name="cn.com.shuduwang.AboutgameActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Dialog"
+            >
+        </activity>
+         <activity
+            android:name="cn.com.shuduwang.Sudoku_Activity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="cn.com.shuduwang.MyViewPagerActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="cn.com.shuduwang.RatingActivity"
+            android:theme="@android:style/Theme.Dialog"></activity>
+    </application>
+
+</manifest>

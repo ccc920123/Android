@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#7A93DF</color>
+    <drawable name="background">#90000000</drawable>
+    <drawable name="aboutus_bg">#e0000000</drawable>
+    <drawable name="transparent_background">#00000000</drawable>
+     <color name="white">#FFFFFF</color>
+     <color name="transparent">#00000000</color>
+     <color name="text_color">#ff434343</color>
+     <color name="trff">#50000000</color>
+</resources>
