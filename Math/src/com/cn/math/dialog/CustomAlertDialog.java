@@ -30,9 +30,11 @@ public class CustomAlertDialog extends Dialog{
 	private View.OnClickListener leftOnClick;
 	private View.OnClickListener rightOnClick;
 	private boolean issb;
+	private Context context;
 	
     public CustomAlertDialog(Context context,String strzq,String leftmsg,View.OnClickListener leftOnClick,String rightMessage,View.OnClickListener rightOnClick,boolean issb){
         super(context, R.style.MyDialog);
+        this.context=context;
         this.strzq=strzq;
         this.leftMessage=leftmsg;
 		this.leftOnClick=leftOnClick;
@@ -51,12 +53,14 @@ public class CustomAlertDialog extends Dialog{
     void initViews(){
     	ImageView image=(ImageView) findViewById(R.id.imageView1);
     	if(issb){
-		image.setBackgroundResource(R.anim.fw);
+    		image.setBackground(context.getResources().getDrawable(R.drawable.icon_nizhengbiang_normal));
+//		image.setBackgroundResource(R.anim.fw);
     	}else{
-    	image.setBackgroundResource(R.anim.sb);
+//    	image.setBackgroundResource(R.anim.sb);
+    		image.setBackground(context.getResources().getDrawable(R.drawable.icon_buyaohuixing_normal));
     	}
-    	AnimationDrawable animationDrawable = (AnimationDrawable) image.getBackground();
-        animationDrawable.start();	
+//    	AnimationDrawable animationDrawable = (AnimationDrawable) image.getBackground();
+//        animationDrawable.start();	
     	TextView title=(TextView) findViewById(R.id.zq);
     	title.setText(this.strzq);
     	Button leftButton = (Button) findViewById(R.id.sbmit);

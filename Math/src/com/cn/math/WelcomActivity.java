@@ -18,7 +18,7 @@ public class WelcomActivity extends Activity {
 		setContentView(R.layout.welcom);
 		RelativeLayout adsParent = (RelativeLayout) this
 				.findViewById(R.id.adsRl);
-		AdView.setAppSid(this, "db99f30e");
+//		AdView.setAppSid(this, "db99f30e");
 		SplashAdListener listener=new SplashAdListener() {
 			@Override
 			public void onAdDismissed() {

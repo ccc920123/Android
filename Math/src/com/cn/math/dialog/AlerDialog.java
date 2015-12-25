@@ -43,4 +43,15 @@ public class AlerDialog {
 		mDialog.setCanceledOnTouchOutside(true);
 		mDialog.show();
 	}
+	
+	public static void exitDialog(Context context,final DialogInterface.OnClickListener positiveListener,
+			final DialogInterface.OnClickListener negativeListener,String message)
+	{
+		mDialog = BaseDialog.getDialog(context, R.string.prompt, message, "确定", 
+				positiveListener,"取消",
+				negativeListener);
+		mDialog.setCancelable(true);
+		mDialog.setCanceledOnTouchOutside(true);
+		mDialog.show();
+	}
 }

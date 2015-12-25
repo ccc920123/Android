@@ -11,5 +11,15 @@
     <color name="shudu_hilite">#ffffffff</color>
     <color name="shudu_light">#64c6d4ef</color>
    <color name="shudu_dark">#6456648f</color>
+   <color name="bai">#E1E1E1</color>
+   <color name="hui">#A5A5A5</color>
+   <color name="hong">#E6694D</color>
+   <color name="lan">#4B9ADC</color>
 <drawable name="about_bg">#e0000000</drawable>
+<drawable name="sd">#FFA200</drawable>
+<drawable name="sd1">#FFC200</drawable>
+ <color name="text_white">#fff6f2</color>
+    <color name="text_black">#996e65</color>
+    <color name="text_brown">#d8cdc4</color>
+    <color name="background">#eef8ef</color>
 </resources>

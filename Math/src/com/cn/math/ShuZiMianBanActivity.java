@@ -6,11 +6,13 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.cn.math.R;
+import com.cn.math.dialog.AlerDialog;
 import com.cn.math.game.shuzimianban.DataHelper;
 
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
@@ -105,9 +107,31 @@ public class ShuZiMianBanActivity extends Activity {
 		        for(int i=0;i<newnumbe.length;i++){
 		        	number[i] = Integer.parseInt(String.valueOf(newnumbe[i]));
 		        }
-				 initGame();
-				 socer = 0 ;
-				 tv_socer.setText("移动了 "+String.valueOf(socer)+" 步");
+		    	AlerDialog.exitDialog(ShuZiMianBanActivity.this,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								AlerDialog.closeDialog();
+								initGame();
+								 socer = 0 ;
+								 tv_socer.setText("移动了 "+String.valueOf(socer)+" 步");
+								
+
+							}
+						}, new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								AlerDialog.closeDialog();
+								
+							}
+						},"确定重新开始吗?");
+		        
+		        
+				 
+				
+				 
 			}
 		});
     }

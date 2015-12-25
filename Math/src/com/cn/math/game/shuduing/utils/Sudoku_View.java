@@ -2,7 +2,9 @@ package com.cn.math.game.shuduing.utils;
 
 import java.util.ArrayList;
 
+import com.cn.math.MoreActivity;
 import com.cn.math.R;
+import com.cn.math.dialog.AlerDialog;
 
 
 
@@ -12,6 +14,7 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
@@ -235,7 +238,26 @@ System.out.println("getKeyboard = " + getKeyboard) ;
 			//重置按钮
 			if(oldClick_x == event.getX()&&oldClick_y == event.getY()&&event.getX()>resetButton_x&&event.getY()>resetButton_y
 					&&event.getX()<resetButton_x+resetButton_x_dis&&event.getY()<resetButton_y+resetButton_y_dis){
-				resetGame() ;
+				
+				
+				
+				AlerDialog.exitDialog(_context,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+
+								resetGame() ;
+
+							}
+						}, new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+
+								AlerDialog.closeDialog();
+							}
+						},"你确定重置游戏吗？");
 			}
 			break ;
 		}

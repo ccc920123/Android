@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -32,10 +33,12 @@ import com.cn.math.adpter.CommonAdapter;
 import com.cn.math.adpter.ViewHolder;
 import com.cn.math.bean.GridViewBean;
 import com.cn.math.dialog.AlerDialog;
+import com.cn.math.game.meandme.MeAndMeActivity;
 import com.cn.math.game.shuduing.gameactivity.MyViewPagerActivity;
 import com.cn.math.lib.DragLayout;
 import com.cn.math.lib.DragLayout.DragListener;
 import com.cn.math.utli.CopyFileToSDcard;
+import com.cn.math.utli.DisplayMetricsEN;
 
 public class MoreActivity extends Activity implements OnItemClickListener {
 	public static final String PHONE_PATH = Environment
@@ -49,20 +52,24 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 	private ListView menuListView;// 菜单列表
 	private ImageButton Seting, menu_left;
 	private String url = "file:///android_asset/ico.png";
-
+	private DisplayMetrics dm;
 	private Map<String, Integer> imageidMap = null;
 	private GridView mGridView;
 	private CommonAdapter<GridViewBean> mAdapter;
 	private List<GridViewBean> data;
 	private int[] imageid = { R.drawable.suangsu, R.drawable.shuduioc,
-			R.drawable.shuduioc,R.drawable.shuduioc };
-	private String[] title = { "算数", "数独", "你的世界","魔板" };
+			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme};
+	private String[] title = { "算数", "数独", "你的世界","魔板","我和我"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activitymore);
+		dm = new DisplayMetrics();
+		this.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		DisplayMetricsEN.setWidth(dm.widthPixels);
+		DisplayMetricsEN.setHeigth(dm.heightPixels);
 		findViewid();
 		initDatas();
 		initView();
@@ -237,18 +244,18 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 		// titleUrl是标题的网络链接，仅在人人网和QQ空间使用
 		oks.setTitleUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
 		// text是分享文本，所有平台都需要这个字段
-		oks.setText("你的省心家教“启蒙数学”");
+		oks.setText("宝宝没学习没兴趣，启蒙数学让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“启蒙数学”");
 		// imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
 		//
 		oks.setImagePath(PHONE_PATH);// 确保SDcard下面存在此张图片
 		// url仅在微信（包括好友和朋友圈）中使用
 		oks.setUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
 		// comment是我对这条分享的评论，仅在人人网和QQ空间使用
-		oks.setComment("宝宝没学习没兴趣，启蒙数学让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“启蒙数学”");
+//		oks.setComment("宝宝没学习没兴趣，启蒙数学让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“启蒙数学”");
 		// site是分享此内容的网站名称，仅在QQ空间使用
-		oks.setSite(getString(R.string.app_name));
+//		oks.setSite(getString(R.string.app_name));
 		// siteUrl是分享此内容的网站地址，仅在QQ空间使用
-		oks.setSiteUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
+//		oks.setSiteUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
 
 		// 启动分享GUI
 		oks.show(this);
@@ -300,6 +307,12 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 			overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				
 				break;
+			case 4:
+				Intent intentmeandme = new Intent(MoreActivity.this,
+						MeAndMeActivity.class);
+				startActivity(intentmeandme);
+				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+				
 		default:
 			break;
 		}

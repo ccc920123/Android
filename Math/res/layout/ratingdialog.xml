@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+   
     android:orientation="vertical" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/congratulation" />
+         android:background="@drawable/icon_nizhengbiang_normal"
+         />
 
     <RatingBar
         android:id="@+id/ratingBar_dialog"
@@ -22,6 +24,9 @@
         android:id="@+id/passgame_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_selector_sd"
+        android:paddingTop="8dip"
+        android:paddingBottom="8dip"
         android:text="进入下一关" />
 
 </LinearLayout>
