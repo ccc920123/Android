@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#00C5CD"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/imageback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:visibility="visible"
+            android:background="@drawable/skyblue_actionbar_back_btn" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+             android:gravity="center"
+            android:text="反馈与建议"
+            android:textColor="@android:color/white"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:textSize="20dp" />
+ 
+    </LinearLayout>
+    <EditText
+        android:id="@+id/advice"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/biankuangshade"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:hint="请输入您的宝贵意见"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:gravity="top|left"
+        />
+    
+    
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+         android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:background="@drawable/sbmit"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="提交"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        />
+<EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/biankuangshade"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:hint="你还可以关注我们的微信公众号进行反馈与建议，我们希望听到你的心声\n\n\n公众号：day365game\n\n"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="2dp"
+        android:enabled="false"
+        android:gravity="top|left"
+        />
+</LinearLayout>

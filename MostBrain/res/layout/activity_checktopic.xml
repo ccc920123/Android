@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+  <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="#00C5CD"
+        android:paddingTop="16dip"
+        android:paddingBottom="16dip"
+        android:text="试题设置界面"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        />
+  <RadioGroup 
+      android:id="@+id/checkgroup"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+          android:gravity="center_horizontal"
+      >
+    <RadioButton
+        android:id="@+id/checkBox1"
+        style="@style/mychcek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dip"
+        android:text="  10以内的加减" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/blue"
+        />
+
+    <RadioButton
+        android:id="@+id/checkBox2"
+        style="@style/mychcek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:padding="20dip"
+        android:text="  10以内的乘除" />
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/blue"
+        />
+
+    <RadioButton
+        android:id="@+id/checkBox3"
+        style="@style/mychcek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:padding="20dip"
+        android:text="100以内的加减" />
+
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/blue"
+        />
+
+    <RadioButton
+        android:id="@+id/checkBox4"
+        style="@style/mychcek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:padding="20dip"
+        android:text="100以内的乘除" />
+
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/blue"
+        />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:background="@drawable/sbmit"
+        android:text="保存试题设置" />
+</RadioGroup>
+</LinearLayout>

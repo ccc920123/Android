@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/saoleibeuijing"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/saolei_title"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        
+         >
+
+        <Button
+            android:id="@+id/b_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_b_back" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/time"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/hui"
+            android:gravity="center_vertical|right"
+            android:textColor="@color/bai"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bomb_nomal"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_bomb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/hui"
+            android:gravity="center"
+            android:textColor="@color/bai"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_tv_level"
+            android:clickable="true"
+            android:gravity="center"
+          />
+
+        <Button
+            android:id="@+id/b_restart"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_b_restart"
+            android:gravity="center"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/BLACK"
+        android:columnCount="10"
+        android:rowCount="15"
+        tools:targetApi="14" />
+            <CheckBox
+            android:id="@+id/cb_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cb_mark"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="12dip"
+            android:button="@null" />
+
+</RelativeLayout>
