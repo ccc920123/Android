@@ -35,6 +35,7 @@ import com.cncyj.mostbrain.adpter.CommonAdapter;
 import com.cncyj.mostbrain.adpter.ViewHolder;
 import com.cncyj.mostbrain.bean.GridViewBean;
 import com.cncyj.mostbrain.dialog.AlerDialog;
+import com.cncyj.mostbrain.game.kuaifanying.LiveActivity;
 import com.cncyj.mostbrain.game.meandme.MeAndMeActivity;
 import com.cncyj.mostbrain.game.saolei.MineSweeperActivity;
 import com.cncyj.mostbrain.game.shuduing.gameactivity.MyViewPagerActivity;
@@ -63,8 +64,8 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 	private CommonAdapter<GridViewBean> mAdapter;
 	private List<GridViewBean> data;
 	private int[] imageid = { R.drawable.suangsu, R.drawable.shuduioc,
-			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,R.drawable.icosaolei,R.drawable.icozuiqingdanao};
-	private String[] title = { "算数", "数独", "你的世界","魔板","我和我","扫雷","最强大脑"};
+			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,R.drawable.icosaolei,R.drawable.icozuiqingdanao,R.drawable.icozuiqingdanao};
+	private String[] title = { "算数", "数独", "你的世界","魔板","我和我","扫雷","最强大脑","123"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,11 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 	}
 
 	private void initView() {
+		if (!this.getPackageName()
+                .equals("com.cncyj.mostbrain")) {
+            System.exit(0);
+        }
+		
 		mText.setText("最强大脑");
 		menu_left.setOnClickListener(Click);
 		mGridView.setOnItemClickListener(this);
@@ -353,6 +359,12 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 		    break;
 		    case 6:
 		    	ittmain.setClass(MoreActivity.this,FateGameActivity.class);
+				startActivity(ittmain);
+				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+				finish();
+		    	break;
+		    case 7:
+		    	ittmain.setClass(MoreActivity.this,LiveActivity.class);
 				startActivity(ittmain);
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				finish();
