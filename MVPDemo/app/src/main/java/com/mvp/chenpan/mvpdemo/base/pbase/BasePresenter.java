@@ -1,4 +1,4 @@
-package com.mvp.chenpan.mvpdemo.base.vbase;
+package com.mvp.chenpan.mvpdemo.base.pbase;
 
 import java.lang.ref.WeakReference;
 

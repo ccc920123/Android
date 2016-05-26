@@ -1,16 +1,13 @@
 package com.mvp.chenpan.mvpdemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 import com.mvp.chenpan.mvpdemo.base.MVPBaseActivity;
-import com.mvp.chenpan.mvpdemo.base.vbase.BasePresenter;
 import com.mvp.chenpan.mvpdemo.mvp.presenter.TelPresenter;
 import com.mvp.chenpan.mvpdemo.mvp.view.TelView;
 
@@ -19,9 +16,8 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class MainActivity extends MVPBaseActivity<TelView,TelPresenter> implements TelView {
+public class MainActivity extends MVPBaseActivity<TelView, TelPresenter> implements TelView {
 
 
     @Bind(R.id.tel)
@@ -30,14 +26,12 @@ public class MainActivity extends MVPBaseActivity<TelView,TelPresenter> implemen
     Button query;
     @Bind(R.id.show)
     TextView show;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    public void bindViewAndAction() {
         query.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +42,11 @@ public class MainActivity extends MVPBaseActivity<TelView,TelPresenter> implemen
                 mPresenter.fetch(map);
             }
         });
+    }
 
+    @Override
+    public int getContentLayout() {
+        return R.layout.activity_main;
     }
 
 
@@ -65,7 +63,17 @@ public class MainActivity extends MVPBaseActivity<TelView,TelPresenter> implemen
 
 
     @Override
+    public Toolbar getToolBarId() {
+        return toolbar;
+    }
+
+    @Override
     public TelPresenter createPresenter() {
-        return new TelPresenter(this);
+        return new TelPresenter();
+    }
+
+    @Override
+    protected boolean isSetStatusBar() {
+        return true;
     }
 }
