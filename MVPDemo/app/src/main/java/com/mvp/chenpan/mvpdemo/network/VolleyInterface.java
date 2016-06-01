@@ -5,6 +5,8 @@ import android.content.Context;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.xmlpull.v1.XmlPullParser;
+
 /**
  * Created by Administrator on 2016/5/19.
  */
@@ -12,6 +14,7 @@ public abstract class VolleyInterface {
     private Context context;
     public static Response.Listener<String> mListener;
     public static Response.ErrorListener mErrorListener;
+
 
     public VolleyInterface(Context context, Response.Listener<String> lisener, Response.ErrorListener errorListener) {
         this.context = context;
@@ -35,6 +38,7 @@ public abstract class VolleyInterface {
         };
         return mListener;
     }
+
     public Response.ErrorListener errorListener(){
         mErrorListener=new Response.ErrorListener() {
             @Override

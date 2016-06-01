@@ -37,14 +37,13 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends App
      */
     private SystemBarTintManager tintManager;
 
-    private  View mRootView;
+    private View mRootView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
         initWindow();
-
         mRootView = createView(null, null, savedInstanceState);
         setContentView(mRootView);
         //创建presenter
@@ -52,17 +51,37 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends App
         //内存泄漏,当Activity销毁，P，M都还在运行 ，就出现内存泄漏
         //关联View
         mPresenter.attachView((V) this);
-        mToolbar = getToolBarId();
-        setSupportActionBar(mToolbar);
-        bindViewAndAction();
+        mToolbar = (Toolbar) findViewById(getToolBarId());
+        setSupportActionBar(mToolbar);//这里要用到主题必须是隐藏了action的
+        bindViewAndAction(savedInstanceState);
     }
-    public abstract void bindViewAndAction();
+
+    /**
+     * 绑定视图监听
+     */
+    public abstract void bindViewAndAction(Bundle savedInstanceState);
+
+    /**
+     * 得到当前的xml布局
+     *
+     * @return
+     */
     public abstract int getContentLayout();
+
+    /**
+     * 绑定视图
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     public View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = ContextUtils.inflate(this, getContentLayout());
         ButterKnife.bind(this, view);
         return view;
     }
+
     /**
      * 获取UI线程ID
      *
@@ -77,7 +96,7 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends App
      *
      * @return
      */
-    public abstract Toolbar getToolBarId();
+    public abstract int getToolBarId();
 
     @Override
     protected void onDestroy() {
