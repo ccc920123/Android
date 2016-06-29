@@ -19,7 +19,7 @@ public class ArticleAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         ArticleFragment fragment = new ArticleFragment();
-        fragment.setHref(mTitles.get(position).split("@panjichang@")[1]);
+        fragment.setHref(mTitles.get(position).split("@toypopchenyujin@")[1]);
         return fragment;
     }
 
@@ -30,6 +30,6 @@ public class ArticleAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mTitles.get(position).split("@panjichang@")[0];
+        return mTitles.get(position).split("@toypopchenyujin@")[0];
     }
 }

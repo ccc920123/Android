@@ -23,7 +23,7 @@ public class JuzimiAdapter extends FragmentPagerAdapter {
             return new WebFragment();
         }
         PictureFragment fragment = new PictureFragment();
-        fragment.setmType(Integer.parseInt(mTitles.get(position).split("@panjichang@")[1]));
+        fragment.setmType(Integer.parseInt(mTitles.get(position).split("@toypopchenyujin@")[1]));
         return fragment;
     }
 
@@ -34,6 +34,6 @@ public class JuzimiAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mTitles.get(position).split("@panjichang@")[0];
+        return mTitles.get(position).split("@toypopchenyujin@")[0];
     }
 }

@@ -1,5 +1,6 @@
 package com.jysd.toypop.view.holder;
 
+import android.content.Intent;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import com.jysd.toypop.R;
 import com.jysd.toypop.bean.Lz13;
+import com.jysd.toypop.view.activity.ArticleActivity;
 
 import butterknife.Bind;
 
@@ -37,10 +39,10 @@ public class ArticleHolder extends BaseHolder<Lz13> {
         mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent=new Intent(mContext, ArticleActivity.class);
-//                intent.putExtra("article", mData);
-//                mContext.startActivity(intent);
-                Toast.makeText(mContext, "ArticleActivity界面", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(mContext, ArticleActivity.class);
+                intent.putExtra("article", mData);
+                mContext.startActivity(intent);
+//                Toast.makeText(mContext, "ArticleActivity界面", Toast.LENGTH_SHORT).show();
             }
         });
     }

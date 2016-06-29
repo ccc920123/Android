@@ -147,11 +147,11 @@ public class MainActivity extends BaseActivity implements IMainView {
                 .withActivity(this)
                 .withToolbar(getToolbar())
                 .withHasStableIds(true)
-                .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
+                .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header /GoogleMaterial.Icon.gmd_videocam/FontAwesome.Icon.faw_picture_o/GoogleMaterial.Icon.gmd_text_format
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_compact_header).withIcon(GoogleMaterial.Icon.gmd_videocam).withIdentifier(1).withSelectable(true),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_non_translucent_status_drawer).withIcon(FontAwesome.Icon.faw_picture_o).withIdentifier(2).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_action_bar_drawer).withIcon(GoogleMaterial.Icon.gmd_text_format).withIdentifier(3).withSelectable(true),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_compact_header).withIcon(R.mipmap.g).withIdentifier(1).withSelectable(true),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_non_translucent_status_drawer).withIcon(R.mipmap.s).withIdentifier(2).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_action_bar_drawer).withIcon(R.mipmap.h).withIdentifier(3).withSelectable(true),
 //                        new DividerDrawerItem(),
                      /*   new PrimaryDrawerItem().withName(R.string.drawer_item_multi_drawer).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(4).withSelectable(false),
                         new DividerDrawerItem(),*/
@@ -175,7 +175,7 @@ public class MainActivity extends BaseActivity implements IMainView {
                                 dId = 1;
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
-                                setupVideoViewPager();
+//                                setupVideoViewPager();
                                 //               intent = new Intent(MainActivity.this, TopicActivity.class);
                             } else if (drawerItem.getIdentifier() == 2 && dId != 2) {
                                 dId = 2;
