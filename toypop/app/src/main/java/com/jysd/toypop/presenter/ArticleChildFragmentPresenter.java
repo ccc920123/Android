@@ -1,6 +1,5 @@
 package com.jysd.toypop.presenter;
 
-
 import com.jysd.toypop.bean.Lz13;
 import com.jysd.toypop.inter.Callback;
 import com.jysd.toypop.model.ArticleChildFragmentModel;
@@ -12,13 +11,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by sysadminl on 2016/1/18.
+ * Created by 陈渝金 on 2016/6/30.
  */
-public class ArticleFragmentPresenter extends BasePresenter<IArticleFragmentView> {
-    private ArticleFragmentModel mIArticleModel;
+public class ArticleChildFragmentPresenter extends BasePresenter<IArticleFragmentView> {
+    private ArticleChildFragmentModel mIArticleModel;
 
-    public ArticleFragmentPresenter() {
-        mIArticleModel = new ArticleFragmentModel();//model获取数据
+    public ArticleChildFragmentPresenter() {
+            mIArticleModel = new ArticleChildFragmentModel();//model获取数据
+
     }
 
     public void getArticles(final Map<String, String> params) {

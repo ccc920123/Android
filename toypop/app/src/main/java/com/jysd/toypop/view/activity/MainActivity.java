@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.jysd.toypop.R;
 import com.jysd.toypop.adapter.ArticleAdapter;
+import com.jysd.toypop.adapter.ArticleChildAdapter;
 import com.jysd.toypop.adapter.FragmentAdapter;
 import com.jysd.toypop.adapter.JuzimiAdapter;
 import com.jysd.toypop.bean.User;
@@ -74,7 +75,7 @@ public class MainActivity extends BaseActivity implements IMainView {
     @Override
     public void bindView(Bundle savedInstanceState) {
         EventBus.getDefault().register(this);
-        setupVideoViewPager();
+        setupTextChildViewPager();//先启动儿童读物
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
         if (UserManager.getInstance().isLogin()) {
@@ -175,7 +176,7 @@ public class MainActivity extends BaseActivity implements IMainView {
                                 dId = 1;
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
-//                                setupVideoViewPager();
+                                setupTextChildViewPager();//开始儿童读物
                                 //               intent = new Intent(MainActivity.this, TopicActivity.class);
                             } else if (drawerItem.getIdentifier() == 2 && dId != 2) {
                                 dId = 2;
@@ -263,6 +264,17 @@ public class MainActivity extends BaseActivity implements IMainView {
         String[] titles = getResources().getStringArray(R.array.text_tab);
         ArticleAdapter adapter =
                 new ArticleAdapter(getSupportFragmentManager(), Arrays.asList(titles));
+        mViewPager.setAdapter(adapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setTabsFromPagerAdapter(adapter);
+    }
+    /**
+     * 儿童阅读
+     */
+    private void setupTextChildViewPager() {
+        String[] titles = getResources().getStringArray(R.array.video_tab);
+        ArticleChildAdapter adapter =
+                new ArticleChildAdapter(getSupportFragmentManager(), Arrays.asList(titles));
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);
