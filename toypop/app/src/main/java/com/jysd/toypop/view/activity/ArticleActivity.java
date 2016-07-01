@@ -26,11 +26,13 @@ public class ArticleActivity extends BaseActivity implements IArticleActView {
     }
 
     private Lz13 mArticle;
+    private String from="";//判断是从哪个界面来的
 
     @Override
     public void getIntentValue() {
         super.getIntentValue();
         mArticle = getIntent().getParcelableExtra("article");
+//        from=getIntent().getStringExtra("from");
     }
 
     @Override
@@ -47,7 +49,7 @@ public class ArticleActivity extends BaseActivity implements IArticleActView {
 
     @Override
     public BasePresenter getPresenter() {
-        return new ArticleActPresenter();
+        return new ArticleActPresenter(getIntent().getStringExtra("from"));
     }
 
     @Bind(R.id.tv_content)

@@ -14,6 +14,7 @@ import com.jysd.toypop.inter.LoadingState;
 import com.jysd.toypop.inter.OnRetryListener;
 import com.jysd.toypop.presenter.ArticleChildFragmentPresenter;
 import com.jysd.toypop.utils.NetWorkUtil;
+import com.jysd.toypop.view.holder.ArticleChlidHolder;
 import com.jysd.toypop.view.holder.ArticleHolder;
 import com.jysd.toypop.view.impl.IArticleFragmentView;
 import com.jysd.toypop.widget.LoadingView;
@@ -41,7 +42,7 @@ public class ArticleChlidFragment extends BaseFragment implements IArticleFragme
         if (pageNo < pageSize)
             canLoadMore = false;
         if (mAdapter == null) {
-            mAdapter = new BaseRecyclerAdapter(list, R.layout.fragment_text_item, ArticleHolder.class);
+            mAdapter = new BaseRecyclerAdapter(list, R.layout.fragment_text_item, ArticleChlidHolder.class);//该处需要改
             mRecyclerView.setAdapter(mAdapter);
         } else {
             if ((mAdapter.getItem(0) == null) && (list.size() == 0))
@@ -147,7 +148,7 @@ public class ArticleChlidFragment extends BaseFragment implements IArticleFragme
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 if (canLoadMore)
-                    ArticleChlidFragment.this.onScrolled(recyclerView, dx, dy);
+                    ArticleChlidFragment.this.onScrolled(mRecyclerView, dx, dy);
             }
         });
         params = new TreeMap<String, String>();
@@ -164,7 +165,7 @@ public class ArticleChlidFragment extends BaseFragment implements IArticleFragme
     private TreeMap<String, String> params;
     private int page = 0;
     private int pageNo = 0;
-    private final int pageSize = 30;
+    private final int pageSize = 5;
 
     @Override
     public void onRefresh() {
@@ -187,7 +188,7 @@ public class ArticleChlidFragment extends BaseFragment implements IArticleFragme
     }
 
     private void loadPage() {
-        params.put("url", mResId.replace(".html", "-" + (++page) + ".html"));
+        params.put("url", mResId.replace("_1.html", "_" + (++page) + ".html"));
         params.put("page", String.valueOf(page));
         ((ArticleChildFragmentPresenter) mPresenter).getArticles(params);
     }

@@ -2,6 +2,7 @@ package com.jysd.toypop.presenter;
 
 
 import com.jysd.toypop.inter.Callback;
+import com.jysd.toypop.model.ArticleActChildModel;
 import com.jysd.toypop.model.ArticleActModel;
 import com.jysd.toypop.model.impl.IArticleActModel;
 import com.jysd.toypop.view.impl.IArticleActView;
@@ -14,8 +15,16 @@ import java.util.Map;
 public class ArticleActPresenter extends BasePresenter<IArticleActView> {
     private IArticleActModel mIArticleModel;
 
-    public ArticleActPresenter() {
-        mIArticleModel = new ArticleActModel();
+
+    public ArticleActPresenter(String from) {
+        if("father".equals(from)) {
+
+            mIArticleModel = new ArticleActModel();
+        }else if("child".equals(from))
+        {
+            mIArticleModel=new ArticleActChildModel();
+
+        }
     }
 
     public void getArticleContent(final Map<String, String> params) {

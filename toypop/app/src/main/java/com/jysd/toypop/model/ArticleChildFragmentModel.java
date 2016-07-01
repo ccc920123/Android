@@ -32,36 +32,23 @@ public class ArticleChildFragmentModel implements IArticleFragmentModel {
                               public void call(Subscriber<? super List<Lz13>> subscriber) {
                                   try {
                                       Document result = Jsoup.connect(params.get("url")).get();
-                                      Elements postHeads = result.getElementsByClass("list");//找到我们需要的内容list  <div class="list">本网页只有一个list，但在list下面有<ui> <li>
-                                      Elements postContent1s = result.getElementsByClass("PostContent1");
-                                      List<Lz13> list = new ArrayList<Lz13>(postHeads.size());
-                                      for (int i = 0; i < postHeads.size(); i++) {
-                                          Lz13 lz13 = new Lz13();
-                                          Element postHead = postHeads.get(i);
-                                          Element a = postHead.getElementsByTag("a").get(0);
+
+                                      Elements listClass = result.getElementsByClass("list");//找到我们需要的内容list  <div class="list">本网页只有一个list，但在list下面有<ui> <li>
+                                      Element div=listClass.get(0);
+                                      Elements li= div.getElementsByTag("li");
+                                      List<Lz13> list = new ArrayList<Lz13>(li.size());
+                                      Lz13 lz13 =null;
+                                      for (int i=0;i<li.size();i++)
+                                      {
+                                          lz13 = new Lz13();
+                                          Element postHead = li.get(i);
+                                          Element a=postHead.getElementsByTag("a").get(0);
                                           lz13.href = a.attr("href");
                                           lz13.title = a.text();
-                                          Element postContent1 = postContent1s.get(i);
-                                          lz13.text = postContent1.text().replace(lz13.title, "");
-                                          String[] split = lz13.text.split("\\s{2,}");
-                                          StringBuffer sb = new StringBuffer();
-                                          for (String s : split) {
-                                              if (TextUtils.isEmpty(s)) {
-                                                  continue;
-                                              }
-                                              if (lz13.title.equals(s)) {
-                                                  continue;
-                                              }
-                                              if (s.startsWith("文/")) {
-                                                  lz13.auth = s;
-                                                  continue;
-                                              }
-                                              sb.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;").append(s).append("<br/>");
-                                          }
-                                          int index = sb.lastIndexOf("<br/>");
-                                          if (index == -1) continue;
-                                          lz13.text = sb.substring(0, sb.lastIndexOf("<br/>") - 1) + "......";
+                                          lz13.text=li.get(i).text().split("<br>")[0];
+                                          lz13.auth="J哥";
                                           list.add(lz13);
+
                                       }
                                       subscriber.onNext(list);
                                   } catch (Exception e) {
