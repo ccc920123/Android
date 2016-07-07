@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.jysd.toypop.R;
 import com.jysd.toypop.adapter.ArticleAdapter;
 import com.jysd.toypop.adapter.ArticleChildAdapter;
+import com.jysd.toypop.adapter.ArticleJokeAdapter;
 import com.jysd.toypop.adapter.FragmentAdapter;
 import com.jysd.toypop.adapter.JuzimiAdapter;
 import com.jysd.toypop.bean.User;
@@ -24,7 +25,6 @@ import com.jysd.toypop.view.impl.IMainView;
 import com.jysd.toypop.widget.CustomDialog;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.pan.materialdrawer.AccountHeader;
 import com.pan.materialdrawer.AccountHeaderBuilder;
@@ -182,12 +182,12 @@ public class MainActivity extends BaseActivity implements IMainView {
                                 dId = 2;
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
-                                setupPictureViewPager();
+                                setupTextJokeViewPager();
                             } else if (drawerItem.getIdentifier() == 3 && dId != 3) {
                                 dId = 3;
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
-                                setupTextViewPager();
+                                setupTextViewPager();//文章欣赏
                             } /*else if (drawerItem.getIdentifier() == 4) {
                                 //                intent = new Intent(MainActivity.this, SmallGameActivity.class);
                             }*/ else if (drawerItem.getIdentifier() == 5) {
@@ -258,6 +258,21 @@ public class MainActivity extends BaseActivity implements IMainView {
     }
 
     /**
+     * 笑话
+     */
+    private  void  setupTextJokeViewPager()
+    {
+        String[] titles = getResources().getStringArray(R.array.pictrue_tab);
+        ArticleJokeAdapter adapter =
+                new ArticleJokeAdapter(getSupportFragmentManager(), Arrays.asList(titles));
+        mViewPager.setAdapter(adapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setTabsFromPagerAdapter(adapter);
+
+    }
+
+
+    /**
      * 文章阅读
      */
     private void setupTextViewPager() {
@@ -268,6 +283,7 @@ public class MainActivity extends BaseActivity implements IMainView {
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);
     }
+
     /**
      * 儿童阅读
      */
