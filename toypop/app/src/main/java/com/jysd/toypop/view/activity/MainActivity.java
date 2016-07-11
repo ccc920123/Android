@@ -191,9 +191,9 @@ public class MainActivity extends BaseActivity implements IMainView {
                             } /*else if (drawerItem.getIdentifier() == 4) {
                                 //                intent = new Intent(MainActivity.this, SmallGameActivity.class);
                             }*/ else if (drawerItem.getIdentifier() == 5) {
-//                                intent = new Intent(MainActivity.this, SettingActivity.class);
-//                                MainActivity.this.startActivity(intent);
-                                Toast.makeText(MainActivity.this, "这里是设置界面", Toast.LENGTH_SHORT).show();
+                                intent = new Intent(MainActivity.this, SettingActivity.class);
+                                MainActivity.this.startActivity(intent);
+//                                Toast.makeText(MainActivity.this, "这里是设置界面", Toast.LENGTH_SHORT).show();
                                 return true;
                             } else if (drawerItem.getIdentifier() == 6) {
                                 //

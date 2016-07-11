@@ -44,4 +44,6 @@
 
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="material_drawer_primary">#2196F3</color>
+    <color name="blue">#4DB9FF</color>
+    <color name="blueno">#00C5CD</color>
 </resources>
