@@ -43,6 +43,9 @@
         <activity android:name=".view.activity.ArticleActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".view.activity.ArticleImageTextActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

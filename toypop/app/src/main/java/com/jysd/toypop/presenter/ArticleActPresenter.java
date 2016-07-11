@@ -3,6 +3,7 @@ package com.jysd.toypop.presenter;
 
 import com.jysd.toypop.inter.Callback;
 import com.jysd.toypop.model.ArticleActChildModel;
+import com.jysd.toypop.model.ArticleActJokeModel;
 import com.jysd.toypop.model.ArticleActModel;
 import com.jysd.toypop.model.impl.IArticleActModel;
 import com.jysd.toypop.view.impl.IArticleActView;
@@ -23,6 +24,10 @@ public class ArticleActPresenter extends BasePresenter<IArticleActView> {
         }else if("child".equals(from))
         {
             mIArticleModel=new ArticleActChildModel();
+
+        }else if("joke".equals(from))//笑话
+        {
+            mIArticleModel=new ArticleActJokeModel();
 
         }
     }

@@ -5,6 +5,7 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.jysd.toypop.R;
 import com.jysd.toypop.bean.Lz13;
 import com.jysd.toypop.utils.FrecsoUtils;
 import com.jysd.toypop.view.activity.ArticleActivity;
+import com.jysd.toypop.view.activity.ArticleImageTextActivity;
 import com.jysd.toypop.view.impl.IMainView;
 
 import butterknife.Bind;
@@ -27,7 +29,7 @@ public class ArticleJokeHolder extends BaseHolder<Lz13> {
     }
 
     @Bind(R.id.joke_auth)
-    RelativeLayout rl_auth;
+    LinearLayout rl_auth;
 
     @Bind(R.id.joke_title)
     TextView joke_title;
@@ -43,9 +45,9 @@ public class ArticleJokeHolder extends BaseHolder<Lz13> {
         mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, ArticleActivity.class);
+                Intent intent = new Intent(mContext, ArticleImageTextActivity.class);
                 intent.putExtra("article", mData);
-                intent.putExtra("from", "child");
+                intent.putExtra("from", "joke");
                 mContext.startActivity(intent);
 //                Toast.makeText(mContext, "ArticleActivity界面", Toast.LENGTH_SHORT).show();
             }

@@ -37,11 +37,20 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
     @Override
     public void setAdapter(List<Lz13> list) {
         if (mRecyclerView == null) return;
+//        try {
+//            String oneurl = list.get(0).href;
+//            String daojieurl = oneurl.substring(oneurl.lastIndexOf("/"), oneurl.lastIndexOf("."));
+//            String str = daojieurl.substring(daojieurl.indexOf("daojie"), daojieurl.length());
+//            page = Integer.valueOf(str) ;
+//        }catch (Exception e)
+//        {
+//            page=0;
+//        }
         pageNo = list.size();
         if (pageNo < pageSize)
             canLoadMore = false;
         if (mAdapter == null) {
-            mAdapter = new BaseRecyclerAdapter(list, R.layout.fragment_text_item, ArticleJokeHolder.class);//该处需要改
+            mAdapter = new BaseRecyclerAdapter(list, R.layout.fragment_joke_item, ArticleJokeHolder.class);//该处需要改
             mRecyclerView.setAdapter(mAdapter);
         } else {
             if ((mAdapter.getItem(0) == null) && (list.size() == 0))

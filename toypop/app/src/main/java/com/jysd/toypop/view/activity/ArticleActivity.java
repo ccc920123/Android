@@ -1,16 +1,24 @@
 package com.jysd.toypop.view.activity;
 
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.Spanned;
 import android.widget.TextView;
 
 
 import com.jysd.toypop.R;
 import com.jysd.toypop.bean.Lz13;
+import com.jysd.toypop.inter.OnRetryListener;
 import com.jysd.toypop.presenter.ArticleActPresenter;
+import com.jysd.toypop.presenter.ArticleChildFragmentPresenter;
 import com.jysd.toypop.presenter.BasePresenter;
 import com.jysd.toypop.view.impl.IArticleActView;
+import com.jysd.toypop.widget.LoadingView;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +34,7 @@ public class ArticleActivity extends BaseActivity implements IArticleActView {
     }
 
     private Lz13 mArticle;
-    private String from="";//判断是从哪个界面来的
+//    private String from="";//判断是从哪个界面来的
 
     @Override
     public void getIntentValue() {
@@ -51,7 +59,6 @@ public class ArticleActivity extends BaseActivity implements IArticleActView {
     public BasePresenter getPresenter() {
         return new ArticleActPresenter(getIntent().getStringExtra("from"));
     }
-
     @Bind(R.id.tv_content)
     TextView tv_content;
 
@@ -71,6 +78,9 @@ public class ArticleActivity extends BaseActivity implements IArticleActView {
     @Override
     public void setContent(String content) {
         if (tv_content == null) return;
-        tv_content.setText(Html.fromHtml(content));
+        Spanned sp =Html.fromHtml(content);
+        tv_content.setText(sp);
     }
+
+
 }
