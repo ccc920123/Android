@@ -29,7 +29,8 @@
             android:background="@color/material_drawer_primary"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="#aaffffff" />
+            app:tabTextColor="#aaffffff"
+            android:fillViewport="false" />
 
     </android.support.design.widget.AppBarLayout>
 
