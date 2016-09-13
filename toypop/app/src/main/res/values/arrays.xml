@@ -2,6 +2,10 @@
 <resources>
     <array name="video_tab">
         <item>童话故事@toypopchenyujin@http://www.61ertong.com/wenxue/tonghuagushi/list_177_1.html</item>
+        <item>安徒生童话@toypopchenyujin@http://www.61ertong.com/wenxue/antushengtonghua/list_186_1.html</item>
+        <item>格林童话@toypopchenyujin@http://www.61ertong.com/wenxue/gelintonghua/list_183_1.html</item>
+        <item>一千零一夜@toypopchenyujin@http://www.61ertong.com/wenxue/yiqianlingyiyegushi/list_184_1.html</item>
+        <item>睡前故事@toypopchenyujin@http://www.61ertong.com/wenxue/shuiqiangushi/list_178_1.html</item>
         <item>爱国故事@toypopchenyujin@http://www.61ertong.com/wenxue/aiguogushi/list_189_1.html</item>
         <item>传奇故事@toypopchenyujin@http://www.61ertong.com/wenxue/chuanqigushi/list_190_1.html</item>
         <item>帝王故事@toypopchenyujin@http://www.61ertong.com/wenxue/diwanggushi/list_191_1.html</item>
@@ -12,14 +16,12 @@
         <item>上下五千年@toypopchenyujin@http://www.61ertong.com/wenxue/shangxiawuqiannian/list_196_1.html</item>
         <item>名人故事@toypopchenyujin@http://www.61ertong.com/wenxue/mingrengushi/list_188_1.html</item>
         <item>希腊神话@toypopchenyujin@http://www.61ertong.com/wenxue/xilashenhua/list_187_1.html</item>
-        <item>安徒生童话@toypopchenyujin@http://www.61ertong.com/wenxue/antushengtonghua/list_186_1.html</item>
-        <item>睡前故事@toypopchenyujin@http://www.61ertong.com/wenxue/shuiqiangushi/list_178_1.html</item>
+
         <item>益智故事@toypopchenyujin@http://www.61ertong.com/wenxue/yizhigushi/list_179_1.html</item>
         <item>民间故事@toypopchenyujin@http://www.61ertong.com/wenxue/minjiangushi/list_180_1.html</item>
         <item>寓言故事@toypopchenyujin@http://www.61ertong.com/wenxue/yuyangushi/list_181_1.html</item>
         <item>成语故事@toypopchenyujin@http://www.61ertong.com/wenxue/chengyugushi/list_182_1.html</item>
-        <item>格林童话@toypopchenyujin@http://www.61ertong.com/wenxue/gelintonghua/list_183_1.html</item>
-        <item>一千零一夜@toypopchenyujin@http://www.61ertong.com/wenxue/yiqianlingyiyegushi/list_184_1.html</item>
+
         <item>郑渊洁童话@toypopchenyujin@http://www.61ertong.com/wenxue/zhengyuanjietonghua/list_185_1.html</item>
         <!--<item>最美创意@toypopchenyujin@1</item>-->
         <!--<item>动画精选@toypopchenyujin@0</item>-->

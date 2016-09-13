@@ -305,6 +305,7 @@
                 android:background="@drawable/btn_bg_selector"
                 android:text="退出登录"
                 android:textColor="#fff"
+                android:visibility="gone"
                 android:textSize="15sp" />
         </LinearLayout>
 

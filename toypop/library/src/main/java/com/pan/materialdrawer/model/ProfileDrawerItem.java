@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mikepenz.iconics.typeface.IIcon;
+import com.mikepenz.materialize.util.UIUtils;
 import com.pan.materialdrawer.holder.ColorHolder;
 import com.pan.materialdrawer.holder.ImageHolder;
 import com.pan.materialdrawer.holder.StringHolder;
@@ -24,7 +25,6 @@ import com.pan.materialdrawer.model.interfaces.Typefaceable;
 import com.pan.materialdrawer.model.utils.ViewHolderFactory;
 import com.pan.materialdrawer.util.DrawerImageLoader;
 import com.pan.materialdrawer.util.DrawerUIUtils;
-import com.mikepenz.materialize.util.UIUtils;
 
 /**
  * Created by mikepenz on 03.02.15.

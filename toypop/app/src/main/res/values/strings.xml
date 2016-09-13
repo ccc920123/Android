@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">故事会</string>
+    <string name="app_name">故事汇</string>
     <string name="drawer_item_compact_header">儿童读物</string>
 
     <!-- Drawer Items -->
@@ -54,8 +54,8 @@
     <string name="action_share">分享</string>
     <string name="action_grade">赏个好评</string>
     <string name="action_favoriter">收藏</string>
-    <string name="setting_factory">官方公众号</string>
-    <string name="setting_factory_web">建设中...</string>
+    <string name="setting_factory">官方公众号（发福利的哟-_-）</string>
+    <string name="setting_factory_web"> The_HK</string>
     <string name="setting_email">联系我们</string>
     <string name="setting_email_username">邮箱 : 645503254@qq.com</string>
     <string name="setting_pay">官网</string>

@@ -2,13 +2,10 @@ package com.jysd.toypop.view.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.jysd.toypop.R;
 import com.jysd.toypop.adapter.ArticleAdapter;
@@ -16,13 +13,7 @@ import com.jysd.toypop.adapter.ArticleChildAdapter;
 import com.jysd.toypop.adapter.ArticleJokeAdapter;
 import com.jysd.toypop.adapter.FragmentAdapter;
 import com.jysd.toypop.adapter.JuzimiAdapter;
-import com.jysd.toypop.bean.User;
 import com.jysd.toypop.presenter.BasePresenter;
-import com.jysd.toypop.utils.ContextUtils;
-import com.jysd.toypop.utils.ScreenUtils;
-import com.jysd.toypop.utils.UserManager;
-import com.jysd.toypop.view.impl.IMainView;
-import com.jysd.toypop.widget.CustomDialog;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -41,10 +32,9 @@ import com.pan.materialdrawer.util.RecyclerViewCacheUtil;
 import java.util.Arrays;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 
-public class MainActivity extends BaseActivity implements IMainView {
+public class MainActivity extends BaseActivity {
 
     private static final int PROFILE_SETTING = 1;
 
@@ -78,69 +68,12 @@ public class MainActivity extends BaseActivity implements IMainView {
         setupTextChildViewPager();//先启动儿童读物
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
-        if (UserManager.getInstance().isLogin()) {
-            profile = new ProfileDrawerItem().withName(UserManager.getInstance().getUser().screen_name).withEmail("朋友，欢迎您回来 !").withIcon(Uri.parse(UserManager.getInstance().getUser().profile_image_url)).withIdentifier(100);
-        } else {
-            profile = new ProfileDrawerItem().withName("未登录").withEmail("朋友，欢迎您回来 !").withIcon(R.mipmap.ic_default).withIdentifier(100);
-        }
+            profile = new ProfileDrawerItem().withName("故事里的事").withEmail("你说是就是，你说不是就不是").withIcon(R.mipmap.ic_default);
         // Create the AccountHeader
-        headerResult = new AccountHeaderBuilder().withOnlyMainProfileImageVisible(true).withSelectionListEnabled(false)
+        headerResult = new AccountHeaderBuilder().withOnlyMainProfileImageVisible(false).withSelectionListEnabled(false)
                 .withActivity(this).withHeightDp(230)
                 .withHeaderBackground(R.mipmap.slider_bg)
-                .addProfiles(
-                        profile
-                )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean current) {
-                        //sample usage of the onProfileChanged listener
-                        //if the clicked item has the identifier 1 add a new profile ;)
-                      /*  if (profile instanceof IDrawerItem && ((IDrawerItem) profile).getIdentifier() == PROFILE_SETTING) {
-                            int count = 100 + headerResult.getProfiles().size() + 1;
-                            IProfile newProfile = new ProfileDrawerItem().withNameShown(true).withName("Batman" + count).withEmail("batman" + count + "@gmail.com").withIcon(R.drawable.profile5).withIdentifier(count);
-                            if (headerResult.getProfiles() != null) {
-                                //we know that there are 2 setting elements. set the new profile above them ;)
-                                headerResult.addProfile(newProfile, headerResult.getProfiles().size() - 2);
-                            } else {
-                                headerResult.addProfiles(newProfile);
-                                headerResult.setActiveProfile();
-                            }
-                        }*/
-                        if (UserManager.getInstance().isLogin())
-                            return true;
-                        //加载loading等待框
-                        View login_dialog = ContextUtils.inflate(MainActivity.this, R.layout.login_dialog);
-                        final CustomDialog dialog = new CustomDialog(MainActivity.this, login_dialog,
-                                ScreenUtils.getInstance(MainActivity.this).getWidth() - ContextUtils.dip2px(MainActivity.this, 40),
-                                ContextUtils.dip2px(MainActivity.this, 260), Gravity.CENTER);
-                        ButterKnife.findById(login_dialog, R.id.login_qq).setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                if (dialog != null && dialog.isShowing()) {
-                                    dialog.dismiss();
-                                }
-                            }
-                        });
-                        ButterKnife.findById(login_dialog, R.id.login_sina).setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                if (dialog != null && dialog.isShowing()) {
-                                    dialog.dismiss();
-                                }
-                            }
-                        });
-                        ButterKnife.findById(login_dialog, R.id.cancle).setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                if (dialog != null && dialog.isShowing()) {
-                                    dialog.dismiss();
-                                }
-                            }
-                        });
-                        dialog.show();
-                        return true;
-                    }
-                })
+                .addProfiles(profile)
                 .withSavedInstance(savedInstanceState)
                 .build();
         //Create the drawer 侧滑内容
@@ -340,12 +273,4 @@ public class MainActivity extends BaseActivity implements IMainView {
         return R.layout.activity_sample_dark_toolbar;
     }
 
-    @Override
-    public void setUserInfo(User user) {
-        if (headerResult != null) {
-            headerResult.removeProfile(profile);
-            profile = new ProfileDrawerItem().withName(user.screen_name).withEmail("朋友，欢迎您回来 !").withIcon(Uri.parse(user.profile_image_url)).withIdentifier(100);
-            headerResult.addProfiles(profile);
-        }
-    }
 }
