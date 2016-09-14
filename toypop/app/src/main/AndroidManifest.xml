@@ -37,6 +37,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="bcb5a2f0" />
         <activity
             android:name="com.jysd.toypop.view.activity.WelcomActivity"
             android:screenOrientation="portrait">
@@ -63,61 +66,10 @@
             android:name=".view.activity.MainActivity"
             android:screenOrientation="portrait" />
         <!-- 百度 -->
-        <meta-data
-            android:name="BaiduMobAd_APP_ID"
-            android:value="bcb5a2f0" />
+
         <activity
             android:name="com.baidu.mobads.AppActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--友盟-->
-        <activity
-            android:name="com.umeng.socialize.editorpage.ShareActivity"
-            android:excludeFromRecents="true" />
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="57d760e6e0f55af1690008df"></meta-data>
-        <activity
-            android:name="com.jysd.toypop.view.wxapi.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--<activity-->
-        <!--android:name=".WBShareActivity"-->
-        <!--android:configChanges="keyboardHidden|orientation"-->
-        <!--android:screenOrientation="portrait" >-->
-        <!--<intent-filter>-->
-        <!--<action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />-->
-        <!--<category android:name="android.intent.category.DEFAULT" />-->
-        <!--</intent-filter>-->
-        <!--</activity>-->
-        <!--<activity-->
-        <!--android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"-->
-        <!--android:configChanges="keyboardHidden|orientation"-->
-        <!--android:windowSoftInputMode="adjustResize"-->
-        <!--android:exported="false" >-->
-        <!--</activity>-->
-        <!--<service-->
-        <!--android:name="com.sina.weibo.sdk.net.DownloadService"-->
-        <!--android:exported="false">-->
-        <!--</service>-->
-        <activity
-            android:name="com.tencent.tauth.AuthActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="tencent100424468" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.tencent.connect.common.AssistActivity"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
 

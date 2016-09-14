@@ -35,7 +35,8 @@ public class WelcomActivity extends Activity {
 
 			@Override
 			public void onAdFailed(String arg0) {
-				skips(); //
+				MyThread m = new MyThread();
+				new Thread(m).start();
 			}
 
 			@Override
@@ -46,13 +47,12 @@ public class WelcomActivity extends Activity {
 			public void onAdClick() {
 				// 设置开屏可接受点击时，该回调可用
 			}
-		};
+		};//
 		String adPlaceId = "2894720"; // 重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
 		new SplashAd(this, adsParent, listener, adPlaceId, true);
 
 
-//		MyThread m=new MyThread();
-//		new Thread(m).start();
+
 
 
 	}
@@ -63,8 +63,7 @@ public class WelcomActivity extends Activity {
 
 	private void jumpWhenCanClick() {
 		if (canJumpImmediately) {
-			this.startActivity(new Intent(WelcomActivity.this,MainActivity.class));
-			this.finish();
+			skips();
 		} else {
 			canJumpImmediately = true;
 		}
@@ -93,17 +92,16 @@ public class WelcomActivity extends Activity {
 	}
 
 
-//	class MyThread implements Runnable {
-//		public void run() {
-//			try {
-//				Thread.sleep(3000);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-////             jump();
-//			skips();
-//		}
-//	}
+	class MyThread implements Runnable {
+		public void run() {
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			skips();
+		}
+	}
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		return false;

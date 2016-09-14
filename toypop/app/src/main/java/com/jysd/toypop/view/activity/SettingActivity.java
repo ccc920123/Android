@@ -12,13 +12,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.avos.avoscloud.AVObject;
 import com.jysd.toypop.R;
-import com.jysd.toypop.inter.OnShareListener;
 import com.jysd.toypop.presenter.BasePresenter;
 import com.jysd.toypop.presenter.SettingPresenter;
 import com.jysd.toypop.utils.AppUtils;
@@ -30,14 +27,7 @@ import com.jysd.toypop.utils.UserManager;
 import com.jysd.toypop.view.impl.ISettingView;
 import com.jysd.toypop.widget.AlertDialog;
 import com.jysd.toypop.widget.CustomDialog;
-import com.jysd.toypop.widget.ShareView;
 import com.jysd.toypop.widget.ToggleButton;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -87,41 +77,15 @@ public class SettingActivity extends BaseActivity implements ISettingView,
                 // 反馈意见
                 showCommentDialog();
                 break;
-            case R.id.remmend_firend:
-                ShareView shareView = new ShareView(this);
-                shareView.setOnShareListener(new OnShareListener() {
-                    @Override
-                    public void onShareData(ShareAction action) {
-                        action.withTitle("故事会")
-                                .withText("小时候我们都喜欢大人给我们讲故事，现在我们的童年已去，但故事还在。")
-                                .withTargetUrl("www.baidu.com").share();
-                    }
+            case R.id.remmend_firend:   //分享
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain"); //纯文本
+                intent.putExtra(Intent.EXTRA_SUBJECT, "故事汇");
+                intent.putExtra(Intent.EXTRA_TEXT, "故事里的事，你说是就是，你说不是就不是。\n" +
+                        "下载地址：http://www.lenovomm.com/appdetail/com.jysd.toypop/0");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(Intent.createChooser(intent, getTitle()));
 
-                    @Override
-                    public void onShareSuccess(SHARE_MEDIA platform) {
-
-                    }
-
-                    @Override
-                    public void onShareFailed(SHARE_MEDIA platform) {
-
-                    }
-
-                    @Override
-                    public void onCancle() {
-                        if (shareDialog != null && shareDialog.isShowing())
-                            shareDialog.dismiss();
-                    }
-
-                    @Override
-                    public void onShareCancle(SHARE_MEDIA platform) {
-
-                    }
-                });
-                LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-                shareView.setLayoutParams(layoutParam);
-                shareDialog = new CustomDialog(this, shareView, ScreenUtils.getInstance(this).getWidth() - ContextUtils.dip2px(this, 20), ContextUtils.dip2px(this, 420), Gravity.CENTER);
-                shareDialog.show();
                 break;
             case R.id.assess:
                 // 赏个好评
@@ -268,7 +232,6 @@ public class SettingActivity extends BaseActivity implements ISettingView,
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
