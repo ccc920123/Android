@@ -2,21 +2,22 @@ package com.jysd.toypop.presenter;
 
 import com.jysd.toypop.bean.Lz13;
 import com.jysd.toypop.inter.Callback;
-import com.jysd.toypop.model.ArticleJokeFragmentModel;
+import com.jysd.toypop.model.ArticleJokeJuheFragmentModel;
 import com.jysd.toypop.view.impl.IArticleFragmentView;
 
 import java.util.List;
 import java.util.Map;
 
 /**
- * Created by 陈渝金 on 2016/7/7.
+ * Created by 陈渝金 on 2016/9/18.
  */
-public class ArticleJokeFragmentPresenter extends BasePresenter<IArticleFragmentView> {
-    private ArticleJokeFragmentModel mIArticleModel;
+public class ArticleJokeJuheFragmentPresenter extends BasePresenter<IArticleFragmentView>  {
 
-    public ArticleJokeFragmentPresenter() {
-        mIArticleModel = new ArticleJokeFragmentModel();//model获取数据
+    private ArticleJokeJuheFragmentModel  mIArticleModel;
 
+    public  ArticleJokeJuheFragmentPresenter()
+    {
+        mIArticleModel=new ArticleJokeJuheFragmentModel();
     }
 
     public void getArticles(final Map<String, String> params) {
@@ -32,17 +33,16 @@ public class ArticleJokeFragmentPresenter extends BasePresenter<IArticleFragment
                 if (mView == null) return;
                 mView.onRefreshComplete();
                 mView.onLoadMoreComplete();
-                if ("0".equals(params.get("page"))) {
+                if ("1".equals(params.get("page"))) {
                     if (data.size() == 0) {
                         mView.showEmpty();
                     } else {
                         mView.setAdapter(data);
                         mView.showSuccess();
                     }
+                }else{
+                    mView.loadMore(data);
                 }
-//                else {
-//                    mView.loadMore(data);
-//                }
 
             }
 
@@ -51,7 +51,7 @@ public class ArticleJokeFragmentPresenter extends BasePresenter<IArticleFragment
                 if (mView == null) return;
                 mView.onRefreshComplete();
                 mView.onLoadMoreComplete();
-                if ("0".equals(params.get("page"))){
+                if ("1".equals(params.get("page"))){
                     mView.showFaild();
                 }
             }

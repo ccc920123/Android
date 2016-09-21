@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import com.jysd.toypop.view.fragment.ArticleJokeFragment;
+import com.jysd.toypop.view.fragment.ArticleJokeJuheFragment;
+import com.jysd.toypop.view.fragment.BaseFragment;
 
 import java.util.List;
 
@@ -19,10 +21,23 @@ public class ArticleJokeAdapter extends FragmentStatePagerAdapter {
         mTitles = titles;
     }
 
+    /**
+     * 在此处处理聚合接口
+     * @param position
+     * @return
+     */
     @Override
     public Fragment getItem(int position) {
-        ArticleJokeFragment fragment = new ArticleJokeFragment();//
-        fragment.setHref(mTitles.get(position).split("@toypopchenyujin@")[1]);
+        BaseFragment fragment=null;
+        String url=mTitles.get(position).split("@toypopchenyujin@")[1];
+        if(url.contains("juhe")) {
+            fragment = new ArticleJokeJuheFragment();//处理聚合笑话  （新开的Fragment）
+            ((ArticleJokeJuheFragment)fragment).setHref(url);
+        }else{
+            fragment = new ArticleJokeFragment();//处理导姐笑话  （新开的Fragment）
+            ((ArticleJokeFragment)fragment).setHref(url);
+        }
+
         return fragment;
     }
 

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Toast;
 
+import com.jysd.toypop.PanApplication;
 import com.jysd.toypop.R;
 import com.jysd.toypop.adapter.ArticleAdapter;
 import com.jysd.toypop.adapter.ArticleChildAdapter;
@@ -115,7 +117,7 @@ public class MainActivity extends BaseActivity {
                                 dId = 2;
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
-                                setupTextJokeViewPager();
+                                setupTextJokeViewPager();//笑话
                             } else if (drawerItem.getIdentifier() == 3 && dId != 3) {
                                 dId = 3;
                                 mTabLayout.removeAllTabs();
@@ -245,13 +247,28 @@ public class MainActivity extends BaseActivity {
 
         super.onSaveInstanceState(outState);
     }
-
+    private long exitTime = 0;
     @Override
     public void onBackPressed() {
         if (result != null && result.isDrawerOpen()) {
             result.closeDrawer();
         } else {
-            super.onBackPressed();
+	/*
+	 * <p>Title onBackPressed</p> <p>Description </p>
+	 *
+	 * @see com.stardon.carassistant.application.BaseActivity#onBackPressed()
+	 */
+            /**
+             * 双击退出程序
+             */
+                if ((System.currentTimeMillis() - exitTime) > 2000) {
+                    Toast.makeText(this,"再按一次返回退出程序",Toast.LENGTH_LONG).show();
+                    exitTime = System.currentTimeMillis();
+                } else {
+                    PanApplication.getQueues().cancelAll("postjh");
+                    System.exit(0);
+
+                }
         }
     }
     public void onEventMainThread(String remove) {

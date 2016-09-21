@@ -12,9 +12,9 @@ import com.jysd.toypop.adapter.BaseRecyclerAdapter;
 import com.jysd.toypop.bean.Lz13;
 import com.jysd.toypop.inter.LoadingState;
 import com.jysd.toypop.inter.OnRetryListener;
-import com.jysd.toypop.presenter.ArticleJokeFragmentPresenter;
+import com.jysd.toypop.presenter.ArticleJokeJuheFragmentPresenter;
 import com.jysd.toypop.utils.NetWorkUtil;
-import com.jysd.toypop.view.holder.ArticleJokeHolder;
+import com.jysd.toypop.view.holder.ArticleJokeJuheHolder;
 import com.jysd.toypop.view.impl.IArticleFragmentView;
 import com.jysd.toypop.widget.LoadingView;
 
@@ -24,9 +24,9 @@ import java.util.TreeMap;
 import butterknife.Bind;
 
 /**
- * Created by 陈渝金 on 2016/7/7.
+ * Created by 陈渝金 on 2016/9/19.
  */
-public class ArticleJokeFragment  extends BaseFragment implements IArticleFragmentView, SwipeRefreshLayout.OnRefreshListener {
+public class ArticleJokeJuheFragment extends BaseFragment implements IArticleFragmentView, SwipeRefreshLayout.OnRefreshListener {
 
     @Bind(R.id.recycler_view)
     public RecyclerView mRecyclerView;
@@ -41,7 +41,8 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
         if (pageNo < pageSize)
             canLoadMore = false;
         if (mAdapter == null) {
-                mAdapter = new BaseRecyclerAdapter(list, R.layout.fragment_joke_item, ArticleJokeHolder.class);//该处需要改
+                mAdapter=new BaseRecyclerAdapter(list,R.layout.fragment_joke_juhe_item, ArticleJokeJuheHolder.class);
+
 
             mRecyclerView.setAdapter(mAdapter);
         } else {
@@ -76,8 +77,8 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
     }
 
     @Override
-    public ArticleJokeFragmentPresenter getPresenter() {
-        return new ArticleJokeFragmentPresenter();
+    public ArticleJokeJuheFragmentPresenter getPresenter() {
+        return new ArticleJokeJuheFragmentPresenter();
     }
 
     private LinearLayoutManager mLayoutManager;
@@ -129,8 +130,7 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
     @Override
     public void bindView(Bundle savedInstanceState) {
 
-
-            if (TextUtils.isEmpty(mResId) || mPresenter == null || !(mPresenter instanceof ArticleJokeFragmentPresenter)) {
+            if (TextUtils.isEmpty(mResId) || mPresenter == null || !(mPresenter instanceof ArticleJokeJuheFragmentPresenter)) {
                 return;
             }
             fl_loading.withLoadedEmptyText("≥﹏≤ , 连条毛都没有 !").withEmptyIco(R.mipmap.note_empty).withBtnEmptyEnnable(false)
@@ -139,7 +139,7 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
                     .withLoadingIco(R.drawable.loading_animation).withLoadingText("加载中...").withOnRetryListener(new OnRetryListener() {
                 @Override
                 public void onRetry() {
-                    ((ArticleJokeFragmentPresenter) mPresenter).getArticles(params);
+                    ((ArticleJokeJuheFragmentPresenter) mPresenter).getArticles(params);
                 }
             }).build();
             mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -150,14 +150,15 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                     super.onScrolled(recyclerView, dx, dy);
                     if (canLoadMore)
-                        ArticleJokeFragment.this.onScrolled(mRecyclerView, dx, dy);
+                        ArticleJokeJuheFragment.this.onScrolled(mRecyclerView, dx, dy);
                 }
             });
             params = new TreeMap<String, String>();
 
-            params.put("url", mResId);
+            params.put("url", mResId+url+(page)+"&pagesize=10");
             params.put("page", String.valueOf(page));
-            ((ArticleJokeFragmentPresenter) mPresenter).getArticles(params);//搭建桥梁
+            ((ArticleJokeJuheFragmentPresenter) mPresenter).getArticles(params);//搭建桥梁
+
     }
 
     @Override
@@ -166,19 +167,20 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
     }
 
     private TreeMap<String, String> params;
-    private int page = 0;//页面
+    private int page = 1;//页面
     private int pageNo = 0;//当前返回数据的条数
     private final int pageSize = 5;//每一页的条数
 
+    private String url="?key=f0da6636bf7cd5bbd8e2af4d4fdd5880&page=";//聚合数据
 
 
     @Override
     public void onRefresh() {
-
-            page = 0;
-            params.put("url", mResId);
+            page = 1;
+            params.put("url", mResId+url+page+"&pagesize=10");
             params.put("page", String.valueOf(page));
-            ((ArticleJokeFragmentPresenter) mPresenter).getArticles(params);
+            ((ArticleJokeJuheFragmentPresenter) mPresenter).getArticles(params);//搭建桥梁
+
 
     }
 
@@ -195,9 +197,11 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
     }
 
     private void loadPage() {
-            params.put("url", mResId.replace("_1.html", "_" + (++page) + ".html"));
+
+            params.put("url",mResId+url+(++page)+"&pagesize=10");
             params.put("page", String.valueOf(page));
-            ((ArticleJokeFragmentPresenter) mPresenter).getArticles(params);
+            ((ArticleJokeJuheFragmentPresenter) mPresenter).getArticles(params);//搭建桥梁
+
 
     }
 

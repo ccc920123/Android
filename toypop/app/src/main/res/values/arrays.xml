@@ -23,36 +23,13 @@
         <item>成语故事@toypopchenyujin@http://www.61ertong.com/wenxue/chengyugushi/list_182_1.html</item>
 
         <item>郑渊洁童话@toypopchenyujin@http://www.61ertong.com/wenxue/zhengyuanjietonghua/list_185_1.html</item>
-        <!--<item>最美创意@toypopchenyujin@1</item>-->
-        <!--<item>动画精选@toypopchenyujin@0</item>-->
-        <!--<item>热门电影@toypopchenyujin@7</item>-->
-        <!--<item>MV@toypopchenyujin@4</item>-->
-        <!--<item>广告/宣传@toypopchenyujin@8</item>-->
-        <!--<item>剧情/短片@toypopchenyujin@9</item>-->
-        <!--<item>游戏CG@toypopchenyujin@2</item>-->
-        <!--<item>预告/花絮@toypopchenyujin@3</item>-->
-        <!--  <item>院线热映@toypopchenyujin@5</item>-->
-        <!--<item>轻松学堂@toypopchenyujin@100</item>-->
-        <!--<item>音乐舞蹈@toypopchenyujin@101</item>-->
-        <!--<item>访谈演讲@toypopchenyujin@102</item>-->
-        <!--<item>娱乐八卦@toypopchenyujin@103</item>-->
-        <!--<item>恶搞配音@toypopchenyujin@104</item>-->
-        <!--<item>搞笑@toypopchenyujin@105</item>-->
-        <!--<item>吐槽@toypopchenyujin@106</item>-->
-        <!--<item>体育@toypopchenyujin@107</item>-->
-        <!--<item>汽车@toypopchenyujin@108</item>-->
-        <!--<item>脱口秀@toypopchenyujin@109</item>-->
-        <!--<item>生活@toypopchenyujin@110</item>-->
-        <!--<item>动漫@toypopchenyujin@111</item>-->
-        <!--<item>微电影@toypopchenyujin@112</item>-->
-        <!--<item>记录片@toypopchenyujin@113</item>-->
+
     </array>
     <array name="pictrue_tab">
+        <item>幽默文字@toypopchenyujin@http://japi.juhe.cn/joke/content/text.from</item>
         <item>导姐叨叨@toypopchenyujin@http://xiaohua.360.cn/daojie</item>
-        <!--<item>美图美句@toypopchenyujin@0</item>-->
-        <!--<item>手写美句@toypopchenyujin@1</item>-->
-        <!--<item>经典对白@toypopchenyujin@2</item>-->
-        <!--  <item>美女图片@toypopchenyujin@3</item>-->
+        <item>爆笑图片@toypopchenyujin@http://japi.juhe.cn/joke/img/text.from</item>
+
     </array>
 
     <array name="text_tab">
@@ -61,13 +38,9 @@
         <item>励志故事@toypopchenyujin@http://www.lz13.cn/lizhi/lizhigushi.html</item>
         <item>励志人物@toypopchenyujin@http://www.lz13.cn/lizhi/lizhirenwu.html</item>
         <item>励志名言@toypopchenyujin@http://www.lz13.cn/lizhi/lizhimingyan.html</item>
-        <!--<item>名人名言@toypopchenyujin@http://www.lz13.cn/lizhi/mingrenmingyan.html</item>-->
-        <!--<item>励志电影@toypopchenyujin@http://www.lz13.cn/lizhi/lizhidianying.html</item>-->
-        <!--<item>励志歌曲@toypopchenyujin@http://www.lz13.cn/lizhi/lizhigequ.html</item>-->
         <item>人生感悟@toypopchenyujin@http://www.lz13.cn/lizhi/renshengganwu.html</item>
         <item>人生哲理@toypopchenyujin@http://www.lz13.cn/lizhi/zheli.html</item>
         <item>经典语录@toypopchenyujin@http://www.lz13.cn/lizhi/jingdianyulu.html</item>
-        <!--<item>经典句子@toypopchenyujin@http://www.lz13.cn/lizhi/jingdianyuduan.html</item>-->
         <item>职场励志@toypopchenyujin@http://www.lz13.cn/lizhi/zhichanglizhi.html</item>
         <item>励志创业@toypopchenyujin@http://www.lz13.cn/lizhi/lizhichuangye.html</item>
         <item>青春励志@toypopchenyujin@http://www.lz13.cn/lizhi/qingchunlizhi.html</item>
@@ -79,13 +52,9 @@
         <item>感恩励志@toypopchenyujin@http://www.lz13.cn/lizhi/ganenlizhi.html</item>
         <item>经典美文@toypopchenyujin@http://www.lz13.cn/lizhi/meiwen.html</item>
 
-        <!--<item>伤感日志@toypopchenyujin@http://www.lz13.cn/lizhi/shanggan.html</item>-->
-        <!--<item>励志口号@toypopchenyujin@http://www.lz13.cn/lizhi/lizhikouhao.html</item>-->
-        <!--<item>励志书籍@toypopchenyujin@http://www.lz13.cn/lizhi/lizhishuji.html</item>-->
         <item>励志教育@toypopchenyujin@http://www.lz13.cn/lizhi/lizhijiaoyu.html</item>
         <item>励志诗歌@toypopchenyujin@http://www.lz13.cn/lizhi/lizhishige.html</item>
         <item>大学励志@toypopchenyujin@http://www.lz13.cn/lizhi/daxueshenglizhi.html</item>
-        <!--<item>励志奖学金@toypopchenyujin@http://www.lz13.cn/lizhi/lizhijiangxuejin.html</item>-->
     </array>
 
     <array name="play_tab">
