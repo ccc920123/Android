@@ -55,18 +55,6 @@ public class LiveActivity extends Activity {
 	}
 
  
-//    public void showads(){
-//    	// 展示插播广告，可以不调用loadSpot独立使用
-//    	Tool.Log("showads");
-//    	Calendar c = Calendar.getInstance();
-//		int year = c.get(Calendar.YEAR);
-//		int month = c.get(Calendar.MONTH);
-//		int day = c.get(Calendar.DAY_OF_MONTH);
-//		if (year == 2015 && month == 0 && day <21) {
-//			return;
-//		}
-//    }
-   
    
    public void openUrl(String url){
 	   Uri uri = Uri.parse(url);

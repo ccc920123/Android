@@ -170,6 +170,7 @@ public class Gamemanager {
 			paint.setStrokeWidth(1);
 			paint.setTextSize(22);
 			int offx = 20;
+//			 gameView.setBackgroundDrawable(this.getResources().getDrawable(R.drawable.bgshounaodazhan));
 			canvas.drawText("·ÖÊý", 140 + offx, 180, paint);
 			canvas.drawText("" + score, 210 + offx, 180, paint);
 

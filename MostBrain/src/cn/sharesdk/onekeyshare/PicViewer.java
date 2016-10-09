@@ -1,9 +1,9 @@
 /*
- * 官网地站:http://www.mob.com
- * 技术支持QQ: 4006852216
- * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第一时间通过微信将版本更新内容推送给您。如果使用过程中有任何问题，也可以通过微信与我们取得联系，我们将会在24小时内给予回复）
+ * 瀹樼綉鍦扮珯:http://www.mob.com
+ * 鎶�鏈敮鎸丵Q: 4006852216
+ * 瀹樻柟寰俊:ShareSDK   锛堝鏋滃彂甯冩柊鐗堟湰鐨勮瘽锛屾垜浠皢浼氱涓�鏃堕棿閫氳繃寰俊灏嗙増鏈洿鏂板唴瀹规帹閫佺粰鎮ㄣ�傚鏋滀娇鐢ㄨ繃绋嬩腑鏈変换浣曢棶棰橈紝涔熷彲浠ラ�氳繃寰俊涓庢垜浠彇寰楄仈绯伙紝鎴戜滑灏嗕細鍦�24灏忔椂鍐呯粰浜堝洖澶嶏級
  *
- * Copyright (c) 2013年 mob.com. All rights reserved.
+ * Copyright (c) 2013骞� mob.com. All rights reserved.
  */
 
 
@@ -22,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import com.mob.tools.FakeActivity;
 
-/** 查看编辑页面中图片的例子 */
+/** 鏌ョ湅缂栬緫椤甸潰涓浘鐗囩殑渚嬪瓙 */
 public class PicViewer extends FakeActivity implements OnTouchListener {
 	private ImageView ivViewer;
 	private Bitmap pic;
@@ -31,26 +31,26 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
     Matrix savedMatrix = new Matrix();
     DisplayMetrics dm;
 
-    /** 最小缩放比例*/
+    /** 鏈�灏忕缉鏀炬瘮渚�*/
     float minScaleR = 1f;
-    /** 最大缩放比例*/
+    /** 鏈�澶х缉鏀炬瘮渚�*/
     static final float MAX_SCALE = 10f;
 
-    /** 初始状态*/
+    /** 鍒濆鐘舵��*/
     static final int NONE = 0;
-    /** 拖动*/
+    /** 鎷栧姩*/
     static final int DRAG = 1;
-    /** 缩放*/
+    /** 缂╂斁*/
     static final int ZOOM = 2;
 
-    /** 当前模式*/
+    /** 褰撳墠妯″紡*/
     int mode = NONE;
 
     PointF prev = new PointF();
     PointF mid = new PointF();
     float dist = 1f;
 
-	/** 设置图片用于浏览 */
+	/** 璁剧疆鍥剧墖鐢ㄤ簬娴忚 */
 	public void setImageBitmap(Bitmap pic) {
 		this.pic = pic;
 		if (ivViewer != null) {
@@ -67,7 +67,7 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
 			ivViewer.setImageBitmap(pic);
 		}
 		dm = new DisplayMetrics();
-		activity.getWindowManager().getDefaultDisplay().getMetrics(dm);// 获取分辨率
+		activity.getWindowManager().getDefaultDisplay().getMetrics(dm);// 鑾峰彇鍒嗚鲸鐜�
         minZoom();
         CheckView();
         ivViewer.setImageMatrix(matrix);
@@ -78,21 +78,21 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
 
 
 	/**
-     * 触屏监听
+     * 瑙﹀睆鐩戝惉
      */
     public boolean onTouch(View v, MotionEvent event) {
 
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
-        // 主点按下
+        // 涓荤偣鎸変笅
         case MotionEvent.ACTION_DOWN:
             savedMatrix.set(matrix);
             prev.set(event.getX(), event.getY());
             mode = DRAG;
             break;
-        // 副点按下
+        // 鍓偣鎸変笅
         case MotionEvent.ACTION_POINTER_DOWN:
             dist = spacing(event);
-            // 如果连续两点距离大于10，则判定为多点模式
+            // 濡傛灉杩炵画涓ょ偣璺濈澶т簬10锛屽垯鍒ゅ畾涓哄鐐规ā寮�
             if (spacing(event) > 10f) {
                 savedMatrix.set(matrix);
                 midPoint(mid, event);
@@ -124,18 +124,18 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
     }
 
     /**
-     * 限制最大最小缩放比例，自动居中
+     * 闄愬埗鏈�澶ф渶灏忕缉鏀炬瘮渚嬶紝鑷姩灞呬腑
      */
     private void CheckView() {
         float p[] = new float[9];
         matrix.getValues(p);
         if (mode == ZOOM) {
             if (p[0] < minScaleR) {
-//                Log.d("", "当前缩放级别:"+p[0]+",最小缩放级别:"+minScaleR);
+//                Log.d("", "褰撳墠缂╂斁绾у埆:"+p[0]+",鏈�灏忕缉鏀剧骇鍒�:"+minScaleR);
                 matrix.setScale(minScaleR, minScaleR);
             }
             if (p[0] > MAX_SCALE) {
-//                Log.d("", "当前缩放级别:"+p[0]+",最大缩放级别:"+MAX_SCALE);
+//                Log.d("", "褰撳墠缂╂斁绾у埆:"+p[0]+",鏈�澶х缉鏀剧骇鍒�:"+MAX_SCALE);
                 matrix.set(savedMatrix);
             }
         }
@@ -143,13 +143,13 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
     }
 
     /**
-     * 最小缩放比例，最大为100%
+     * 鏈�灏忕缉鏀炬瘮渚嬶紝鏈�澶т负100%
      */
     private void minZoom() {
         minScaleR = Math.min(
                 (float) dm.widthPixels / (float) pic.getWidth(),
                 (float) dm.heightPixels / (float) pic.getHeight());
-        //以最小缩放比例显示
+        //浠ユ渶灏忕缉鏀炬瘮渚嬫樉绀�
         matrix.setScale(minScaleR, minScaleR);
     }
 
@@ -158,7 +158,7 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
     }
 
     /**
-     * 横向、纵向居中
+     * 妯悜銆佺旱鍚戝眳涓�
      */
     protected void center(boolean horizontal, boolean vertical) {
 
@@ -173,7 +173,7 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
          float deltaX = 0, deltaY = 0;
 
          if (vertical) {
-             // 图片小于屏幕大小，则居中显示。大于屏幕，上方留空则往上移，下方留空则往下移
+             // 鍥剧墖灏忎簬灞忓箷澶у皬锛屽垯灞呬腑鏄剧ず銆傚ぇ浜庡睆骞曪紝涓婃柟鐣欑┖鍒欏線涓婄Щ锛屼笅鏂圭暀绌哄垯寰�涓嬬Щ
              int screenHeight = dm.heightPixels;
              if (height < screenHeight) {
                  deltaY = (screenHeight - height) / 2 - rect.top;
@@ -198,16 +198,16 @@ public class PicViewer extends FakeActivity implements OnTouchListener {
     }
 
     /**
-     * 两点的距离
+     * 涓ょ偣鐨勮窛绂�
      */
 	private float spacing(MotionEvent event) {
         float x = event.getX(0) - event.getX(1);
         float y = event.getY(0) - event.getY(1);
-        return FloatMath.sqrt(x * x + y * y);
+        return (float) Math.sqrt(x * x + y * y);
     }
 
     /**
-     * 两点的中点
+     * 涓ょ偣鐨勪腑鐐�
      */
     private void midPoint(PointF point, MotionEvent event) {
         float x = event.getX(0) + event.getX(1);

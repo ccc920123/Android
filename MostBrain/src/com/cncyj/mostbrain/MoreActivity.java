@@ -64,8 +64,8 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 	private CommonAdapter<GridViewBean> mAdapter;
 	private List<GridViewBean> data;
 	private int[] imageid = { R.drawable.suangsu, R.drawable.shuduioc,
-			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,R.drawable.icosaolei,R.drawable.icozuiqingdanao,R.drawable.icozuiqingdanao};
-	private String[] title = { "算数", "数独", "你的世界","魔板","我和我","扫雷","最强大脑","123"};
+			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,R.drawable.icosaolei,R.drawable.icozuiqingdanao,R.drawable.shuonaodazhan};
+	private String[] title = { "算数", "数独", "你的世界","魔板","2048","扫雷","最强大脑","手脑大战"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

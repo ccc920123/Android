@@ -7,17 +7,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;  
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -34,6 +39,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
@@ -113,6 +119,7 @@ public class MainActivity extends Activity {
 	 * @throws 
 	 * @throw
 	 */
+	@TargetApi(23)
 	private void initFloatView(){
 	    //获取WindowManager
 	    wm=(WindowManager)getApplicationContext().getSystemService("window");
@@ -131,15 +138,28 @@ public class MainActivity extends Activity {
 	    //设置悬浮窗口长宽数据
 	     wmParams.width=80;
 	    wmParams.height=80;
-	    createLeftFloatView();
+	    if (Build.VERSION.SDK_INT >= 23) {
+	    	   if(!Settings.canDrawOverlays(this)) {
+	    	       Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+	    	       startActivity(intent);
+	    	       return;
+	    	   } else {
+	    	   //绘ui代码, 这里说明6.0系统已经有权限了
+	    		   createLeftFloatView();
+	    	   }
+	    	} else {
+	    	   //绘ui代码,这里android6.0以下的系统直接绘出即可
+	    		  createLeftFloatView();
+	    	}
 	}
+
 	 /**
 	    * 创建左边悬浮按钮
 	    */
 	    private void createLeftFloatView(){
 	        leftbtn=new Button(this);
 	        leftbtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_cg));
-	        leftbtn.setText("纸");
+//	        leftbtn.setText("纸");
 	        leftbtn.setTextSize(10);
 	        leftbtn.setGravity(Gravity.RIGHT);
 	        leftbtn.setTextColor(Color.WHITE);
