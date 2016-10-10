@@ -546,12 +546,12 @@ private void showShare() {
 //	// titleUrl是标题的网络链接，仅在人人网和QQ空间使用
 //	oks.setTitleUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
 	// text是分享文本，所有平台都需要这个字段
-	oks.setText("宝宝没学习没兴趣，最强大脑让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“最强大脑”");
+	oks.setText("你能过几个项目，不服你就来战");
 	// imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
 	//
 	oks.setImagePath(PHONE_PATH);// 确保SDcard下面存在此张图片
 	// url仅在微信（包括好友和朋友圈）中使用
-	oks.setUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
+	oks.setUrl("http://android.myapp.com/myapp/detail.htm?apkName=com.cncyj.mostbrain");
 	// comment是我对这条分享的评论，仅在人人网和QQ空间使用
 //	oks.setComment("宝宝没学习没兴趣，启蒙数学让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“启蒙数学”");
 	// site是分享此内容的网站名称，仅在QQ空间使用

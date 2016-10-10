@@ -70,7 +70,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:hint="你还可以关注我们的微信公众号进行反馈与建议，我们希望听到你的心声\n\n\n公众号：day365game\n\n"
+        android:hint="你还可以关注我们的官方福利公众号，我们为你服务\n\n名称：黑客帝国时代\n\n公众号：The_HK\n\n"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingTop="2dp"

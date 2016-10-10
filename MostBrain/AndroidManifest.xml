@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cncyj.mostbrain"
-    android:versionCode="4"
-    android:versionName="4.4.6" >
+    android:versionCode="5"
+    android:versionName="5.5.8" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="9" />
 
     <uses-permission android:name="android.permission.GET_TASKS" />
- <uses-permission android:name="android.permission.INTERNET" />
- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
- <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
- <uses-permission android:name="android.permission.READ_PHONE_STATE" />
- <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
- <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />  
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 以下为可选权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ico"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="ae91f400" />
+
         <activity
             android:name="com.cncyj.mostbrain.WelcomActivity"
             android:label="@string/app_name"
@@ -34,6 +45,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.cncyj.mostbrain.MoreActivity"
             android:screenOrientation="portrait" >
@@ -136,11 +151,12 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
-         <activity
+        <activity
             android:name="com.cncyj.mostbrain.game.kuaifanying.LiveActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
+        <activity android:name="com.cncyj.mostbrain.game.fastcut.bn.fastcut.MyActivity"></activity>
     </application>
 
 </manifest>

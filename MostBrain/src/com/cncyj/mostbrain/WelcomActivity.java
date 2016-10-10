@@ -1,5 +1,8 @@
 package com.cncyj.mostbrain;
 
+import com.baidu.mobads.SplashAd;
+import com.baidu.mobads.SplashAdListener;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,9 +24,36 @@ public class WelcomActivity extends Activity {
 		setContentView(R.layout.welcom);
 		RelativeLayout adsParent = (RelativeLayout) this
 				.findViewById(R.id.adsRl);
+		 // the observer of AD
+        SplashAdListener listener = new SplashAdListener() {
+            @Override
+            public void onAdDismissed() {
+//                Log.i("RSplashActivity", "onAdDismissed");
+            	skips(); // 跳转至您的应用主界面
+            }
 
-				 MyThread m=new MyThread();
-	                new Thread(m).start();
+            @Override
+            public void onAdFailed(String arg0) {
+             				 MyThread m=new MyThread();
+                new Thread(m).start();
+            }
+
+            @Override
+            public void onAdPresent() {
+//                Log.i("RSplashActivity", "onAdPresent");
+            }
+
+            @Override
+            public void onAdClick() {
+//                Log.i("RSplashActivity", "onAdClick");
+                // 设置开屏可接受点击时，该回调可用
+            }
+        };
+//        2398946
+        String adPlaceId = "2398946"; // 重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
+        new SplashAd(this, adsParent, listener, adPlaceId, true);
+
+
 			
 
 	}
@@ -35,7 +65,13 @@ public class WelcomActivity extends Activity {
 		this.finish();
 	}
 	
-	
+	/**
+	 * 暂时未使用
+	* @FILENAME WelcomActivity.java
+	* @Description 
+	* @Author 陈渝金
+	* @Create Time 2016
+	 */
 	 class MyThread implements Runnable {
          public void run() {
              try {

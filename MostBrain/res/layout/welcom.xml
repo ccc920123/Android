@@ -32,7 +32,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dip"
         android:textColor="@android:color/white"
-        android:text="微信公众号：day365game" />
+        android:textSize="18sp"
+        android:text="领福利到黑客帝国时代\n微信公众号：The_HK" />
 
 </RelativeLayout>
 <RelativeLayout android:id="@+id/adsRl"

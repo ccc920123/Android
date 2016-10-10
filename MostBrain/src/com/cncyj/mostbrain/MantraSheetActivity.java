@@ -26,7 +26,7 @@ public class MantraSheetActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_mantrasheet);
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-		mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag"); 
+//		mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag"); 
 		// in onResume() call
 		
 //		mWakeLock.acquire(); 
@@ -70,14 +70,14 @@ public class MantraSheetActivity extends Activity {
 
 	@Override
 	protected void onResume() {
-		mWakeLock.acquire();
+//		mWakeLock.acquire();
 		super.onResume();
 	}
 
 
 	@Override
 	protected void onPause() {
-		mWakeLock.release();
+//		mWakeLock.release();
 		super.onPause();
 	}
 }

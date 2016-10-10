@@ -15,5 +15,9 @@
 	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-SinaWeibo-2.6.5.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-Wechat-2.6.5.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/ShareSDK-Wechat-Core-2.6.5.jar"/>
+	<classpathentry kind="lib" path="libs/Baidu_MobAds_SDK.jar"/>
+	<classpathentry kind="lib" path="libs/GeoLib.jar"/>
+	<classpathentry kind="lib" path="libs/GeoPolygons.jar"/>
+	<classpathentry kind="lib" path="libs/GeoView.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

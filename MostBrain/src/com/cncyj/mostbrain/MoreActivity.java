@@ -35,6 +35,7 @@ import com.cncyj.mostbrain.adpter.CommonAdapter;
 import com.cncyj.mostbrain.adpter.ViewHolder;
 import com.cncyj.mostbrain.bean.GridViewBean;
 import com.cncyj.mostbrain.dialog.AlerDialog;
+import com.cncyj.mostbrain.game.fastcut.bn.fastcut.MyActivity;
 import com.cncyj.mostbrain.game.kuaifanying.LiveActivity;
 import com.cncyj.mostbrain.game.meandme.MeAndMeActivity;
 import com.cncyj.mostbrain.game.saolei.MineSweeperActivity;
@@ -64,8 +65,8 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 	private CommonAdapter<GridViewBean> mAdapter;
 	private List<GridViewBean> data;
 	private int[] imageid = { R.drawable.suangsu, R.drawable.shuduioc,
-			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,R.drawable.icosaolei,R.drawable.icozuiqingdanao,R.drawable.shuonaodazhan};
-	private String[] title = { "算数", "数独", "你的世界","魔板","2048","扫雷","最强大脑","手脑大战"};
+			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,R.drawable.icosaolei,R.drawable.icozuiqingdanao,R.drawable.shuonaodazhan,R.drawable.icoqieqiele};
+	private String[] title = { "算数", "数独", "你的世界","魔板","2048","扫雷","最强大脑","手脑大战","切切乐"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -262,14 +263,13 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 		// title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
 		oks.setTitle(getString(R.string.share));
 		// titleUrl是标题的网络链接，仅在人人网和QQ空间使用
-		oks.setTitleUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
-		// text是分享文本，所有平台都需要这个字段
-		oks.setText("宝宝没学习没兴趣，最强大脑让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“最强大脑”");
+		oks.setTitleUrl("http://android.myapp.com/myapp/detail.htm?apkName=com.cncyj.mostbrain");
+		oks.setText("你能过几个项目，不服你就来战");
 		// imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
 		//
 		oks.setImagePath(PHONE_PATH);// 确保SDcard下面存在此张图片
 		// url仅在微信（包括好友和朋友圈）中使用
-		oks.setUrl("http://a.app.qq.com/o/simple.jsp?pkgname=com.cn.math");
+		oks.setUrl("http://android.myapp.com/myapp/detail.htm?apkName=com.cncyj.mostbrain");
 		// comment是我对这条分享的评论，仅在人人网和QQ空间使用
 //		oks.setComment("宝宝没学习没兴趣，启蒙数学让宝宝学习有兴趣，让宝宝不输在起跑线上，学习的好助手，“启蒙数学”");
 		// site是分享此内容的网站名称，仅在QQ空间使用
@@ -365,6 +365,13 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 		    	break;
 		    case 7:
 		    	ittmain.setClass(MoreActivity.this,LiveActivity.class);
+				startActivity(ittmain);
+				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+				finish();
+		    	
+		    	break;
+		    case 8://切切乐
+		    	ittmain.setClass(MoreActivity.this,MyActivity.class);
 				startActivity(ittmain);
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				finish();
