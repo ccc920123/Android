@@ -17,7 +17,7 @@ public class MyFCData {
 	//================start========================
 	public static String[] gamePicName={"s_01.png","s_02.png",
 		"s_03.png","s_04.png","s_05.png","s_06.png"};
-	public static String goal[]={"40","30","20","20","20","20"};//目标面积
+	public static String goal[]={"30","30","30","30","30","30"};//目标面积
 	//物体原始数据
 	public static float[][] data={
 		{255,826, 74,1216,  520,1626, 1022,548, 689,371,  468,1143},
@@ -242,13 +242,14 @@ public class MyFCData {
 	
 	public static ArrayList<BNObject> getData(int level)//获得原始面积数据
 	{
-		String goal=MyFCData.goal[level];//第一关
+		String goal=Integer.parseInt(MyFCData.goal[level])-MySurfaceView.level+"";//第一关
 
 	    ArrayList<BNObject> AreaData=new ArrayList<BNObject>();//绘制切割面积
 	    for(int i=0;i<=goal.length()-1;i++)
 	    {
 	    	String str=goal.charAt(i)+"";//获得数据
 	    	int data=Integer.parseInt(str);//转换成相应的数据
+	    	
 	    	AreaData.add(
 	    			new BNObject(//切割面积
 	    					370+40*i, 

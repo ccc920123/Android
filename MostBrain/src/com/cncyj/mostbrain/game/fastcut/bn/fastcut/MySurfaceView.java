@@ -70,6 +70,8 @@ public class MySurfaceView extends GLSurfaceView
 	
 	public World world;//创建世界
 	
+	public static int level=0;//难度系数 5+5+5；3中难度；当level=15最高拿到，最后回到0；
+	
 	public boolean isCutRigid=false;//是否碰到刚边
 	boolean isJudgePolygon=true;//是否在物理世界里删除包围框或者添加包围框
 	boolean isJudgeBall=true;//是否在物理世界里删除球刚体或者添加球刚体
@@ -882,6 +884,8 @@ public class MySurfaceView extends GLSurfaceView
 	//游戏界面内部类=======================start========================
 	class GameViewTouchTask
 	{
+		
+
 		void doTask(MotionEvent e)
 		{
 			switch(e.getAction())
@@ -1077,7 +1081,16 @@ public class MySurfaceView extends GLSurfaceView
 				{//胜利界面  下一关
 					if(CheckpointIndex>=5)
 					{
-						CheckpointIndex=0;
+						
+						
+						if(level>=20){  //难度指数，分3级当到的3级后恢复到低级
+							level=0;
+							CheckpointIndex=0;
+						}else{
+							level=level+5;
+							CheckpointIndex=0;
+						}
+						
 					}else
 					{
 						CheckpointIndex++;
@@ -1227,7 +1240,7 @@ public class MySurfaceView extends GLSurfaceView
 							//获得斧头道具===============end====================
 							
 							
-							int goal=Integer.parseInt(MyFCData.goal[CheckpointIndex]);//目标面积
+							int goal=Integer.parseInt(MyFCData.goal[CheckpointIndex])-level;//目标面积
 							if(goal>=getAreaPercent())//胜利
 							{
 								isCut=true;
@@ -1858,6 +1871,7 @@ public class MySurfaceView extends GLSurfaceView
 		BNPolyObject bnpo=new BNPolyObject//创建切割物体
 				(
 						MySurfaceView.this,
+						//创建游戏前，引导界面图片（小地图）CheckpointIndex =5表示=第6个数据
 						TextureManager.getTextures(MyFCData.gamePicName[CheckpointIndex]),
 						ShaderManager.getShader(0),
 						MyFCData.data[CheckpointIndex],
