@@ -170,8 +170,8 @@ public class ArticleJokeJuheFragment extends BaseFragment implements IArticleFra
     private int page = 1;//页面
     private int pageNo = 0;//当前返回数据的条数
     private final int pageSize = 5;//每一页的条数
-
-    private String url="?key=f0da6636bf7cd5bbd8e2af4d4fdd5880&page=";//聚合数据
+//    ?key=f0da6636bf7cd5bbd8e2af4d4fdd5880
+    private String url="&page=";//聚合数据
 
 
     @Override

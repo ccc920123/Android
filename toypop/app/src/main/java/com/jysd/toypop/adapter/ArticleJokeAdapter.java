@@ -31,6 +31,10 @@ public class ArticleJokeAdapter extends FragmentStatePagerAdapter {
         BaseFragment fragment=null;
         String url=mTitles.get(position).split("@toypopchenyujin@")[1];
         if(url.contains("juhe")) {
+            if(url.contains("*"))
+            {
+                url=url.replace("*","&");
+            }
             fragment = new ArticleJokeJuheFragment();//处理聚合笑话  （新开的Fragment）
             ((ArticleJokeJuheFragment)fragment).setHref(url);
         }else{

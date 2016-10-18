@@ -29,29 +29,34 @@ public class ArticleJokeJuheFragmentModel implements IArticleFragmentModel {
             @Override
             public void onMySuccess(String result) {
                 try {
+//
                     JSONObject jsonObject = new JSONObject(result);
                     int code = jsonObject.getInt("error_code");
                     if (code == 0) {
-                        JSONObject object=new JSONObject(jsonObject.getString("result"));
-                        JSONArray arryData = object.getJSONArray("data");
-                        List<Lz13> list = new ArrayList<Lz13>();
-                        for(int i=0;i<arryData.length();i++)
-                        {
-                            Lz13 lz13 = new Lz13();
-                            JSONObject obj = (JSONObject)arryData.get(i);
+                        JSONArray arryData = null;
+                        if (result.contains("\\")) {
+                            arryData = jsonObject.getJSONArray("result");
+                        } else {
+                            JSONObject object = new JSONObject(jsonObject.getString("result"));
 
-                            String text= obj.getString("content");
-                            lz13.text=text;
-                            String url="";
+                            arryData = object.getJSONArray("data");
+                        }
+                        List<Lz13> list = new ArrayList<Lz13>();
+                        for (int i = 0; i < arryData.length(); i++) {
+                            Lz13 lz13 = new Lz13();
+                            JSONObject obj = (JSONObject) arryData.get(i);
+
+                            String text = obj.getString("content");
+                            lz13.text = text;
+                            String url = "";
                             try {
                                 url = obj.getString("url");
 
-                            }catch (Exception E)
-                            {
-                                url="";
+                            } catch (Exception E) {
+                                url = "";
 
                             }
-                            lz13.href=url;//如果是图片请求就有url
+                            lz13.href = url;//如果是图片请求就有url
 
                             list.add(lz13);
                         }
@@ -59,7 +64,6 @@ public class ArticleJokeJuheFragmentModel implements IArticleFragmentModel {
 
 
                     }
-
 
 
                 } catch (JSONException e) {

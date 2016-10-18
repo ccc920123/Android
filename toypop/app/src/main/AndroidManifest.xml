@@ -41,7 +41,7 @@
         android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
         <meta-data
             android:name="BaiduMobAd_APP_ID"
-            android:value="bcb5a2f0" />
+            android:value="bcb5a2f0"/>
         <activity
             android:name="com.jysd.toypop.view.activity.WelcomActivity"
             android:screenOrientation="portrait">
