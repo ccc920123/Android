@@ -16,8 +16,8 @@ android {
         applicationId "com.jysd.toypop"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 3
-        versionName "2.3.2"
+        versionCode 4
+        versionName "2.3.4"
 
 
     }
@@ -44,20 +44,17 @@ dependencies {
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'io.reactivex:rxandroid:1.0.1'
     compile 'com.jakewharton:butterknife:7.0.0'
-//    compile 'com.facebook.fresco:fresco:0.8.1+'
+    //    compile 'com.facebook.fresco:fresco:0.8.1+'
+
     // 其他依赖
     compile 'com.facebook.fresco:fresco:0.12.0'
-
     // 在 API < 14 上的机器支持 WebP 时，需要添加
     compile 'com.facebook.fresco:animated-base-support:0.12.0'
-
     // 支持 GIF 动图，需要添加
     compile 'com.facebook.fresco:animated-gif:0.12.0'
-
     // 支持 WebP （静态图+动图），需要添加
     compile 'com.facebook.fresco:animated-webp:0.12.0'
     compile 'com.facebook.fresco:webpsupport:0.12.0'
-
     // 仅支持 WebP 静态图，需要添加
     compile 'com.facebook.fresco:webpsupport:0.12.0'
     compile 'com.mikepenz:crossfader:1.2.0@aar'
@@ -70,6 +67,6 @@ dependencies {
     compile files('libs/httpmime-4.2.4.jar')
     compile files('libs/jsoup-1.8.3.jar')
     compile files('libs/htmlparser-1.2.1.jar')
-    compile files('libs/Baidu_MobAds_SDK.jar')
     compile files('libs/Volley.jar')
+    compile files('libs/GDTUnionSDK.4.9.537.min.jar')
 }

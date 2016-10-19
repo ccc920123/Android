@@ -6,51 +6,94 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-import com.baidu.mobads.SplashAd;
-import com.baidu.mobads.SplashAdListener;
 import com.jysd.toypop.R;
+import com.qq.e.ads.splash.SplashAD;
+import com.qq.e.ads.splash.SplashADListener;
 
 public class WelcomActivity extends Activity {
 
     boolean isFirstIn = false;
     // 跳转延时
-
+    //应用id
+    private final String APPId = "1105701792";
+    //广告id
+    private final String SplashPosId = "7070918559312744";
+    private SplashAD splashAD;
+    RelativeLayout adsParent;
+    TextView skipView;
+    private static final String SKIP_TEXT = "点击跳过%d";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcom);
-        RelativeLayout adsParent = (RelativeLayout) this
+        adsParent = (RelativeLayout) this
                 .findViewById(R.id.adsRl);
-
-        // the observer of AD
-        SplashAdListener listener = new SplashAdListener() {
+        skipView = (TextView) this.findViewById(R.id.skip_view);
+        splashAD = new SplashAD(this, adsParent, skipView, APPId, SplashPosId, new SplashADListener() {
             @Override
-            public void onAdDismissed() {
+            public void onADDismissed() {
                 skips();
-                // 跳转至您的应用主界面
             }
 
             @Override
-            public void onAdFailed(String arg0) {
-
+            public void onNoAD(int i) {
+                //广告加载失败
                 MyThread m = new MyThread();
                 new Thread(m).start();
             }
 
             @Override
-            public void onAdPresent() {
+            public void onADPresent() {
 
             }
 
             @Override
-            public void onAdClick() {
-                // 设置开屏可接受点击时，该回调可用
+            public void onADClicked() {
+
             }
-        };//
-        String adPlaceId = "2894720"; // 重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
-        new SplashAd(this, adsParent, listener, adPlaceId, true);
+            /**
+             * 倒计时回调，返回广告还将被展示的剩余时间。
+             * 通过这个接口，开发者可以自行决定是否显示倒计时提示，或者还剩几秒的时候显示倒计时
+             *
+             *  millisUntilFinished 剩余毫秒数
+             */
+            @Override
+            public void onADTick(long millisUntilFinished) {
+                skipView.setText(String.format(SKIP_TEXT, Math.round(millisUntilFinished / 1000f)));
+            }
+        }, 0);
+
+
+        // the observer of AD
+//        SplashAdListener listener = new SplashAdListener() {
+//            @Override
+//            public void onAdDismissed() {
+//                skips();
+//                // 跳转至您的应用主界面
+//            }
+//
+//            @Override
+//            public void onAdFailed(String arg0) {
+//
+//                MyThread m = new MyThread();
+//                new Thread(m).start();
+//            }
+//
+//            @Override
+//            public void onAdPresent() {
+//
+//            }
+//
+//            @Override
+//            public void onAdClick() {
+//                // 设置开屏可接受点击时，该回调可用
+//            }
+//        };//
+//        String adPlaceId = "2894720"; // 重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
+//        new SplashAd(this, adsParent, listener, adPlaceId, true);
 
 
     }
