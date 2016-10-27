@@ -33,19 +33,21 @@ public class ArticleJokeFragmentModel implements IArticleFragmentModel {
                                       Document result = Jsoup.connect(params.get("url")).get();
 
 
-                                     Elements listImage= result.getElementsByClass("img-list");//得到图片地址
-                                      Elements listClass = result.getElementsByClass("img-list-text");//找到我们需要的内容文本内容
+                                     Elements listImage= result.getElementsByClass("excerpts");//内容地址
+                                      Elements listClass = result.getElementsByClass("excerpt");//内容中的小项目
                                       List<Lz13> list = new ArrayList<Lz13>(listClass.size());
                                       for (int i = 0; i < listClass.size(); i++) {
                                           Lz13 lz13 = new Lz13();
                                           Element postHead = listClass.get(i);
-                                          Element a = postHead.getElementsByTag("a").get(0);
+                                          Element a = postHead.getElementsByTag("a").get(1);
                                           lz13.href = a.attr("href");
                                           lz13.title = a.text();
                                           lz13.text =listClass.get(i).text();
-                                          Element postImage=listImage.get(i);
-                                          Element img=postImage.getElementsByTag("img").get(0);//得到img标签
+                                          Element img=postHead.getElementsByTag("img").get(0);//得到img标签
+//                                          Element postImage=listImage.get(i);
+//                                          Element img=postImage.getElementsByTag("img").get(0);//得到img标签
                                           lz13.auth=img.attr("src");
+
                                           list.add(lz13);
                                       }
                                       subscriber.onNext(list);

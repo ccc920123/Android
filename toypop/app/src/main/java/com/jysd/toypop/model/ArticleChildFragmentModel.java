@@ -1,7 +1,5 @@
 package com.jysd.toypop.model;
 
-import android.text.TextUtils;
-
 import com.jysd.toypop.bean.Lz13;
 import com.jysd.toypop.inter.Callback;
 import com.jysd.toypop.model.impl.IArticleFragmentModel;
@@ -46,7 +44,7 @@ public class ArticleChildFragmentModel implements IArticleFragmentModel {
                                           lz13.href = a.attr("href");
                                           lz13.title = a.text();
                                           lz13.text=li.get(i).text().split("<br>")[0];
-                                          lz13.auth="J哥";
+                                          lz13.auth=" ";
                                           list.add(lz13);
 
                                       }

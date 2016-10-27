@@ -62,7 +62,7 @@
     <string name="setting_pay_username">建设中...</string>
 
 
-
     <item name="tag_first" type="id"></item>
     <item name="tag_second" type="id"></item>
+    <string name="toolbar_save">保存</string>
 </resources>

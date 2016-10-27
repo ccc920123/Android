@@ -72,6 +72,8 @@
                     android:layout_height="wrap_content"
                     android:lineSpacingExtra="3dp"
                     android:padding="8dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
                     android:textColor="@color/textColor"
                     android:textSize="15sp" />
             </LinearLayout>

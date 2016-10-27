@@ -1,0 +1,563 @@
+Index: app/libs/cyberplayer-sdk.jar
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/libs/cyberplayer-sdk.jar	(revision )
++++ app/libs/cyberplayer-sdk.jar	(revision )
+@@ -1,0 +1,0 @@
+Index: app/libs/avoscloud-sdk-v3.12.jar
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/libs/avoscloud-sdk-v3.12.jar	(revision )
++++ app/libs/avoscloud-sdk-v3.12.jar	(revision )
+@@ -1,0 +1,0 @@
+Index: app/app.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/app.iml	(revision )
++++ app/app.iml	(revision )
+@@ -66,14 +66,6 @@
+       <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/main/shaders" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/aidl" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/jni" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
+@@ -82,7 +74,17 @@
+       <sourceFolder url="file://$MODULE_DIR$/src/test/jni" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/aidl" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/jni" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dependency-cache" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars" />
+@@ -107,11 +109,22 @@
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.mikepenz/octicons-typeface/3.0.0.1/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.0.1/jars" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-safeguard" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-verifier" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-resources" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/restart-dex" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
+       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
++      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
+       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
+     </content>
+@@ -157,6 +170,7 @@
+     <orderEntry type="library" exported="" name="rxjava-1.0.13" level="project" />
+     <orderEntry type="library" exported="" name="webpsupport-0.12.0" level="project" />
+     <orderEntry type="library" exported="" name="cyberplayer-sdk" level="project" />
++    <orderEntry type="library" exported="" name="avoscloud-sdk-v3.12" level="project" />
+     <orderEntry type="library" exported="" name="animated-gif-0.12.0" level="project" />
+     <orderEntry type="module" module-name="library" exported="" />
+     <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision )
++++ app/build.gradle	(revision )
+@@ -61,6 +61,7 @@
+     compile 'com.mikepenz:google-material-typeface:2.1.2.1@aar'
+     compile 'com.mikepenz:fontawesome-typeface:4.4.0.1@aar'
+     compile 'com.mikepenz:octicons-typeface:3.0.0.1@aar'
++    compile files('libs/avoscloud-sdk-v3.12.jar')
+     compile files('libs/cyberplayer-sdk.jar')
+     compile files('libs/fastjson.jar')
+     compile files('libs/httpmime-4.2.4.jar')
+Index: .idea/libraries/avoscloud_sdk_v3_12.xml
+===================================================================
+--- .idea/libraries/avoscloud_sdk_v3_12.xml	(revision )
++++ .idea/libraries/avoscloud_sdk_v3_12.xml	(revision )
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="avoscloud-sdk-v3.12">
++    <CLASSES>
++      <root url="jar://$PROJECT_DIR$/app/libs/avoscloud-sdk-v3.12.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: build/intermediates/dex-cache/cache.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build/intermediates/dex-cache/cache.xml	(revision )
++++ build/intermediates/dex-cache/cache.xml	(revision )
+@@ -1,437 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<items version="2" >
+-
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.mikepenz\crossfader\1.2.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="22cb1efd4c687b299cd1d09bf5d8465941874fc1">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.mikepenz-crossfader-1.2.0_b11d1b61ac41a6bc99d63a90bc7b2e992db81e78.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="145da27a459a63ea0c4e318930365cf0a8b8e891">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-0.12.0_5bd4c100048592848ed7a13b4bd82d91c2b485bf.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\cyberplayer-sdk.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="412f0f2ebc711540ef966d931418e8320783146c">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\cyberplayer-sdk_16b4bbe8c94cf1e550769c74603ea3ddb79c7502.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.android.support\design\23.1.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.0_3ea38da7fa2c6a23a3391dda462b78aa873a1bbe.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\animated-webp\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="907480570b617f29e3a8f3d248b8a1d9fd137677">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-animated-webp-0.12.0_f304156f2c55adc076df4333cf274e8254bfc4da.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="98476622f10715998eacf9240d6b479f12c66143">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\okio-1.6.0_bc0df7218f3f204ad5d0e1e30f52fd31c5337214.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\okhttp-2.5.0_1abfc9ffa71c6cc610dc8daea7a454439f799c93.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_27cc688690f0baed4784c64108e322ddba06215a.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\Baidu_MobAds_SDK.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="27a06b296b545c9bc6289d48e724767d674d6621">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\Baidu_MobAds_SDK_823ff7cef4cde8d3ab4a8af34bd04e0ed560ad79.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\2.0.0-beta2\880d9e0997b2d1bfc98e0d121ced33ee5d04aac4\retrofit-2.0.0-beta2.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\retrofit-2.0.0-beta2_46fd5600bbd871e769e1cf387aa940abbea9daae.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\animated-base-support\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="1ec2a90175d1fec6d14246f874cc95e09a2dd9df">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-animated-base-support-0.12.0_856b2ed6f86fcca6ddbde8c63780568802de2fc2.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\httpmime-4.2.4.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="dba4d4d224e2ca872af5be8d2992777583145478">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\httpmime-4.2.4_a8b7af9112bced8839f4a7eccbc6d7f91ce4a0ee.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\jsoup-1.8.3.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\jsoup-1.8.3_15698b2d74c9007264182352781e1b0c6566ac57.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="a540784239c611ea490593e2053a5e2890675c68">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-0.12.0_0cf976c77f81b0bbddcc7ec11b8bd74f5b36465d.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_61e8f6e7070905dbb98d32d82336e24fc5ab35c8.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.0\f1e24ac977505d1fdcabadaa5be1f41dc11c4286\butterknife-7.0.0.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="f1e24ac977505d1fdcabadaa5be1f41dc11c4286">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\butterknife-7.0.0_4f824172ba29c183f5bd9fa2259e92e673fbc98c.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\avoscloud-sdk-v3.12.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="461aa10cd63ba4131c09e585897cedb03ecce8ed">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\avoscloud-sdk-v3.12_3cacbfe62343d9ed584572c98b7aded0cf922e64.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\animated-base\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="7ba22785d529a9cd95f714ca782a59846a22ce02">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-animated-base-0.12.0_2e2e4b63e98ac5d8ea363822762ac77c720f10e6.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.1_6ac734748aa092a58ef4f7067ae09b767d6ade13.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0_7633eb36426c0edeab21a845bc3aab7324b78e32.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.0_17b7863a12de969c1178444f17a5f2d67754d995.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.0.1\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="aa81bfe8c5cc88c2472ca936ae71f0c3dd1766df">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.0.1_5bdf3d9669f3cf39a1a93e435469b2def0a1e079.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\Program Files\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_47d1fdeca42a24a2e9e4a00659e8129e3828b769.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\converter-gson\2.0.0-beta2\392c3d09e0f5e7087544093cc0cb23bb9c7af5fa\converter-gson-2.0.0-beta2.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.0-beta2_0b40b7b01bf4087cc89236d6b88c9d8065bc0934.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.0_ce6d3d5757dec4ad741ee4487263b0e8e834e3f3.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\htmlparser-1.2.1.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="df4fa3ab923eea98ad2f28fe6b8942be884e2a25">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\htmlparser-1.2.1_3e6582095d6c0d77e05d9e8fad8deb803c08772a.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.mikepenz\aboutlibraries\5.3.2\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="2288dced7dbda9951077f06bd0dcde1bb169a4eb">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.mikepenz-aboutlibraries-5.3.2_6f20592061de15e61c3839ab27a13d862f942610.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\library-2.4.0_325e00ebf92e9cd96e8783e3943a95897ee4fbdf.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="1e346707e4770db216049a532ab3eb5e317cf82a">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-0.12.0_e37bb3794df89591666c2228c3f108c6f3b85de0.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\webpsupport\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="f3d9074e9cbc7d0eb180287e29ad3dec039763b5">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-webpsupport-0.12.0_dd4f3eb4c9a9331374ebbc659a763a0afc7086b9.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\animated-gif\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="92e359c53b444598bf7973f1cbf31c8dc769e19f">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-animated-gif-0.12.0_ce1a546730fc49d2b46d693a603e39913a7965c2.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.facebook.rebound\rebound\0.3.8\c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e\rebound-0.3.8.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\rebound-0.3.8_4bf9fc17d792404a7269db8b3916db5df735c972.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="c9a86e6bc8300fc00c191949ac61a2f7165e35c7">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-0.12.0_760c594641482ead43edd6bae5ad77b314bc0d88.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.0.13\b8668706414b5936d38c8a9e4c2be16e3c999c62\rxjava-1.0.13.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="b8668706414b5936d38c8a9e4c2be16e3c999c62">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\rxjava-1.0.13_373f4b25adda8636c045d48785adc7a286e56ab0.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\gson-2.3.1_7f04a14ac8ac5744931e42c008ec88ee9b4d1720.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.mikepenz\fontawesome-typeface\4.4.0.1\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="e8ad61c604470ee6933c21ae0aefcf9ee03c3911">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.mikepenz-fontawesome-typeface-4.4.0.1_e704d017078c3d482134720065fdc157c874bb0d.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="bc6946ae10ba7b262e00e7da8c17e0b0564bdff3">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_a31e670b965df23b5e549c7cb4cb06c07d6fb0ac.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\fastjson.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="94d4ebd4acdaf01d7445435382eea2d2d38e7534">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\fastjson_f944a99658ebd56d25c1791e09f52c9edf4fdd8b.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_c4de42ea2a0eb9ed93a31d9104e1dc9d2fe7ada7.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.mikepenz\iconics-core\2.1.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="ed991557ee4c04c28a660493636a1f50347ccb03">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.mikepenz-iconics-core-2.1.0_c33128e201c62a68db9294f80298e05d6a357cbc.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.mikepenz\octicons-typeface\3.0.0.1\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="a3332adcdc1cdd7ed9a2f6a90f322c0e0c89ab91">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.mikepenz-octicons-typeface-3.0.0.1_e63fa9cd1c0adba52bb41063a1758cd2d8ac9658.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.12.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="40e5cb8708fc25fe57cb403cc82e9ef98376b648">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-0.12.0_b01edff51d15d97fc37e9518e8a7c191110df7ef.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.mikepenz\google-material-typeface\2.1.2.1\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="98e880b38d2415e56b30cdb2aab3b6a20bddc82a">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.mikepenz-google-material-typeface-2.1.2.1_fe47d620341cddf43a1b71c7cf97eee262f4e262.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\libs\Volley.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\Volley_18d48579ca3ff11913f1d1805615e531bfb06505.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="8d128d44f00508a54e355d888481b1edb1a2e4ef">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\instant-run_a5a1fb8ec17bd46dfeb86cb94ecc1f3263cd8092.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.1.0_029b4d2db2abe76f83fb2883ff4cbf90986ee940.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="C:\Users\³ÂÓå½ð\.gradle\caches\modules-2\files-2.1\com.nhaarman.listviewanimations\library\2.6.0\59351ccb0a1631d30358f6a92749a072f2df7602\library-2.6.0.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="59351ccb0a1631d30358f6a92749a072f2df7602">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\library-2.6.0_fbc96e1c9a770230760f0b22412848aa57a9fb48.jar" />
+-    </item>
+-    <item
+-        is-multidex="false"
+-        jar="D:\GitHub\Android\toypop\app\build\intermediates\exploded-aar\com.mikepenz\materialize\0.2.7\jars\classes.jar"
+-        jumboMode="true"
+-        optimize="true"
+-        revision="23.0.3"
+-        sha1="fa4722c731f92df41532b4e21bbd6b015226cd23">
+-        <dex dex="D:\GitHub\Android\toypop\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialize-0.2.7_b6731ff73bd69e624173d7b5fc81db70254d63f2.jar" />
+-    </item>
+-
+-</items>

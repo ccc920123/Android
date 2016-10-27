@@ -24,6 +24,7 @@ import java.util.TreeMap;
 import butterknife.Bind;
 
 /**
+ * 请求段子笑话
  * Created by 陈渝金 on 2016/7/7.
  */
 public class ArticleJokeFragment  extends BaseFragment implements IArticleFragmentView, SwipeRefreshLayout.OnRefreshListener {
@@ -195,7 +196,8 @@ public class ArticleJokeFragment  extends BaseFragment implements IArticleFragme
     }
 
     private void loadPage() {
-            params.put("url", mResId.replace("_1.html", "_" + (++page) + ".html"));
+
+            params.put("url", mResId.replace("_1.html", "_" + (++page+1) + ".html"));
             params.put("page", String.valueOf(page));
             ((ArticleJokeFragmentPresenter) mPresenter).getArticles(params);
 

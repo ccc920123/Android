@@ -40,9 +40,9 @@ public class ArticleJokeFragmentPresenter extends BasePresenter<IArticleFragment
                         mView.showSuccess();
                     }
                 }
-//                else {
-//                    mView.loadMore(data);
-//                }
+                else {
+                    mView.loadMore(data);
+                }
 
             }
 

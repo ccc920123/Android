@@ -154,7 +154,6 @@ public class ArticleJokeJuheFragment extends BaseFragment implements IArticleFra
                 }
             });
             params = new TreeMap<String, String>();
-
             params.put("url", mResId+url+(page)+"&pagesize=10");
             params.put("page", String.valueOf(page));
             ((ArticleJokeJuheFragmentPresenter) mPresenter).getArticles(params);//搭建桥梁

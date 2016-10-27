@@ -26,10 +26,19 @@
 
     </array>
     <array name="pictrue_tab">
-        <item>幽默文字@toypopchenyujin@http://japi.juhe.cn/joke/content/text.from?key=f0da6636bf7cd5bbd8e2af4d4fdd5880</item>
-        <item>导姐叨叨@toypopchenyujin@http://xiaohua.360.cn/daojie</item>
+
+        <item>每日一笑@toypopchenyujin@http://www.rekele.com/lei/list_60_1.html</item>
+        <!--<item>导姐叨叨@toypopchenyujin@http://xiaohua.360.cn/daojie</item>-->
         <!--<item>爆笑图片@toypopchenyujin@http://japi.juhe.cn/joke/img/text.from</item>-->
         <item>爆笑图片@toypopchenyujin@ http://v.juhe.cn/joke/randJoke.php?key=f0da6636bf7cd5bbd8e2af4d4fdd5880*type=pic</item>
+        <item>神吐槽@toypopchenyujin@http://www.rekele.com/shentucao/list_7_1.html</item>
+        <item>狐诌冷笑话@toypopchenyujin@http://www.52rkl.cn/huzhou/list_88_1.html</item>
+        <item>高级黑@toypopchenyujin@http://www.rekele.com/gaojihei/list_40_1.html</item>
+        <item>脱口秀@toypopchenyujin@http://www.rekele.com/dajshen/list_108_1.html</item>
+        <item>幽默文字@toypopchenyujin@http://japi.juhe.cn/joke/content/text.from?key=f0da6636bf7cd5bbd8e2af4d4fdd5880</item>
+        <!--<item>轻松一刻@toypopchenyujin@http://www.rekele.com/qingsong/list_96_1.html</item>-->
+        <!--<item>内涵图@toypopchenyujin@http://www.rekele.com/neihantu/list_45_1.html</item>-->
+       <!--<item>百度笑包@toypopchenyujin@http://www.rekele.com/xiaobao/list_83_1.html</item>-->
         <!--http://v.juhe.cn/joke/randJoke.php?key=f0da6636bf7cd5bbd8e2af4d4fdd5880&page=1&pagesize=10-->
         <!--http://v.juhe.cn/joke/randJoke.php?key=你申请的key&type=pic-->
     </array>
