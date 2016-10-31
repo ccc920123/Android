@@ -27,10 +27,7 @@ public class ArticleActJokeModel implements IArticleActModel {
                               @Override
                               public void call(Subscriber<? super String> subscriber) {
                                   try {
-//                                      String url=params.get("url");
-//                                      Document result = Jsoup.parse(new URL(url).openStream(), "utf-8", url);
                                       Document result = Jsoup.connect(params.get("url")).get();
-//                                      Elements postContent= result.getElementsByAttributeValue("class","doc-main box");
                                       Element postContent = result.getElementsByClass("article-content").get(0);
                                       Elements p = postContent.getElementsByTag("p");
                                       Elements img = postContent.getElementsByTag("img");
@@ -49,12 +46,13 @@ public class ArticleActJokeModel implements IArticleActModel {
                                              sb.append("<img src=").append(src).append(">");
                                          }
                                          if(e.text().contains("欢迎收看本期一雷，我们也下期贱啦")
-                                                ||e.text().contains("推荐：")  ||e.text().contains("当前：") )
+                                                ||e.text().contains("推荐：")  ||e.text().contains("当前：")||
+                                                 e.text().contains("爱玩App"))
                                           {
                                               sb.append("<p>").append("本期就到次结束了，我们也下期贱啦！！！").append("</p>");
                                               break;
                                           }
-                                          if(e.text().contains("域名www.rekele.com")){
+                                          if(e.text().contains("www.rekele.com")||e.text().contains("我爱热可乐")){
                                               sb.append("<p>").append("====更多精彩记住故事会=====").append("</p>");
 
                                           }else {

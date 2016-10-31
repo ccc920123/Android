@@ -67,6 +67,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public void bindView(Bundle savedInstanceState) {
         EventBus.getDefault().register(this);
+//        setupTextJokeViewPager();
         setupTextChildViewPager();//先启动儿童读物
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
