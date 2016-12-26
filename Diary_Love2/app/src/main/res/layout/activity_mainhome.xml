@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cdjysdkj.diary.sliding.DragLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/side_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/all_bg"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <!-- 此处毕设背景，不然null指针 -->
+    <!-- 左侧菜单页面 -->
+
+    <include layout="@layout/slidingmenu_layout" />
+
+    <com.cdjysdkj.diary.sliding.MyRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#eeeeee"
+        android:orientation="vertical" >
+
+        <!-- 右界面 -->
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/activity_home" />
+    </com.cdjysdkj.diary.sliding.MyRelativeLayout>
+
+</com.cdjysdkj.diary.sliding.DragLayout>

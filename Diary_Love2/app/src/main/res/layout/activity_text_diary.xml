@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TextDiaryActivity"
+    android:background="@drawable/list_bg" >
+
+    <com.cdjysdkj.diary.view.internal.ListView
+        android:id="@+id/my_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         >
+    </com.cdjysdkj.diary.view.internal.ListView>
+
+</RelativeLayout>
