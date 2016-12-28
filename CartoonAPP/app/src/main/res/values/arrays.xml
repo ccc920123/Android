@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="video_tab">
+        <item>邪恶漫画@toypopchenyujin@http://www.yaoqmh.net/xieemanhua/list_1_1.html</item>
+        <item>绿色军团@toypopchenyujin@http://www.yaoqmh.net/sexi/list_49_1.html</item>
+        <item>卡列漫画@toypopchenyujin@http://www.yaoqmh.net/kalie/list_50_1.html</item>
+        <item>幻啃漫画@toypopchenyujin@http://www.yaoqmh.net/huanken/list_51_1.html</item>
+        <item>色小组@toypopchenyujin@http://www.yaoqmh.net/sexiaozu/list_3_1.html</item>
+        <!--<item>少女漫画@toypopchenyujin@http://www.yaoqmh.net/shaonvmanhua/list_4_1.html</item>-->
+    </array>
+    <array name="pictrue_tab">
+        <item>最新更新@toypopchenyujin@http://www.1kkk.com/manhua-new-p1</item>
+        <item>爆笑喜剧@toypopchenyujin@http://www.1kkk.com/manhua-baoxiaoxiju-p1</item>
+        <item>少女爱情@toypopchenyujin@http://www.1kkk.com/manhua-shaonvaiqing-p1</item>
+        <item>少年热血@toypopchenyujin@http://www.1kkk.com/manhua-shaonianrexue-p1</item>
+        <item>武侠格斗@toypopchenyujin@http://www.1kkk.com/manhua-wuxiagedou-p1</item>
+        <item>科幻魔幻@toypopchenyujin@http://www.1kkk.com/manhua-kehuanmohuan-p1</item>
+        <item>竞技体育@toypopchenyujin@http://www.1kkk.com/manhua-jingjitiyu-p1</item>
+        <item>侦探推理@toypopchenyujin@http://www.1kkk.com/manhua-zhentantuili-p1</item>
+
+    </array>
+
+    <array name="text_tab">
+        <item>精选文章@toypopchenyujin@http://www.lz13.cn/lizhi/lizhiwenzhang.html</item>
+        <item>成功故事@toypopchenyujin@http://www.lz13.cn/lizhi/chenggonglizhi.html</item>
+        <item>励志故事@toypopchenyujin@http://www.lz13.cn/lizhi/lizhigushi.html</item>
+        <item>励志人物@toypopchenyujin@http://www.lz13.cn/lizhi/lizhirenwu.html</item>
+        <item>励志名言@toypopchenyujin@http://www.lz13.cn/lizhi/lizhimingyan.html</item>
+        <item>人生感悟@toypopchenyujin@http://www.lz13.cn/lizhi/renshengganwu.html</item>
+        <item>人生哲理@toypopchenyujin@http://www.lz13.cn/lizhi/zheli.html</item>
+        <item>经典语录@toypopchenyujin@http://www.lz13.cn/lizhi/jingdianyulu.html</item>
+        <item>职场励志@toypopchenyujin@http://www.lz13.cn/lizhi/zhichanglizhi.html</item>
+        <item>励志创业@toypopchenyujin@http://www.lz13.cn/lizhi/lizhichuangye.html</item>
+        <item>青春励志@toypopchenyujin@http://www.lz13.cn/lizhi/qingchunlizhi.html</item>
+
+        <item>高中励志@toypopchenyujin@http://www.lz13.cn/lizhi/gaosanlizhi.html</item>
+        <item>为人处事@toypopchenyujin@http://www.lz13.cn/lizhi/weirenchushi.html</item>
+        <item>家庭教育@toypopchenyujin@http://www.lz13.cn/lizhi/jiatingjiaoyu.html</item>
+        <item>激情演讲@toypopchenyujin@http://www.lz13.cn/lizhi/lizhiyanjiang.html</item>
+        <item>感恩励志@toypopchenyujin@http://www.lz13.cn/lizhi/ganenlizhi.html</item>
+        <item>经典美文@toypopchenyujin@http://www.lz13.cn/lizhi/meiwen.html</item>
+
+        <item>励志教育@toypopchenyujin@http://www.lz13.cn/lizhi/lizhijiaoyu.html</item>
+        <item>励志诗歌@toypopchenyujin@http://www.lz13.cn/lizhi/lizhishige.html</item>
+        <item>大学励志@toypopchenyujin@http://www.lz13.cn/lizhi/daxueshenglizhi.html</item>
+    </array>
+
+    <array name="play_tab">
+        <item>选集</item>
+        <item>评论</item>
+    </array>
+</resources>
