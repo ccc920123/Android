@@ -1,6 +1,5 @@
 package com.jysd.cartoonapp.view.activity;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -203,10 +202,10 @@ public class MorePicActivity extends BaseActivity implements IArticleActView {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     int pos = position + curIndex * pageSize;
                     Toast.makeText(MorePicActivity.this, chapterList.get(pos).getChapterUrl(), Toast.LENGTH_SHORT).show();
-                    Intent itt=new Intent(MorePicActivity.this,PreviewCarToon.class);
-                    itt.putExtra("URL", chapterList.get(pos).getChapterUrl());
-                    itt.putExtra("PAGE",chapterList.get(pos).getChapterPage());
-                    startActivity(itt);
+//                    Intent itt=new Intent(MorePicActivity.this,PreviewCarToon.class);
+//                    itt.putExtra("URL", chapterList.get(pos).getChapterUrl());
+//                    itt.putExtra("PAGE",chapterList.get(pos).getChapterPage());
+//                    startActivity(itt);
 
                 }
             });
