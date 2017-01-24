@@ -30,9 +30,12 @@
         android:icon="@drawable/ico"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-    <meta-data
+
+        <!--
+         <meta-data
             android:name="BaiduMobAd_APP_ID"
-            android:value="ae91f400" />
+            android:value="ae91f400" />
+        -->
 
         <activity
             android:name="com.cncyj.mostbrain.WelcomActivity"
@@ -156,7 +159,26 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
-        <activity android:name="com.cncyj.mostbrain.game.fastcut.bn.fastcut.MyActivity"></activity>
+        <activity
+            android:name="com.cncyj.mostbrain.game.fastcut.bn.fastcut.MyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cncyj.mostbrain.game.brainsharp.HomeAddappActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cncyj.mostbrain.game.brainsharp.ContentActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cncyj.mostbrain.game.brainsharp.CangContenActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cncyj.mostbrain.game.brainsharp.chartcart.ChartActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

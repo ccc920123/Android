@@ -30,5 +30,17 @@
     <string name="bomb">炸弹</string>
     <string name="restart">重来</string>
     <string name="b_ok">好吧</string>
+    <!-- 脑筋急转弯 -->
+    <string name="app_namebrainsharp">脑筋急转弯2014</string>
+    <string name="title_tv">GridView动态添加删除</string>
+    <string name="add_title">脑筋急转弯</string>
+    <string name="confirm_btn">返回</string>
+    <string name="confirm_shoucang">收藏</string>
+    <string name="exit">退出</string>
+    <string name="exit_app">你确定退出QQ?</string>
+    <string name="cancelshap">取消</string>
+    <string name="confirm">确定</string>
+
+    <color name="dhs">#DDDD52</color>
 
 </resources>

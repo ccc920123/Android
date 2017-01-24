@@ -15,6 +15,7 @@ import com.jysd.toypop.adapter.ArticleChildAdapter;
 import com.jysd.toypop.adapter.ArticleJokeAdapter;
 import com.jysd.toypop.adapter.FragmentAdapter;
 import com.jysd.toypop.adapter.JuzimiAdapter;
+import com.jysd.toypop.adapter.JuzimiAdapter2;
 import com.jysd.toypop.presenter.BasePresenter;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
@@ -89,9 +90,8 @@ public class MainActivity extends BaseActivity {
                         new PrimaryDrawerItem().withName(R.string.drawer_item_compact_header).withIcon(R.mipmap.g).withIdentifier(1).withSelectable(true),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_non_translucent_status_drawer).withIcon(R.mipmap.s).withIdentifier(2).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_action_bar_drawer).withIcon(R.mipmap.h).withIdentifier(3).withSelectable(true),
-//                        new DividerDrawerItem(),
-                     /*   new PrimaryDrawerItem().withName(R.string.drawer_item_multi_drawer).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(4).withSelectable(false),
-                        new DividerDrawerItem(),*/
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_multi_drawer).withIcon(R.mipmap.imageico).withIdentifier(4).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
+                        /*   new DividerDrawerItem(),*/
                         new PrimaryDrawerItem().withName(R.string.drawer_item_keyboard_util_drawer).withIcon(GoogleMaterial.Icon.gmd_settings).withIdentifier(5).withSelectable(false)
 
                         //                    new SwitchDrawerItem().withName("日间模式").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener)
@@ -124,9 +124,12 @@ public class MainActivity extends BaseActivity {
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
                                 setupTextViewPager();//文章欣赏
-                            } /*else if (drawerItem.getIdentifier() == 4) {
-                                //                intent = new Intent(MainActivity.this, SmallGameActivity.class);
-                            }*/ else if (drawerItem.getIdentifier() == 5) {
+                            } else if (drawerItem.getIdentifier() == 4) {
+                                dId = 4;
+                                mTabLayout.removeAllTabs();
+                                mViewPager.removeAllViews();
+                                setupPictureViewPager2();
+                            }else if (drawerItem.getIdentifier() == 5) {
                                 intent = new Intent(MainActivity.this, SettingActivity.class);
                                 MainActivity.this.startActivity(intent);
 //                                Toast.makeText(MainActivity.this, "这里是设置界面", Toast.LENGTH_SHORT).show();
@@ -166,7 +169,7 @@ public class MainActivity extends BaseActivity {
             headerResult.setActiveProfile(profile);
         }
 
-        result.updateBadge(4, new StringHolder(10 + ""));
+        result.updateBadge(6, new StringHolder(10 + ""));
     }
 
     /**
@@ -192,7 +195,17 @@ public class MainActivity extends BaseActivity {
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);
     }
-
+    /**
+     * 图片欣赏2污图片
+     */
+    private void setupPictureViewPager2() {
+        String[] titles = getResources().getStringArray(R.array.image_tab);
+        JuzimiAdapter2 adapter2 =
+                new JuzimiAdapter2(getSupportFragmentManager(), Arrays.asList(titles));
+        mViewPager.setAdapter(adapter2);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setTabsFromPagerAdapter(adapter2);
+    }
     /**
      * 笑话
      */

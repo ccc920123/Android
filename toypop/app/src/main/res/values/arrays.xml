@@ -26,12 +26,13 @@
 
     </array>
     <array name="pictrue_tab">
+        <item>神吐槽@toypopchenyujin@http://www.rekele.com/shentucao/list_7_1.html</item>
          <!--http://www.52rkl.cn/qingsong/list_96_1.html-->
         <item>每日一笑@toypopchenyujin@http://www.rekele.com/lei/list_60_1.html</item>
         <!--<item>导姐叨叨@toypopchenyujin@http://xiaohua.360.cn/daojie</item>-->
         <!--<item>爆笑图片@toypopchenyujin@http://japi.juhe.cn/joke/img/text.from</item>-->
         <item>爆笑图片@toypopchenyujin@ http://v.juhe.cn/joke/randJoke.php?key=f0da6636bf7cd5bbd8e2af4d4fdd5880*type=pic</item>
-        <item>神吐槽@toypopchenyujin@http://www.rekele.com/shentucao/list_7_1.html</item>
+
         <item>狐诌冷笑话@toypopchenyujin@http://www.52rkl.cn/huzhou/list_88_1.html</item>
         <item>高级黑@toypopchenyujin@http://www.rekele.com/gaojihei/list_40_1.html</item>
         <item>脱口秀@toypopchenyujin@http://www.rekele.com/dajshen/list_108_1.html</item>
@@ -67,7 +68,14 @@
         <item>励志诗歌@toypopchenyujin@http://www.lz13.cn/lizhi/lizhishige.html</item>
         <item>大学励志@toypopchenyujin@http://www.lz13.cn/lizhi/daxueshenglizhi.html</item>
     </array>
-
+    <array name="image_tab">
+        <item>邪恶漫画@toypopchenyujin@http://www.yaoqmh.net/xieemanhua/list_1_1.html</item>
+        <item>绿色军团@toypopchenyujin@http://www.yaoqmh.net/sexi/list_49_1.html</item>
+        <item>卡列漫画@toypopchenyujin@http://www.yaoqmh.net/kalie/list_50_1.html</item>
+        <item>幻啃漫画@toypopchenyujin@http://www.yaoqmh.net/huanken/list_51_1.html</item>
+        <item>色小组@toypopchenyujin@http://www.yaoqmh.net/sexiaozu/list_3_1.html</item>
+        <!--<item>少女漫画@toypopchenyujin@http://www.yaoqmh.net/shaonvmanhua/list_4_1.html</item>-->
+    </array>
     <array name="play_tab">
         <item>选集</item>
         <item>评论</item>

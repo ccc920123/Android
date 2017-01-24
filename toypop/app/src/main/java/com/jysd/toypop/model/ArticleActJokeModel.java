@@ -53,7 +53,7 @@ public class ArticleActJokeModel implements IArticleActModel {
                                               break;
                                           }
                                           if(e.text().contains("www.rekele.com")||e.text().contains("我爱热可乐")){
-                                              sb.append("<p>").append("====更多精彩记住故事会=====").append("</p>");
+                                              sb.append("<p>").append("====更多精彩记住故事汇=====").append("</p>");
 
                                           }else {
                                               sb.append("<p>").append(e.text()).append("</p>");

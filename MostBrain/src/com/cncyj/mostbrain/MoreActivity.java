@@ -35,6 +35,7 @@ import com.cncyj.mostbrain.adpter.CommonAdapter;
 import com.cncyj.mostbrain.adpter.ViewHolder;
 import com.cncyj.mostbrain.bean.GridViewBean;
 import com.cncyj.mostbrain.dialog.AlerDialog;
+import com.cncyj.mostbrain.game.brainsharp.HomeAddappActivity;
 import com.cncyj.mostbrain.game.fastcut.bn.fastcut.MyActivity;
 import com.cncyj.mostbrain.game.kuaifanying.LiveActivity;
 import com.cncyj.mostbrain.game.meandme.MeAndMeActivity;
@@ -65,8 +66,12 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 	private CommonAdapter<GridViewBean> mAdapter;
 	private List<GridViewBean> data;
 	private int[] imageid = { R.drawable.suangsu, R.drawable.shuduioc,
-			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,R.drawable.icosaolei,R.drawable.icozuiqingdanao,R.drawable.shuonaodazhan,R.drawable.icoqieqiele};
-	private String[] title = { "算数", "数独", "你的世界","魔板","2048","扫雷","最强大脑","手脑大战","切切乐"};
+			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,
+			R.drawable.icosaolei,R.drawable.icozuiqingdanao,
+			R.drawable.shuonaodazhan,R.drawable.icoqieqiele,
+			R.drawable.icoqieqiele};
+	private String[] title = { "算数", "数独", "你的世界","魔板","2048","扫雷",
+			"最强大脑","手脑大战","切切乐","脑筋急转弯"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -372,6 +377,13 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 		    	break;
 		    case 8://切切乐
 		    	ittmain.setClass(MoreActivity.this,MyActivity.class);
+				startActivity(ittmain);
+				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
+				finish();
+		    	
+		    	break;
+		    case 9://切切乐
+		    	ittmain.setClass(MoreActivity.this,HomeAddappActivity.class);
 				startActivity(ittmain);
 				overridePendingTransition(R.anim.zoomin, R.anim.zoomout);
 				finish();
