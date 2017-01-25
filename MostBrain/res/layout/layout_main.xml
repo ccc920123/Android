@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dip"
         android:gravity="center"
-        android:background="#f2bc28"
+        android:background="@color/blueno"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:text="脑筋急转弯" />

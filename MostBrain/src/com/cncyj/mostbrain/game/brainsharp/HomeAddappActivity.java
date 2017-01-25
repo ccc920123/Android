@@ -66,7 +66,7 @@ public class HomeAddappActivity extends Activity {
 		
 		
 		initView();
-		//¹ØÓÚ
+		//·µ»Ø
 		btn_gd=(Button) this.findViewById(R.id.home_add_app_btn_f);
 		
 		btn_gd.setOnClickListener(new OnClickListener() {

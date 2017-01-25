@@ -52,8 +52,8 @@ public class ChartActivity extends Activity {
 //		Toast.makeText(HomeAddappActivity.this, "你已收藏"+canginfo.size()+"条", Toast.LENGTH_SHORT).show();
 		if(canginfo.size()==0){
 			
-			Card mCard=new Card(R.drawable.pic_0,"亲你还没有收藏哟");
-			BaseCard mBaseCard1=new BaseCard(R.drawable.pic_0,"");
+			Card mCard=new Card(R.drawable.bgshounaodazhan,"亲你还没有收藏哟");
+			BaseCard mBaseCard1=new BaseCard(R.drawable.bgshounaodazhan,"");
 			mCard.AppendCard(mBaseCard1);
 			mCards.add(mCard);
 		}else{
@@ -61,8 +61,8 @@ public class ChartActivity extends Activity {
 				String content=canginfo.get(i).getAppcontent();
 				String type=canginfo.get(i).getApptype();
 				String[] tcontent=content.split("#");
-				Card mCard=new Card(R.drawable.pic_0,CommonUtil.getApp(type).getAppName());
-				BaseCard mBaseCard1=new BaseCard(R.drawable.pic_0,tcontent[0]+"\n答案 :"+tcontent[1]);
+				Card mCard=new Card(R.drawable.bgshounaodazhan,CommonUtil.getApp(type).getAppName());
+				BaseCard mBaseCard1=new BaseCard(R.drawable.bgshounaodazhan,tcontent[0]+"\n答案 :"+tcontent[1]);
 				mCard.AppendCard(mBaseCard1);
 				mCards.add(mCard);
 			}

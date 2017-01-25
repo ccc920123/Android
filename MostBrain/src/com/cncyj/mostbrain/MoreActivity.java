@@ -69,7 +69,7 @@ public class MoreActivity extends Activity implements OnItemClickListener {
 			R.drawable.yourareworld,R.drawable.moban,R.drawable.meandme,
 			R.drawable.icosaolei,R.drawable.icozuiqingdanao,
 			R.drawable.shuonaodazhan,R.drawable.icoqieqiele,
-			R.drawable.icoqieqiele};
+			R.drawable.brainshopicon};
 	private String[] title = { "算数", "数独", "你的世界","魔板","2048","扫雷",
 			"最强大脑","手脑大战","切切乐","脑筋急转弯"};
 

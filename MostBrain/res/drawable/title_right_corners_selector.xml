@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="#ff9600"></solid>
-            <gradient android:startColor="#ff9600" android:endColor="#ff9600" android:angle="270"></gradient>
+            <solid android:color="@color/blue"></solid>
+            <gradient android:startColor="@color/blue" android:endColor="@color/blue" android:angle="270"></gradient>
             <corners android:topLeftRadius="20dip"
                 android:topRightRadius="20dip"
                 android:bottomLeftRadius="20dip"
@@ -16,8 +16,8 @@
     
     <item android:state_pressed="false">
         <shape>
-            <solid android:color="#f2bc28"></solid>
-            <gradient android:startColor="#f2bc28" android:endColor="#f2bc28" android:angle="270"></gradient>
+            <solid android:color="@color/blueno"></solid>
+            <gradient android:startColor="@color/blueno" android:endColor="@color/blueno" android:angle="270"></gradient>
             <corners android:topLeftRadius="20dip"
                 android:topRightRadius="20dip"
                 android:bottomLeftRadius="20dip"
