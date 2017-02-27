@@ -39,6 +39,7 @@
 <RelativeLayout android:id="@+id/adsRl"
 	    android:layout_height="fill_parent"
 	    android:layout_width="fill_parent"
+	    android:layout_marginBottom="70dp"
 	    >
 
 </RelativeLayout>

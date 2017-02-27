@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cncyj.mostbrain"
-    android:versionCode="6"
-    android:versionName="6.1.0" >
+    android:versionCode="7"
+    android:versionName="7.2.2" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -34,11 +34,11 @@
         <!--
          <meta-data
             android:name="BaiduMobAd_APP_ID"
-            android:value="ae91f400" />
+            android:value="ae91f400" />
         -->
 
         <activity
-            android:name="com.cncyj.mostbrain.WelcomActivity"
+            android:name="com.cncyj.mostbrain.WelcomActivity2"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
@@ -48,6 +48,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- gdt -->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <!-- baidu -->
         <activity
             android:name="com.baidu.mobads.AppActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"

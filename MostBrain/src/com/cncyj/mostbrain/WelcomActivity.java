@@ -1,5 +1,7 @@
 package com.cncyj.mostbrain;
 
+import cn.bmob.v3.Bmob;
+
 import com.baidu.mobads.SplashAd;
 import com.baidu.mobads.SplashAdListener;
 
@@ -22,6 +24,8 @@ public class WelcomActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcom);
+	     //Ä¬ÈÏ³õÊ¼»¯bmob
+        Bmob.initialize(this, "7308dc4fdb144ef5e906b58be11fb522");
 		RelativeLayout adsParent = (RelativeLayout) this
 				.findViewById(R.id.adsRl);
 		 // the observer of AD
