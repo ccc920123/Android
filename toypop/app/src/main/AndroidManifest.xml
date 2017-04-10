@@ -42,7 +42,7 @@
         android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
         <meta-data
             android:name="BaiduMobAd_APP_ID"
-            android:value="bcb5a2f0" />
+            android:value="bcb5a2f00" />
         <!-- 非信息广告必须添加 -->
         <activity
             android:name="com.baidu.mobads.AppActivity"

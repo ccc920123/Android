@@ -1,15 +1,14 @@
 package com.jysd.toypop.view.activity;
 
 import android.Manifest;
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.PointF;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -30,6 +29,10 @@ import com.jysd.toypop.inter.OnRetryListener;
 import com.jysd.toypop.presenter.BasePresenter;
 import com.jysd.toypop.view.impl.IArticleActView;
 import com.jysd.toypop.widget.LoadingView;
+import com.jysd.toypop.widget.scrollview.OverScrollView;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -42,13 +45,7 @@ import java.io.IOException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.OnNeverAskAgain;
-import permissions.dispatcher.OnPermissionDenied;
-import permissions.dispatcher.OnShowRationale;
-import permissions.dispatcher.PermissionRequest;
-import permissions.dispatcher.RuntimePermissions;
-
+import im.delight.android.webview.AdvancedWebView;
 
 /**
  * @类名: 漫画详情
@@ -60,8 +57,7 @@ import permissions.dispatcher.RuntimePermissions;
  */
 
 
-@RuntimePermissions
-public class CartoonDetail extends BaseActivity implements IArticleActView {
+public class CartoonDetail extends BaseActivity implements IArticleActView,AdvancedWebView.Listener {
 
     private String carUrltoonURL;
     private Juzimi data;
@@ -69,6 +65,12 @@ public class CartoonDetail extends BaseActivity implements IArticleActView {
     LoadingView fl_loading;
     @Bind(R.id.image)
     SubsamplingScaleImageView imageView;
+    @Bind(R.id.webview)
+    AdvancedWebView webView;
+    @Bind(R.id.relative)
+    OverScrollView mRelativeLayout;
+    @Bind(R.id.errorText)
+    TextView errorText;
     /**
      * 图片的url
      */
@@ -76,6 +78,9 @@ public class CartoonDetail extends BaseActivity implements IArticleActView {
     final File downDir = Environment.getExternalStorageDirectory();
 
 //    private String suffix="jpg";
+
+    private static final int REQUECT_CODE_SDCARD = 2;
+
     @Override
     public int getToolBarId() {
         return R.id.toolbar;
@@ -97,16 +102,18 @@ public class CartoonDetail extends BaseActivity implements IArticleActView {
                 .withLoadingIco(R.drawable.loading_animation).withLoadingText("加载中...").withOnRetryListener(new OnRetryListener() {
             @Override
             public void onRetry() {
-               //点击等框的确定事件
+                //点击等框的确定事件
                 getUrlData();
             }
         }).build();
-        if (Build.VERSION.SDK_INT >= 23) {
-            chenckPermission();
-        } else {
-            getUrlData();
-        }
 
+        MPermissions.requestPermissions(CartoonDetail.this, REQUECT_CODE_SDCARD, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        errorText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getWebView();
+            }
+        });
 
     }
 
@@ -116,14 +123,14 @@ public class CartoonDetail extends BaseActivity implements IArticleActView {
         imageView.setMinScale(1.0F);
         imageView.setMaxScale(10.0F);//最大显示比例（太大了图片显示会失真，因为一般微博长图的宽度不会太宽）
         //请求数据
-        MyStringRequest stringRequest = new MyStringRequest(Request.Method.GET,carUrltoonURL,new Response.Listener<String>(){
+        MyStringRequest stringRequest = new MyStringRequest(Request.Method.GET, carUrltoonURL, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String s) {
                 Document result = Jsoup.parse(s);
                 Element ul = result.getElementsByClass("mnlt").get(0);
-                Element img=ul.getElementsByTag("img").get(0);
-                mImageUrl =img.attr("src");//图片地址
+                Element img = ul.getElementsByTag("img").get(0);
+                mImageUrl = img.attr("src");//图片地址
 //                FrecsoUtils.loadImage( mImageUrl, imageView);
 /////////////////////////////
                 //使用Glide下载图片,保存到本地
@@ -170,7 +177,7 @@ public class CartoonDetail extends BaseActivity implements IArticleActView {
                         });
 
             }
-        },new Response.ErrorListener(){
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 fl_loading.setState(LoadingState.STATE_ERROR);
@@ -180,8 +187,6 @@ public class CartoonDetail extends BaseActivity implements IArticleActView {
         PanApplication.getQueues().add(stringRequest);
         PanApplication.getQueues().start();
     }
-
-
 
     @Override
     public int getContentLayout() {
@@ -218,42 +223,113 @@ public class CartoonDetail extends BaseActivity implements IArticleActView {
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
     }
-private  void  chenckPermission()
-{
-    CartoonDetailPermissionsDispatcher.sueessdPerWithCheck(this);
-}
 
-    @NeedsPermission({Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR})
-    void sueessdPer() {
-        getUrlData();
+
+    private  void  getWebView()
+    {
+        imageView.setVisibility(View.GONE);
+        webView.setVisibility(View.VISIBLE);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.setListener(this, this);
+        MyStringRequest stringRequest = new MyStringRequest(Request.Method.GET, carUrltoonURL, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String s) {
+                Document result = Jsoup.parse(s);
+                Element ul = result.getElementsByClass("mnlt").get(0);
+                Element img = ul.getElementsByTag("img").get(0);
+//                <img alt="5092章 妖气邪恶漫画浩的反击" src="http://pic.taov5.com/1/344/208.jpg">
+                mImageUrl = img.attr("src");//图片地址
+//                webView.loadUrl(mImageUrl);
+                webView.loadHtml("<img width=\"100%\"src=\""+mImageUrl+"\">");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                fl_loading.setState(LoadingState.STATE_ERROR);
+            }
+        });
+//将StringRequest对象添加进RequestQueue请求队列中
+        PanApplication.getQueues().add(stringRequest);
+        PanApplication.getQueues().start();
+    }
+    @PermissionGrant(REQUECT_CODE_SDCARD)
+    public void requestSdcardSuccess() {
+        getWebView();
+    }
+
+    @PermissionDenied(REQUECT_CODE_SDCARD)
+    public void requestSdcardFailed() {
+        Toast.makeText(this, "请开启读写权限", Toast.LENGTH_SHORT).show();
+
+        getWebView();
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        CartoonDetailPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+    public void onPageStarted(String url, Bitmap favicon) {
+        errorText.setVisibility(View.VISIBLE);
+        errorText.setText("请等待，正在为你加载数据...");
+        mRelativeLayout.setVisibility(View.GONE);
     }
 
-    @OnShowRationale({Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR})
-    void onshowPer(final PermissionRequest request) {
-        new AlertDialog.Builder(this).setMessage("我们需要文件读写权限").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                request.proceed();
-            }
-        }).show();
+    @Override
+    public void onPageFinished(String url) {
+        mRelativeLayout.setVisibility(View.VISIBLE);
+        errorText.setVisibility(View.GONE);
     }
 
-    @OnPermissionDenied({Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR})
-    void noper() {
+    @Override
+    public void onPageError(int errorCode, String description, String failingUrl) {
+        errorText.setText("加载失败，点击重新加载");
+        mRelativeLayout.setVisibility(View.GONE);
+        errorText.setVisibility(View.VISIBLE);
 
-        Toast.makeText(this, "你没开启读写权限，请在设置中去开启", Toast.LENGTH_SHORT).show();
     }
 
-    @OnNeverAskAgain({Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR})
-    void allNotPer() {
+    @Override
+    public void onDownloadRequested(String url, String suggestedFilename, String mimeType, long contentLength, String contentDisposition, String userAgent) {
 
-        Toast.makeText(this, "请在设置中去开启", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onExternalPageRequest(String url) {
+
+    }
+    @SuppressLint("NewApi")
+    @Override
+    protected void onResume() {
+        super.onResume();
+        webView.onResume();
+        // ...
+    }
+
+    @SuppressLint("NewApi")
+    @Override
+    protected void onPause() {
+        webView.onPause();
+        // ...
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        webView.onDestroy();
+        // ...
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        webView.onActivityResult(requestCode, resultCode, intent);
+        // ...
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (!webView.onBackPressed()) { return; }
+        // ...
+        super.onBackPressed();
     }
 }
 

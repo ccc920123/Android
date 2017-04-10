@@ -53,7 +53,6 @@ public class MainActivity extends BaseActivity {
     public TabLayout mTabLayout;
 
 
-
     @Override
     public int getToolBarId() {
         return R.id.toolbar;
@@ -72,7 +71,7 @@ public class MainActivity extends BaseActivity {
         setupTextChildViewPager();//先启动儿童读物
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
-            profile = new ProfileDrawerItem().withName("故事里的事").withEmail("你说是就是，你说不是就不是").withIcon(R.mipmap.ic_default);
+        profile = new ProfileDrawerItem().withName("故事里的事").withEmail("你说是就是，你说不是就不是").withIcon(R.mipmap.ic_default);
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder().withOnlyMainProfileImageVisible(false).withSelectionListEnabled(false)
                 .withActivity(this).withHeightDp(230)
@@ -129,7 +128,7 @@ public class MainActivity extends BaseActivity {
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
                                 setupPictureViewPager2();
-                            }else if (drawerItem.getIdentifier() == 5) {
+                            } else if (drawerItem.getIdentifier() == 5) {
                                 intent = new Intent(MainActivity.this, SettingActivity.class);
                                 MainActivity.this.startActivity(intent);
 //                                Toast.makeText(MainActivity.this, "这里是设置界面", Toast.LENGTH_SHORT).show();
@@ -191,10 +190,13 @@ public class MainActivity extends BaseActivity {
         String[] titles = getResources().getStringArray(R.array.video_tab);
         FragmentAdapter adapter =
                 new FragmentAdapter(getSupportFragmentManager(), Arrays.asList(titles));
+
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);
+
     }
+
     /**
      * 图片欣赏2污图片
      */
@@ -204,19 +206,21 @@ public class MainActivity extends BaseActivity {
                 new JuzimiAdapter2(getSupportFragmentManager(), Arrays.asList(titles));
         mViewPager.setAdapter(adapter2);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.setTabsFromPagerAdapter(adapter2);
+//        mTabLayout.setTabsFromPagerAdapter(adapter2);
+
     }
+
     /**
      * 笑话
      */
-    private  void  setupTextJokeViewPager()
-    {
+    private void setupTextJokeViewPager() {
         String[] titles = getResources().getStringArray(R.array.pictrue_tab);
         ArticleJokeAdapter adapter =
                 new ArticleJokeAdapter(getSupportFragmentManager(), Arrays.asList(titles));
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.setTabsFromPagerAdapter(adapter);
+//        mTabLayout.setTabsFromPagerAdapter(adapter);
+
 
     }
 
@@ -230,7 +234,8 @@ public class MainActivity extends BaseActivity {
                 new ArticleAdapter(getSupportFragmentManager(), Arrays.asList(titles));
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.setTabsFromPagerAdapter(adapter);
+//        mTabLayout.setTabsFromPagerAdapter(adapter);
+
     }
 
     /**
@@ -242,8 +247,11 @@ public class MainActivity extends BaseActivity {
                 new ArticleChildAdapter(getSupportFragmentManager(), Arrays.asList(titles));
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.setTabsFromPagerAdapter(adapter);
+//        mTabLayout.setTabsFromPagerAdapter(adapter);
+
+
     }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -261,13 +269,15 @@ public class MainActivity extends BaseActivity {
 
         super.onSaveInstanceState(outState);
     }
+
     private long exitTime = 0;
+
     @Override
     public void onBackPressed() {
         if (result != null && result.isDrawerOpen()) {
             result.closeDrawer();
         } else {
-	/*
+    /*
 	 * <p>Title onBackPressed</p> <p>Description </p>
 	 *
 	 * @see com.stardon.carassistant.application.BaseActivity#onBackPressed()
@@ -275,16 +285,17 @@ public class MainActivity extends BaseActivity {
             /**
              * 双击退出程序
              */
-                if ((System.currentTimeMillis() - exitTime) > 2000) {
-                    Toast.makeText(this,"再按一次返回退出程序",Toast.LENGTH_LONG).show();
-                    exitTime = System.currentTimeMillis();
-                } else {
-                    PanApplication.getQueues().cancelAll("postjh");
-                    System.exit(0);
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(this, "再按一次返回退出程序", Toast.LENGTH_LONG).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                PanApplication.getQueues().cancelAll("postjh");
+                System.exit(0);
 
-                }
+            }
         }
     }
+
     public void onEventMainThread(String remove) {
         if (headerResult != null && "remove".equals(remove)) {
             headerResult.removeProfile(profile);
