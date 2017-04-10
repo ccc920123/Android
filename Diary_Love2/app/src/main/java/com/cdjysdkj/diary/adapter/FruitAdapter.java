@@ -15,11 +15,22 @@ import java.util.List;
 public class FruitAdapter extends ArrayAdapter<TextDiaryTab> {
 
 	private int resourceId;
+	private List<TextDiaryTab>  object;
 
 	public FruitAdapter(Context context, int textViewResourceId,
 			List<TextDiaryTab> objects) {
 		super(context, textViewResourceId, objects);
 		resourceId = textViewResourceId;
+		this.object=objects;
+	}
+
+	@Override
+	public int getCount() {
+		if(object!=null) {
+			return object.size() != 0 ? object.size() : 0;
+		}else{
+			return 0;
+		}
 	}
 
 	@Override

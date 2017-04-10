@@ -427,7 +427,11 @@ public class ListView extends AbsListView {
         if (mAdapter != null) {
             mAreAllItemsSelectable = mAdapter.areAllItemsEnabled();
             mOldItemCount = mItemCount;
-            mItemCount = mAdapter.getCount();
+            if(mAdapter.getCount()!=0) {
+                mItemCount = mAdapter.getCount();
+            }else{
+                mItemCount=0;
+            }
             checkFocus();
 
             mDataSetObserver = new AdapterDataSetObserver();
