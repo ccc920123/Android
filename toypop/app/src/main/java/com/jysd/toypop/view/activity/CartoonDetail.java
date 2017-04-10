@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -255,13 +254,11 @@ public class CartoonDetail extends BaseActivity implements IArticleActView,Advan
     }
     @PermissionGrant(REQUECT_CODE_SDCARD)
     public void requestSdcardSuccess() {
-        getWebView();
+        getUrlData();
     }
 
     @PermissionDenied(REQUECT_CODE_SDCARD)
     public void requestSdcardFailed() {
-        Toast.makeText(this, "请开启读写权限", Toast.LENGTH_SHORT).show();
-
         getWebView();
     }
 
