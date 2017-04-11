@@ -8,6 +8,7 @@ import android.graphics.PointF;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -28,7 +29,6 @@ import com.jysd.toypop.inter.OnRetryListener;
 import com.jysd.toypop.presenter.BasePresenter;
 import com.jysd.toypop.view.impl.IArticleActView;
 import com.jysd.toypop.widget.LoadingView;
-import com.jysd.toypop.widget.scrollview.OverScrollView;
 import com.zhy.m.permission.MPermissions;
 import com.zhy.m.permission.PermissionDenied;
 import com.zhy.m.permission.PermissionGrant;
@@ -67,7 +67,7 @@ public class CartoonDetail extends BaseActivity implements IArticleActView,Advan
     @Bind(R.id.webview)
     AdvancedWebView webView;
     @Bind(R.id.relative)
-    OverScrollView mRelativeLayout;
+    ScrollView mRelativeLayout;
     @Bind(R.id.errorText)
     TextView errorText;
     /**

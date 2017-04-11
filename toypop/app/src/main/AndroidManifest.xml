@@ -40,19 +40,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
-        <meta-data
-            android:name="BaiduMobAd_APP_ID"
-            android:value="bcb5a2f00" />
-        <!-- 非信息广告必须添加 -->
+        <!-- 声明SDK所需要的组件 -->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false"/>
         <activity
-            android:name="com.baidu.mobads.AppActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-
-        <!-- 信息流广告必须添加 -->
-        <activity
-            android:name="com.baidu.mobad.feeds.BaiduActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation" />
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
 
         <activity
             android:name=".view.activity.WelcomActivity"

@@ -5,56 +5,32 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.widget.RelativeLayout;
+import android.view.ViewGroup;
 
-import com.baidu.mobads.SplashAd;
-import com.baidu.mobads.SplashAdListener;
 import com.jysd.toypop.R;
+import com.qq.e.ads.splash.SplashAD;
+import com.qq.e.ads.splash.SplashADListener;
 
-public class WelcomActivity extends Activity {
+public class WelcomActivity extends Activity implements SplashADListener {
 
     boolean isFirstIn = false;
     // 跳转延时
     //应用id 1105701792
-//    private final String APPId = "";
+    private final String APPId = "1105701792";
     //广告id 7070918559312744
-//    private final String SplashPosId = "";
-//    private SplashAD splashAD;
-    RelativeLayout adsParent;
+    private final String SplashPosId = "7070918559312744";
+    private SplashAD splashAD;
+    ViewGroup adsParent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcom);
-        adsParent = (RelativeLayout) this
+        adsParent = (ViewGroup) this
                 .findViewById(R.id.adsRl);
         // the observer of AD
-        SplashAdListener listener = new SplashAdListener() {
-            @Override
-            public void onAdDismissed() {
-                skips();
-                // 跳转至您的应用主界面
-            }
-
-            @Override
-            public void onAdFailed(String arg0) {
-
-                MyThread m = new MyThread();
-                new Thread(m).start();
-            }
-
-            @Override
-            public void onAdPresent() {
-
-            }
-
-            @Override
-            public void onAdClick() {
-                // 设置开屏可接受点击时，该回调可用
-            }
-        };//
-        String adPlaceId = "2894720"; // 重要：请填上您的广告位ID，代码位错误会导致无法请求到广告
-        new SplashAd(this, adsParent, listener, adPlaceId, true);
+        splashAD= new SplashAD(WelcomActivity.this, adsParent, APPId,
+                SplashPosId, this, 3000);
 
 
     }
@@ -62,6 +38,33 @@ public class WelcomActivity extends Activity {
     private void jump() {
         this.startActivity(new Intent(WelcomActivity.this, MainActivity.class));
         this.finish();
+    }
+
+    @Override
+    public void onADDismissed() {
+        skips();
+//                // 跳转至您的应用主界面
+    }
+
+    @Override
+    public void onNoAD(int i) {
+        MyThread m = new MyThread();
+                new Thread(m).start();
+    }
+
+    @Override
+    public void onADPresent() {
+
+    }
+
+    @Override
+    public void onADClicked() {
+
+    }
+
+    @Override
+    public void onADTick(long l) {
+
     }
 
 
