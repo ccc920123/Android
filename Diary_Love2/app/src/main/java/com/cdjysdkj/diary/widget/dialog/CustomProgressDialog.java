@@ -38,7 +38,7 @@ public class CustomProgressDialog extends Dialog {
 		    	loadingmsg=(TextView) v.findViewById(R.id.id_tv_loadingmsg);
 		    	loadingmsg.setText(msg);
 		        customProgressDialog = new CustomProgressDialog(context,R.style.CustomProgressDialog);
-		        customProgressDialog.setCancelable(false);
+		        customProgressDialog.setCancelable(true);
 		        customProgressDialog.setContentView(v);
 		        customProgressDialog.getWindow().getAttributes().gravity = Gravity.CENTER;
 		        ImageView imageView = (ImageView) customProgressDialog.findViewById(R.id.loadingImageView);

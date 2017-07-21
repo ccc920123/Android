@@ -69,4 +69,5 @@ public abstract class BaseHomeActivity extends BaseActivity {
 	protected abstract void addActions();
 
 
+
 }

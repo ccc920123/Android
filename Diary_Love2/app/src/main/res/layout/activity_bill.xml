@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:background="@color/out_check_bg"
     android:orientation="vertical" >
-
-        <ExpandableListView
+      <!--  ExpandableListView-->
+        <com.cdjysdkj.diary.view.ZQExpandableListView
             android:id="@+id/list_expandaable"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

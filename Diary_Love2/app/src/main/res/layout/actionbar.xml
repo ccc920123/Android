@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/screen"
     android:layout_width="fill_parent"
     android:layout_height="@dimen/actionbar_height"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
      <RelativeLayout
         android:id="@+id/topbar"
@@ -35,15 +36,32 @@
             android:typeface="monospace"
             android:textStyle="bold"
             />
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_alignParentRight="true"
+             android:orientation="horizontal">
+         <TextView
+             android:id="@+id/beifen"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:text="换机 | "
+             android:textColor="@color/white"
+             android:layout_centerVertical="true"
+             android:layout_marginRight="6dp"
+             android:gravity="center_vertical"
+             android:textSize="16sp"
+             android:visibility="gone"
+             />
          <ImageView 
             android:id="@+id/topbar_menu_right"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/ic_action_edit"
+             android:layout_centerVertical="true"
             android:scaleType="centerInside"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
             android:visibility="gone"/>
+         </LinearLayout>
         </RelativeLayout>
 
 </RelativeLayout>

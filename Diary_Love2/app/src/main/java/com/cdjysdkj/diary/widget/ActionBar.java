@@ -35,6 +35,7 @@ public class ActionBar extends RelativeLayout {
 	private ImageView mRightBtn;
 	// private View mHomeView;
 	private TextView mTitleView;
+	private  TextView mTitleBeifen;
 
 	public ActionBar(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -47,6 +48,7 @@ public class ActionBar extends RelativeLayout {
 		mLeftBtn = (ImageView) mBarView.findViewById(R.id.topbar_menu_left);
 		mRightBtn = (ImageView) mBarView.findViewById(R.id.topbar_menu_right);
 		mTitleView = (TextView) mBarView.findViewById(R.id.topbar_title);
+		mTitleBeifen= (TextView) mBarView.findViewById(R.id.beifen);
 
 		TypedArray a = context.obtainStyledAttributes(attrs,
 				R.styleable.ActionBar);
@@ -76,6 +78,15 @@ public class ActionBar extends RelativeLayout {
 
 	}
 
+	/**
+	 * 是否显示备份
+	 * @param show
+     */
+	public  void setHideBeiFenVisibility(boolean show)
+	{
+		mTitleBeifen.setVisibility(show ? View.VISIBLE : View.GONE);
+	}
+
 	public void setTitle(CharSequence title) {
 		mTitleView.setText(title);
 	}
@@ -103,6 +114,13 @@ public class ActionBar extends RelativeLayout {
 	public void setRightAction(OnClickListener onHomeActionClick){
 		mRightBtn.setOnClickListener(onHomeActionClick);
 	}
+	/**
+	 * @param onHomeActionClick
+	 */
+	public void setBeifenAction(OnClickListener onHomeActionClick){
+		mTitleBeifen.setOnClickListener(onHomeActionClick);
+	}
+
 	/**
 	 * @param ishide
 	 */

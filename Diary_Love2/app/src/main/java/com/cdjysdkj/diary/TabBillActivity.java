@@ -56,14 +56,14 @@ public class TabBillActivity extends TabActivity implements OnTabChangeListener 
 		// mTabHost = (TabHost) findViewById(R.id.tabhost);
 		mTabHost = getTabHost(); // 因为集成了TabActivity
 		mTabHost.setup();
-		// 车辆信息
+		// 我的账单
 		Intent billIntent = new Intent(TabBillActivity.this, BillActivity.class);
 		mTabHost.addTab(mTabHost
 				.newTabSpec("zd")
 				.setIndicator(
 						composeLayout(R.drawable.bill, "我的账单"))
 				.setContent(billIntent));
-		// 外出检验
+		// 我的账户
 		Intent homeIntent = new Intent(TabBillActivity.this,
 				AccountActivity.class);
 		mTabHost.addTab(mTabHost

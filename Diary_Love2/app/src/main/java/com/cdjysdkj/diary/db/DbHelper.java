@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.cdjysdkj.diary.tab.DillTab;
 import com.cdjysdkj.diary.tab.ImageDiaryTab;
 import com.cdjysdkj.diary.tab.TextDiaryTab;
+import com.cdjysdkj.diary.tabhelper.DatabaseUtil;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
@@ -14,7 +15,7 @@ import java.sql.SQLException;
 
 public class DbHelper extends OrmLiteSqliteOpenHelper {
 	private static final String DB_NAME = "diary.db";
-	private static final int DB_VERSION = 1;
+	private static final int DB_VERSION = 2;//数据库版本
 	@SuppressWarnings("unused")
 	private static final String TAG = "DbHelper";
 
@@ -40,12 +41,12 @@ public class DbHelper extends OrmLiteSqliteOpenHelper {
 			ConnectionSource connectionSource, int oldVersion, int newVersion) {
 		try {
 			//更新表
-			
+			DatabaseUtil.upgradeTable(database,connectionSource, DillTab.class,DatabaseUtil.OPERATION_TYPE.ADD);//添加字段
 			TableUtils.createTable(connectionSource, TextDiaryTab.class);
 			TableUtils.createTable(connectionSource, ImageDiaryTab.class);
-			TableUtils.createTable(connectionSource, DillTab.class);
+
 			onCreate(database, connectionSource);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

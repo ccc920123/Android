@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_backup_copy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/yunbeifen" />
+
+    <Button
+        android:id="@+id/updata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/backupbtn_selector"
+        android:textColor="@color/white"
+        android:text="备份到云服务" />
+
+    <Button
+        android:id="@+id/loaing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/backupbtn_selector"
+        android:textColor="@color/white"
+        android:text="下载到本手机" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/text_light_gray"
+        android:text="说明：\n云端备份只支持更换手机用户，不能长期做备份。当用户更换手机后可先通过云备份将数据备份到云端，备份云端需要验证手机号码，验证成功方可备份。每次备份到云端都将要初始化上次备份的数据，同时会删除上次数据。保证你有足够空间来完成本次换机数据交换。下载到本机也需要通过手机号验证，备份到云端和下载到本地的手机号必须相同，否则你将不能将备份的数据下载到本地。下载完成后系统会自动删除储存到云端的数据。"/>
+</LinearLayout>

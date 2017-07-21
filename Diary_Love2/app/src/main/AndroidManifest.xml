@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cdjysdkj.diary"
-    android:versionCode="5"
-    android:versionName="1.0.4.0" >
-
+    android:versionCode="10"
+    android:versionName="1.2.6.20">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- 分享权限 -->
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <!-- 蓝牙分享所需的权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
-        android:name="com.cdjysdkj.diary.application.MyApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/app_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:vmSafeMode="true"
-        android:allowClearUserData="true"
-        android:hardwareAccelerated="true" >
+        android:vmSafeMode="true">
+
         <!-- 声明SDK所需要的组件 -->
         <service
             android:name="com.qq.e.comm.DownloadService"
@@ -46,11 +47,11 @@
             android:name="com.qq.e.ads.ADActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity
-            android:name="com.cdjysdkj.diary.WelcomeActivity"
+            android:name=".WelcomeActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,106 +59,89 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.cdjysdkj.diary.GuideActivity"
+            android:name=".GuideActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-        </activity>
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.cdjysdkj.diary.PasswordActivity"
+            android:name=".PasswordActivity"
             android:label="@string/title_activity_password"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.TextDiaryActivity"
+            android:name=".TextDiaryActivity"
             android:label="@string/title_activity_text_diary"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.WriteDiaryActivity"
+            android:name=".WriteDiaryActivity"
             android:label="@string/title_activity_write_diary"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.ImageDetailsActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:name=".ImageDetailsActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.MomentActivity"
+            android:name=".MomentActivity"
             android:label="@string/title_activity_moment"
             android:launchMode="standard"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.cdjysdkj.diary.EditImageActivity"
+            android:name=".EditImageActivity"
             android:label="@string/title_activity_edit_image"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.BillActivity"
+            android:name=".BillActivity"
             android:label="@string/title_activity_bill"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.TabBillActivity"
+            android:name=".TabBillActivity"
             android:label="@string/title_activity_tab_bill"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.AccountActivity"
+            android:name=".AccountActivity"
             android:label="@string/title_activity_account"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.AddBillActivity"
+            android:name=".AddBillActivity"
             android:label="@string/title_activity_add_bill"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.cdjysdkj.diary.TransferActivity"
+            android:name=".TransferActivity"
             android:label="@string/title_activity_transfer"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.NotesListActivity"
+            android:name=".NotesListActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.NoteEditActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:name=".NoteEditActivity"
+            android:screenOrientation="portrait" />
 
         <provider
-            android:name="com.cdjysdkj.diary.bean.NotesProvider"
+            android:name=".bean.NotesProvider"
             android:authorities="cdjysdkj_notes"
             android:multiprocess="true" />
 
         <activity
-            android:name="com.cdjysdkj.diary.AboutActivity"
+            android:name=".AboutActivity"
             android:label="@string/title_activity_about"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.AdviceActivity"
+            android:name=".AdviceActivity"
             android:label="@string/title_activity_advice"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <!-- 分享 -->
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
                 <data android:scheme="tencent1105087090" />
 
@@ -181,34 +165,34 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.cdjysdkj.diary.CenterActivity"
+            android:name=".CenterActivity"
             android:label="@string/title_activity_center"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.MobileNoActivity"
+            android:name=".MobileNoActivity"
             android:label="@string/title_activity_mobile_no"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.IDCARDActivity"
+            android:name=".IDCARDActivity"
             android:label="@string/title_activity_idcard"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.IPActivity"
+            android:name=".IPActivity"
             android:label="@string/title_activity_ip"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.PostCodeActivity"
+            android:name=".PostCodeActivity"
             android:label="@string/title_activity_post_code"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.cdjysdkj.diary.ConstellationActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:name=".ConstellationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResetPaswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BackupCopyActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
