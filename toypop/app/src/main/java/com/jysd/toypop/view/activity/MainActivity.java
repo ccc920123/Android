@@ -67,8 +67,8 @@ public class MainActivity extends BaseActivity {
     @Override
     public void bindView(Bundle savedInstanceState) {
         EventBus.getDefault().register(this);
-//        setupTextJokeViewPager();
-        setupTextChildViewPager();//先启动儿童读物
+        setupTextJokeViewPager();//笑话
+//        setupTextChildViewPager();//先启动儿童读物
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
         profile = new ProfileDrawerItem().withName("故事里的事").withEmail("你说是就是，你说不是就不是").withIcon(R.mipmap.ic_default);
@@ -86,11 +86,12 @@ public class MainActivity extends BaseActivity {
                 .withHasStableIds(true)
                 .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header /GoogleMaterial.Icon.gmd_videocam/FontAwesome.Icon.faw_picture_o/GoogleMaterial.Icon.gmd_text_format
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_compact_header).withIcon(R.mipmap.g).withIdentifier(1).withSelectable(true),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_non_translucent_status_drawer).withIcon(R.mipmap.s).withIdentifier(2).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_non_translucent_status_drawer).withIcon(R.mipmap.g).withIdentifier(1).withSelectable(true),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_compact_header).withIcon(R.mipmap.s).withIdentifier(2).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_action_bar_drawer).withIcon(R.mipmap.h).withIdentifier(3).withSelectable(true),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_multi_drawer).withIcon(R.mipmap.imageico).withIdentifier(4).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
                         /*   new DividerDrawerItem(),*/
+
                         new PrimaryDrawerItem().withName(R.string.drawer_item_keyboard_util_drawer).withIcon(GoogleMaterial.Icon.gmd_settings).withIdentifier(5).withSelectable(false)
 
                         //                    new SwitchDrawerItem().withName("日间模式").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener)
@@ -111,13 +112,13 @@ public class MainActivity extends BaseActivity {
                                 dId = 1;
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
-                                setupTextChildViewPager();//开始儿童读物
+                                setupTextJokeViewPager();//笑话
                                 //               intent = new Intent(MainActivity.this, TopicActivity.class);
                             } else if (drawerItem.getIdentifier() == 2 && dId != 2) {
                                 dId = 2;
                                 mTabLayout.removeAllTabs();
                                 mViewPager.removeAllViews();
-                                setupTextJokeViewPager();//笑话
+                                setupTextChildViewPager();//开始儿童读物
                             } else if (drawerItem.getIdentifier() == 3 && dId != 3) {
                                 dId = 3;
                                 mTabLayout.removeAllTabs();
@@ -134,11 +135,10 @@ public class MainActivity extends BaseActivity {
 //                                Toast.makeText(MainActivity.this, "这里是设置界面", Toast.LENGTH_SHORT).show();
                                 return true;
                             } else if (drawerItem.getIdentifier() == 6) {
-                                //
-                               /* if (mSweetSheet != null && !mSweetSheet.isShow()) {
-                                    mSweetSheet.show();
-                                    return false;
-                                }*/
+//                                dId = 6;
+//                                mTabLayout.removeAllTabs();
+//                                mViewPager.removeAllViews();
+//                                setupTextJoke360ViewPager();
                             } else if (drawerItem.getIdentifier() == 20) {
                                 intent = new LibsBuilder()
                                         .withFields(R.string.class.getFields())
@@ -251,7 +251,6 @@ public class MainActivity extends BaseActivity {
 
 
     }
-
     @Override
     protected void onStop() {
         super.onStop();

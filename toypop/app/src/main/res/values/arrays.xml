@@ -26,6 +26,7 @@
 
     </array>
     <array name="pictrue_tab">
+        <item>最新事件@toypopchenyujin@http://www.52rkl.cn</item>
         <item>神吐槽@toypopchenyujin@http://www.52rkl.cn/lei/list_60_1.html</item>
         <item>每日一笑@toypopchenyujin@http://www.52rkl.cn/bingxiangjie/list_92_1.html</item>
         <item>爆笑图片@toypopchenyujin@ http://v.juhe.cn/joke/randJoke.php?key=f0da6636bf7cd5bbd8e2af4d4fdd5880*type=pic</item>
@@ -72,6 +73,14 @@
         <item>色小组@toypopchenyujin@http://www.yaoqmh.net/sexiaozu/list_3_1.html</item>
         <!--<item>少女漫画@toypopchenyujin@http://www.yaoqmh.net/shaonvmanhua/list_4_1.html</item>-->
     </array>
+    <!--360娱乐-->
+        <array name="yule_tab">
+            <item>360笑话@toypopchenyujin@http://yule.360.cn/list?tag=笑话</item>
+            <item>轻松一刻@toypopchenyujin@http://yule.360.cn/list?tag=轻松一刻*tonality=轻松一刻</item>
+            <item>娱乐没有圈@toypopchenyujin@http://yule.360.cn/list?tag=娱乐没有圈*tonality=娱乐没有圈</item>
+            <item>污力吐槽@toypopchenyujin@http://yule.360.cn/list?tonality=污力吐槽</item>
+    </array>
+
     <array name="play_tab">
         <item>选集</item>
         <item>评论</item>

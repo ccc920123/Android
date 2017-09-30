@@ -45,8 +45,12 @@ public class ArticleJokeFragmentModel implements IArticleFragmentModel {
                                           lz13.text =listClass.get(i).text();
 
                                           Element img=postHead.getElementsByTag("img").get(0);//得到img标签
-                                          lz13.auth=img.attr("src");
-
+                                          String imgurl=img.attr("src");
+                                          if(imgurl.contains(".php?"))
+                                          {
+                                              imgurl=imgurl.substring(imgurl.indexOf("url=")+4,imgurl.length());
+                                          }
+                                          lz13.auth=imgurl;
                                           list.add(lz13);
                                       }
                                       subscriber.onNext(list);

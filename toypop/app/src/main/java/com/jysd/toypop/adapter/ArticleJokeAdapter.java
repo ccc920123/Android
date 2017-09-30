@@ -38,7 +38,7 @@ public class ArticleJokeAdapter extends FragmentStatePagerAdapter {
             fragment = new ArticleJokeJuheFragment();//处理聚合笑话  （新开的Fragment）
             ((ArticleJokeJuheFragment)fragment).setHref(url);
         }else{
-            fragment = new ArticleJokeFragment();//处理导姐笑话  （新开的Fragment）
+            fragment = new ArticleJokeFragment();//处理笑话  （新开的Fragment）
             ((ArticleJokeFragment)fragment).setHref(url);
         }
 

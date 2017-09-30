@@ -1,29 +1,15 @@
 package com.jysd.toypop.view.activity;
 
 import android.os.Bundle;
-import android.util.Xml;
-import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.jysd.toypop.R;
 import com.jysd.toypop.bean.Lz13;
 import com.jysd.toypop.presenter.ArticleActPresenter;
 import com.jysd.toypop.presenter.BasePresenter;
-import com.jysd.toypop.utils.FrecsoUtils;
 import com.jysd.toypop.view.impl.IArticleActView;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,22 +70,19 @@ public class ArticleImageTextActivity extends BaseActivity implements IArticleAc
     @Override
     public void setContent(String content) {
         if (web == null) return;
-//        Document html = Jsoup.parse(content);
-//        String str="";
-//        try {
-//            str= URLDecoder.decode(content, "utf-8");
-//        }catch (Exception E)
-//        {
-//
-//        }
-//            web.getSettings().setUseWideViewPort(true);
-//            web.getSettings().setLoadWithOverviewMode(true);
         WebSettings mWebSettings = web.getSettings();
+        //设置 缓存模式
+        web.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         mWebSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        web .getSettings().setJavaScriptEnabled(true);
         web.getSettings().setLoadsImagesAutomatically(true);
         web.getSettings().setDomStorageEnabled(true);
-            web.getSettings().setDefaultTextEncodingName("UTF -8");//设置默认为utf-8
-            web.loadData("<html><head><style type='text/css'>body{margin:auto auto;text-align:left;font color=\"#ff607d8b\";} img{width:100%25;} </style></head><body>"+content+"</body></html>", "text/html; charset=UTF-8", null);//这种写法可以正确解码#ff607d8b
+        web.getSettings().setAppCacheMaxSize(1024 * 1024 * 9);
+        //1.网上说是设置此选项提高渲染的优先级，
+        web.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+
+        web.getSettings().setDefaultTextEncodingName("UTF -8");//设置默认为utf-8
+            web.loadData("<html><head><meta charset='utf-8'/><style type='text/css'>body{margin:auto auto;text-align:left;color:#607d8b}img{width:100%;background-size: 100%  100%} </style></head><body>"+content+"</body></html>", "text/html; charset=UTF-8", null);//这种写法可以正确解码#ff607d8b
 
 
 //        Element postContent = html.getElementsByClass("f1").get(0);
