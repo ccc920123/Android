@@ -21,6 +21,15 @@ android {
 
 
     }
+    productFlavors {
+
+        qihu {
+            applicationId "com.jysd.toypop"
+        }
+        other {
+            applicationId "com.jysd.toypop"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false

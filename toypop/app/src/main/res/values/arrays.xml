@@ -80,6 +80,13 @@
             <item>娱乐没有圈@toypopchenyujin@http://yule.360.cn/list?tag=娱乐没有圈*tonality=娱乐没有圈</item>
             <item>污力吐槽@toypopchenyujin@http://yule.360.cn/list?tonality=污力吐槽</item>
     </array>
+        <array name="dy_tab">
+            <item>段友新料@toypopchenyujin@http://www.budejie.com/</item>
+          <!--  <item>段友图片@toypopchenyujin@http://m.neihanshequ.com/pic/</item>
+            <item>段友视频@toypopchenyujin@http://m.neihanshequ.com/video/</item>-->
+          <!--  <item>段友收集@toypopchenyujin@http://www.budejie.com/pic/</item>
+            <item>污力推荐@toypopchenyujin@http://www.budejie.com/video/</item>-->
+    </array>
 
     <array name="play_tab">
         <item>选集</item>

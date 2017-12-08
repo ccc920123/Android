@@ -12,6 +12,7 @@ import com.jysd.toypop.PanApplication;
 import com.jysd.toypop.R;
 import com.jysd.toypop.adapter.ArticleAdapter;
 import com.jysd.toypop.adapter.ArticleChildAdapter;
+import com.jysd.toypop.adapter.ArticleDYAdapter;
 import com.jysd.toypop.adapter.ArticleJokeAdapter;
 import com.jysd.toypop.adapter.FragmentAdapter;
 import com.jysd.toypop.adapter.JuzimiAdapter;
@@ -90,6 +91,7 @@ public class MainActivity extends BaseActivity {
                         new PrimaryDrawerItem().withName(R.string.drawer_item_compact_header).withIcon(R.mipmap.s).withIdentifier(2).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_action_bar_drawer).withIcon(R.mipmap.h).withIdentifier(3).withSelectable(true),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_multi_drawer).withIcon(R.mipmap.imageico).withIdentifier(4).withSelectable(true).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
+//                        new PrimaryDrawerItem().withName(R.string.drawer_item_dy_drawer).withIcon(R.mipmap.dy).withIdentifier(6).withSelectable(true),
                         /*   new DividerDrawerItem(),*/
 
                         new PrimaryDrawerItem().withName(R.string.drawer_item_keyboard_util_drawer).withIcon(GoogleMaterial.Icon.gmd_settings).withIdentifier(5).withSelectable(false)
@@ -134,12 +136,14 @@ public class MainActivity extends BaseActivity {
                                 MainActivity.this.startActivity(intent);
 //                                Toast.makeText(MainActivity.this, "这里是设置界面", Toast.LENGTH_SHORT).show();
                                 return true;
-                            } else if (drawerItem.getIdentifier() == 6) {
+                            }
+//                            else if (drawerItem.getIdentifier() == 6) {
 //                                dId = 6;
 //                                mTabLayout.removeAllTabs();
 //                                mViewPager.removeAllViews();
-//                                setupTextJoke360ViewPager();
-                            } else if (drawerItem.getIdentifier() == 20) {
+//                                setupTextJokedyViewPager();
+//                            }
+                            else if (drawerItem.getIdentifier() == 20) {
                                 intent = new LibsBuilder()
                                         .withFields(R.string.class.getFields())
                                         .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
@@ -248,6 +252,21 @@ public class MainActivity extends BaseActivity {
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
 //        mTabLayout.setTabsFromPagerAdapter(adapter);
+
+
+    }
+
+    /**
+     * 段有出征
+     */
+
+    private void setupTextJokedyViewPager()
+    {
+        String[] titles = getResources().getStringArray(R.array.dy_tab);
+        ArticleDYAdapter adapter =
+                new ArticleDYAdapter(getSupportFragmentManager(), Arrays.asList(titles));
+        mViewPager.setAdapter(adapter);
+        mTabLayout.setupWithViewPager(mViewPager);
 
 
     }

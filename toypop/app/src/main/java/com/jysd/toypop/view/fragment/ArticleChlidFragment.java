@@ -15,7 +15,6 @@ import com.jysd.toypop.inter.OnRetryListener;
 import com.jysd.toypop.presenter.ArticleChildFragmentPresenter;
 import com.jysd.toypop.utils.NetWorkUtil;
 import com.jysd.toypop.view.holder.ArticleChlidHolder;
-import com.jysd.toypop.view.holder.ArticleHolder;
 import com.jysd.toypop.view.impl.IArticleFragmentView;
 import com.jysd.toypop.widget.LoadingView;
 
