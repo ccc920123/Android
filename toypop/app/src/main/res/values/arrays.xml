@@ -26,14 +26,15 @@
 
     </array>
     <array name="pictrue_tab">
-        <item>最新事件@toypopchenyujin@http://www.52rkl.cn</item>
+        <!--<item>最新事件@toypopchenyujin@http://www.52rkl.cn</item>-->
+        <item>最新事件@toypopchenyujin@http://lf.snssdk.com/neihan/stream/mix/v1/?content_type=-104</item>
         <item>神吐槽@toypopchenyujin@http://www.52rkl.cn/lei/list_60_1.html</item>
         <item>每日一笑@toypopchenyujin@http://www.52rkl.cn/bingxiangjie/list_92_1.html</item>
         <item>爆笑图片@toypopchenyujin@ http://v.juhe.cn/joke/randJoke.php?key=f0da6636bf7cd5bbd8e2af4d4fdd5880*type=pic</item>
 
         <item>狐诌冷笑话@toypopchenyujin@http://www.52rkl.cn/huzhou/list_88_1.html</item>
 
-        <item>幽默文字@toypopchenyujin@http://japi.juhe.cn/joke/content/text.from?key=f0da6636bf7cd5bbd8e2af4d4fdd5880</item>
+        <!--<item>幽默文字@toypopchenyujin@http://japi.juhe.cn/joke/content/text.from?key=f0da6636bf7cd5bbd8e2af4d4fdd5880</item>-->
         <!--<item>高级黑@toypopchenyujin@http://www.rekele.com/gaojihei/list_40_1.html</item>-->
         <!--<item>脱口秀@toypopchenyujin@http://www.rekele.com/dajshen/list_108_1.html</item>-->
         <!--<item>轻松一刻@toypopchenyujin@http://www.rekele.com/qingsong/list_96_1.html</item>-->

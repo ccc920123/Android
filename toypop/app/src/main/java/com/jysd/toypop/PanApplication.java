@@ -22,6 +22,7 @@ public class PanApplication extends Application {
         Fresco.initialize(this);
         TAG = this.getClass().getSimpleName();
         //由于Application类本身已经单例，所以直接按以下处理即可。
+
         queues= Volley.newRequestQueue(getApplicationContext());
         myApplication = this;
 

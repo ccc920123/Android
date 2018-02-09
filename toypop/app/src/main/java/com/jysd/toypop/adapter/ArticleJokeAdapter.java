@@ -3,8 +3,10 @@ package com.jysd.toypop.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
 import com.jysd.toypop.view.fragment.ArticleJokeFragment;
 import com.jysd.toypop.view.fragment.ArticleJokeJuheFragment;
+import com.jysd.toypop.view.fragment.ArticleJokeNeihanFragment;
 import com.jysd.toypop.view.fragment.BaseFragment;
 
 import java.util.List;
@@ -15,7 +17,6 @@ import java.util.List;
 public class ArticleJokeAdapter extends FragmentStatePagerAdapter {
 
     private List<String> mTitles;
-
     public ArticleJokeAdapter(FragmentManager fm, List<String> titles) {
         super(fm);
         mTitles = titles;
@@ -30,14 +31,24 @@ public class ArticleJokeAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         BaseFragment fragment=null;
         String url=mTitles.get(position).split("@toypopchenyujin@")[1];
+
         if(url.contains("juhe")) {
             if(url.contains("*"))
             {
-                url=url.replace("*","&");
+
+                    url = url.replace("*", "&");
+
+
             }
             fragment = new ArticleJokeJuheFragment();//处理聚合笑话  （新开的Fragment）
+
             ((ArticleJokeJuheFragment)fragment).setHref(url);
-        }else{
+        } else if(url.contains("neihan"))//内涵段子
+        {
+            fragment = new ArticleJokeNeihanFragment();//内涵段子 （新开的Fragment）
+            ((ArticleJokeNeihanFragment)fragment).setHref(url);
+        } else{
+
             fragment = new ArticleJokeFragment();//处理笑话  （新开的Fragment）
             ((ArticleJokeFragment)fragment).setHref(url);
         }

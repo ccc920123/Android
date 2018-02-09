@@ -66,5 +66,5 @@
 
     <item name="tag_first" type="id"></item>
     <item name="tag_second" type="id"></item>
-    <string name="toolbar_save">保存</string>
+    <string name="toolbar_save">分享</string>
 </resources>

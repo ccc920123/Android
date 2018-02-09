@@ -32,6 +32,7 @@ import com.pan.materialdrawer.model.ProfileDrawerItem;
 import com.pan.materialdrawer.model.interfaces.IDrawerItem;
 import com.pan.materialdrawer.model.interfaces.IProfile;
 import com.pan.materialdrawer.util.RecyclerViewCacheUtil;
+import com.xiao.nicevideoplayer.NiceVideoPlayerManager;
 
 import java.util.Arrays;
 
@@ -292,6 +293,18 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
+        try {
+           if( NiceVideoPlayerManager.instance().getCurrentNiceVideoPlayer()!=null) {
+               if (NiceVideoPlayerManager.instance().getCurrentNiceVideoPlayer().isFullScreen()) {
+                   NiceVideoPlayerManager.instance().getCurrentNiceVideoPlayer().exitFullScreen();
+                   return;
+               }
+           }
+        }catch (Exception e)
+        {
+            e.getStackTrace();
+        }
+
         if (result != null && result.isDrawerOpen()) {
             result.closeDrawer();
         } else {
@@ -307,6 +320,8 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(this, "再按一次返回退出程序", Toast.LENGTH_LONG).show();
                 exitTime = System.currentTimeMillis();
             } else {
+                if (NiceVideoPlayerManager.instance().onBackPressd()) return;
+                PanApplication.getQueues().cancelAll("postjh");
                 PanApplication.getQueues().cancelAll("postjh");
                 System.exit(0);
 

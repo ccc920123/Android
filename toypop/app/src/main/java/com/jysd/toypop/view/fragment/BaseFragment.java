@@ -3,13 +3,13 @@ package com.jysd.toypop.view.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.jysd.toypop.inter.IBase;
 import com.jysd.toypop.presenter.BasePresenter;
+import com.jysd.toypop.view.base.CompatHomeKeyFragment;
 import com.jysd.toypop.view.impl.IBaseView;
 
 import butterknife.ButterKnife;
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 /**
  * Created by sysadminl on 2015/12/10.
  */
-public abstract class BaseFragment<T extends BasePresenter<IBaseView>> extends Fragment implements IBase {
+public abstract class BaseFragment<T extends BasePresenter<IBaseView>> extends CompatHomeKeyFragment implements IBase {
 
     protected BasePresenter mPresenter;
     protected Context mContext;

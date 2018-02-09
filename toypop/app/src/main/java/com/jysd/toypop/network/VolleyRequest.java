@@ -25,8 +25,23 @@ public class VolleyRequest {
         PanApplication.getQueues().start();
 
     }
+
     /**
-     * POST����
+     * 设置头部请求方式
+     * @param url
+     * @param tag
+     * @param volleyInterface
+     */
+    public  static void  RequestAddHeadGetString(String url,String tag,VolleyInterface volleyInterface){
+        PanApplication.getQueues().cancelAll(tag);
+        stringRequest=new HeaderStringRequest(Request.Method.GET,url,volleyInterface.loadingListener(),volleyInterface.errorListener());
+        stringRequest.setTag(tag);
+        PanApplication.getQueues().add(stringRequest);
+        PanApplication.getQueues().start();
+
+    }
+    /**
+     * POST String
      * @param url
      * @param tag
      * @param params
@@ -45,7 +60,7 @@ public class VolleyRequest {
         PanApplication.getQueues().start();
     }
     /**
-     * POST����
+     * POST  Json
      * @param url
      * @param tag
      * @param params

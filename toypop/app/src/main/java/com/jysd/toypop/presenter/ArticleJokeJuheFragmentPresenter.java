@@ -27,23 +27,38 @@ public class ArticleJokeJuheFragmentPresenter extends BasePresenter<IArticleFrag
             mView.showNoNet();
             return;
         }
+        //可以通过params来判断来源
         mIArticleModel.parserLZ13(params, new Callback<List<Lz13>>() {
             @Override
             public void onSccuss(List<Lz13> data) {
                 if (mView == null) return;
                 mView.onRefreshComplete();
                 mView.onLoadMoreComplete();
-                if ("1".equals(params.get("page"))) {
-                    if (data.size() == 0) {
-                        mView.showEmpty();
-                    } else {
-                        mView.setAdapter(data);
-                        mView.showSuccess();
-                    }
-                }else{
-                    mView.loadMore(data);
-                }
+               if(params.get("url").contains("juhe")) {
+                   if ("1".equals(params.get("page"))) {
+                       if (data.size() == 0) {
+                           mView.showEmpty();
+                       } else {
+                           mView.setAdapter(data);
+                           mView.showSuccess();
+                       }
+                   } else {
+                       mView.loadMore(data);
+                   }
+               }else{//说明是不得姐数据
 
+                   if ("1".equals(params.get("page"))) {
+                       if (data.size() == 0) {
+                           mView.checkNet();
+                       } else {
+                           mView.setAdapter(data);
+                           mView.showSuccess();
+                       }
+                   } else {
+                       mView.loadMore(data);
+                   }
+
+               }
             }
 
             @Override
@@ -51,8 +66,14 @@ public class ArticleJokeJuheFragmentPresenter extends BasePresenter<IArticleFrag
                 if (mView == null) return;
                 mView.onRefreshComplete();
                 mView.onLoadMoreComplete();
-                if ("1".equals(params.get("page"))){
-                    mView.showFaild();
+                if(params.get("url").contains("juhe")) {
+                    if ("1".equals(params.get("page"))) {
+                        mView.showFaild();
+                    }
+                }else{////说明是不得姐数据
+                    if ("1".equals(params.get("page"))) {
+                        mView.showNoNet();
+                    }
                 }
             }
         });
