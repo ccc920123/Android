@@ -81,10 +81,11 @@ public class ArticleJokeJuheHolder extends BaseHolder<Lz13> {
                 // 将列表中的每个视频设置为默认16:9的比例
                 ViewGroup.LayoutParams params = videoPlayer.getLayoutParams();
                 params.width = itemView.getResources().getDisplayMetrics().widthPixels; // 宽度为屏幕宽度
-                params.height = (int) (params.width * 9f / 16f);    // 高度为宽度的9/16
+//                params.height = (int) (params.width * 9f / 16f);    // 高度为宽度的9/16
+                params.height = (params.width);   // 高度为屏幕宽度
                 videoPlayer.setLayoutParams(params);
                 mController = new TxVideoPlayerController(getView().getContext());
-                new AsyncTaskHttpImage().execute(mData,mController);
+                new AsyncTaskHttpImage().execute(mData, mController);
 //                createVideoThumbnail(mData.href, 100, 100);
 //                Glide.with(itemView.getContext())
 //                        .load(createVideoThumbnail(mData.href, 100, 100))
@@ -161,14 +162,15 @@ public class ArticleJokeJuheHolder extends BaseHolder<Lz13> {
                 // Ignore failures while cleaning up.
             }
         }
+        byte[] bytes = null;
         if (kind == MediaStore.Images.Thumbnails.MICRO_KIND && bitmap != null) {
 
             bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
-        }
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        byte[] bytes = baos.toByteArray();
 
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+            bytes = baos.toByteArray();
+        }
         return bytes;
     }
 
@@ -191,19 +193,20 @@ public class ArticleJokeJuheHolder extends BaseHolder<Lz13> {
         @Override
         protected byte[] doInBackground(Object... strings) {
 
-            data= (Lz13)strings[0];
-            controller=(TxVideoPlayerController)strings[1];
+            data = (Lz13) strings[0];
+            controller = (TxVideoPlayerController) strings[1];
             return createVideoThumbnail(data.href, 100, 100);
         }
 
         @Override
         protected void onPostExecute(byte[] bytes) {
-
-            Glide.with(itemView.getContext())
-                    .load(bytes)
-                    .placeholder(R.drawable.img_default)
-                    .crossFade()
-                    .into(controller.imageView());
+            if (bytes != null) {
+                Glide.with(itemView.getContext())
+                        .load(bytes)
+                        .placeholder(R.drawable.img_default)
+                        .crossFade()
+                        .into(controller.imageView());
+            }
 
             super.onPostExecute(bytes);
         }

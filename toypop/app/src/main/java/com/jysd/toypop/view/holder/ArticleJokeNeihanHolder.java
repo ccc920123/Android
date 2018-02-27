@@ -52,7 +52,8 @@ public class ArticleJokeNeihanHolder extends BaseHolder<Lz13> {
         joke_des.setText(mData.text);
         ViewGroup.LayoutParams params = videoPlayer.getLayoutParams();
         params.width = itemView.getResources().getDisplayMetrics().widthPixels; // 宽度为屏幕宽度
-        params.height = (int) (params.width * 9f / 16f);    // 高度为宽度的9/16
+//        params.height = (int) (params.width * 9f / 16f);    // 高度为宽度的9/16
+        params.height = (params.width);   // 高度为屏幕宽度
         videoPlayer.setLayoutParams(params);
         mController = new TxVideoPlayerController(getView().getContext());
 

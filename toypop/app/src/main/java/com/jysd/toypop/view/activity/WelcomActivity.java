@@ -16,9 +16,9 @@ public class WelcomActivity extends Activity implements SplashADListener {
     boolean isFirstIn = false;
     // 跳转延时
     //应用id 1105701792
-    private final String APPId = "QQ1105701792";
+    private final String APPId = "1105701792";
     //广告id 7070918559312744
-    private final String SplashPosId = "QQ7070918559312744";
+    private final String SplashPosId = "7070918559312744";
     private SplashAD splashAD;
     ViewGroup adsParent;
 
